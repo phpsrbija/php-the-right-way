@@ -6,32 +6,45 @@ anchor: vagrant
 
 ## Vagrant {#vagrant_title}
 
-Izvršavanje vaše aplikacije u različitim okruženjima prilikom razvoja i produkcije mogu dovesti do čudnih bagova koji
-iskaču kada krenete uživo. Takođe je nezgodno održavati ažurnim različita razvojna okruženja sa istom verzijom za sve
-korišćene biblioteke kada radite sa timom programera.
+Izvršavanjem vaše aplikacije u okruženju koje se razlikuje tokom razvoja od
+produkcije, može dovesti do pojave čudnih bagova kada postane dostupan
+korisnicima. Prilično je zahtevno ažurirati različita okruženja za razvoj
+sa istim verzijama svih biblioteka kada radite u timu.
 
-Ako razvijate na Windows-u a objavljujete na Linux-u (ili bilo čemu što nije Windows) ili razvijate u timu, trebalo bi da
-razmotrite korišćenje virtuelne mašine. Zvuči varljivo, ali korišćenjem [Vagrant-a][vagrant] možete podesiti
-jednostavnu virtuelnu mašinu u samo par koraka. Ovi osnovni boksevi onda mogu da se podese ručno, ili pomoću
-"provisioning" softvera kao što je [Puppet][puppet] ili [Chef][chef] koji će ovo uraditi umesto vas. Provisioning
-osnovnog boksa je sjajan način da obezbedite da će višestruki boksevi biti podešeni na identičan način i eliminiše
-potrebu da održavate komplikovane komandne spiskove za podešavanje. Možete takođe i da "uništite" vaš osnovni boks i da
-ga rekonstruišete bez mnogo ručnih koraka, čime olakšavate pravljenje "sveže" instalacije.
+Ako razvijate na Windows-u a koristite servere na Linux-u (ili bilo čemu sto
+nije Windows), ili radite u timu, trebalo bi da razmotrite korišćenje virtualne
+mašine. Ovo zvuči zahtevno, ali korišćenjem [Vagrant][vagrant]-a možete podesiti
+jednostavnu virtuelnu mašinu u samo nekoliko koraka. Ove virtualne
+mašine se onda mogu podešavati ručno, ili možete koristiti softver za
+"konfigurisanje okruženja" kao što je [Puppet][puppet] ili [Chef][chef] da to
+obavi za vas. Konfigurisanje okruženja virtualnih mašina je odličan
+način da osigurate da je više virtualnih mašina konfigurisano na identičan način
+i uklanja potrebu da imate komplikovane liste komandi za "konfigurisanje".
+Takodje možete "uništiti" vašu virtualnu mašinu i rekreirati je u par komandi,
+što čini pravljenje "nove" instalacije jednostavno i lako.
 
-Vagrant kreira deljene foldere koji služe za deljenje koda između hosta i virtuelne mašine, što znači da možete da
-kreirate i editujete vaše fajlove na host mašini a onda pokrenete kod na virtuelnoj mašini.
+Vagrant pravi direktorijume koji vaš kod čini dostupan na vašoj i virtualnoj
+mašini, što znači da možete praviti i menjati vaše fajlove na vašoj mašini a
+onda ih izvršiti unutar virtualne mašine.
 
-### Mala pomoć
+### Pomoć za početak korišćenja
 
-Ako vam je potrebna mala pomoć da krenete sa korišćenjem Vagrant-a postoje dva servisa koji mogu biti od koristi:
+Ako vam je potrebna pomoć da počete da koristite Vagrant, ova tri servisa vam
+u tome mogu pomoći:
 
-- [Rove][rove]: servis koji vam omogućava da pre-generišete tipične Vagrant build-ove, PHP između opcija. Provisioning
-se radi uz pomoć Chef-a.
-- [Puphpet][puphpet]: jednostavan GUI za podešavanje virtuelnih mašina za PHP razvoj. **Izrazito fokusiran na PHP-u**. Osim
-lokalnih virtuelnih mašina, takođe se može koristiti za objavljivanje na cloud servisima. Provisioning se radi sa Puppet-om.
+- [Rove][rove]: servis koji vam omogućava da generišete tipične Vagrant
+konfiguracije, PHP je medju opcijama, konfiguriasnje se vrši pomoću Chef-a.
+- [Puphpet][puphpet]: jednostavan interfejs koji ce vam pomoći da konfigurišete
+virtualne mašine za PHP razvoj. **Vrlo fokusiran na PHP**. Pored lokalnih VM-a,
+može se koristiti i za puštanje koda u produkciju na cloud servisima.
+Konfigurisanje se vrši pomoću Puppet-a.
+- [Protobox][protobox]: je aplikacija koja koristi Vagrant i web interfejs da bi
+podesila lokalne virtualne mašine za razvoj. Jedan YAML dokument kontroliše sve
+što je instalirano na virtualnoj mašini.
 
 [vagrant]: http://vagrantup.com/
 [puppet]: http://www.puppetlabs.com/
 [chef]: http://www.opscode.com/
 [rove]: http://rove.io/
 [puphpet]: https://puphpet.com/
+[protobox]: http://getprotobox.com/
