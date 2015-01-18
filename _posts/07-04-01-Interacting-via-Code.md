@@ -1,13 +1,13 @@
 ---
 isChild: true
-title:   Interacting with Databases
-anchor:  databases_interacting
+title: Interakcija sa bazom podataka
+anchor: databases_interacting
 ---
 
-## Interacting with Databases {#databases_interacting_title}
+## Interakcija sa bazom podataka {#databases_interacting_title}
 
-When developers first start to learn PHP, they often end up mixing their database interaction up with their
-presentation logic, using code that might look like this:
+Kada programeri počnu da uče PHP, obično dođu u situaciju da mešaju logiku interakcije sa bazom i
+prezentacione logike, kao na primer u ovom slučaju:
 
 {% highlight php %}
 <ul>
@@ -19,13 +19,14 @@ foreach ($db->query('SELECT * FROM table') as $row) {
 </ul>
 {% endhighlight %}
 
-This is bad practice for all sorts of reasons, mainly that its hard to debug, hard to test, hard to read and it is
-going to output a lot of fields if you don't put a limit on there.
+Ovo je loša praksa iz više razloga, a ponajviše zbog toga što je ovakav kôd teško debug-ovati,
+testirati i uopšte čitati i prikazaće previše polja ukoliko ne postavite limit.
 
-While there are many other solutions to doing this - depending on if you prefer [OOP](/#object-oriented-programming) or
-[functional programming](/#functional-programming) - there must be some element of separation.
+Iako postoji dosta načina da se interakcija ostvari, u zavisnosti da li preferirate
+[OOP](/#object-oriented-programming) ili [proceduralno programiranje](/#functional-programming),
+mora postojati taj aspekt razdvajanja logike.
 
-Consider the most basic step:
+Razmotrimo ovaj osnovni korak:
 
 {% highlight php %}
 <?php
@@ -34,15 +35,15 @@ function getAllFoos($db) {
 }
 
 foreach (getAllFoos($db) as $row) {
-    echo "<li>".$row['field1']." - ".$row['field1']."</li>"; // BAD!!
+    echo "<li>".$row['field1']." - ".$row['field1']."</li>"; // LOŠE!!
 }
 {% endhighlight %}
 
-That is a good start. Put those two items in two different files and you've got some clean separation.
+Ovo je dobar početak. Ako stavite ova dva segmenta u dva zasebna fajla imaćete čisto razdvajanje.
 
-Create a class to place that method in and you have a "Model". Create a simple `.php` file to put the presentation
-logic in and you have a "View", which is very nearly [MVC] - a common OOP architecture for most
-[frameworks](/#frameworks).
+Napravite klasu sa ovim metodama i imate "Model". Napravite jednostavan `.php` fajl sa
+prezentacionom logikom i imate "View", što je dosta blizu [MVC-a] &mdash; najčešćeg koncepta u
+većini [framework-ova](/#frameworks_title).
 
 **foo.php**
 
@@ -50,13 +51,13 @@ logic in and you have a "View", which is very nearly [MVC] - a common OOP archit
 <?php
 $db = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8', 'username', 'password');
 
-// Make your model available
+// Učitajte klasu modela
 include 'models/FooModel.php';
 
-// Create an instance
+// Kreirajte instancu
 $fooList = new FooModel($db);
 
-// Show the view
+// Prikažite view
 include 'views/foo-list.php';
 {% endhighlight %}
 
@@ -88,14 +89,13 @@ class FooModel()
 <?php endforeach ?>
 {% endhighlight %}
 
-This is essentially the same as what most modern frameworks are doing, albeit a little more manual. You might not
-need to do all of that every time, but mixing together too much presentation logic and database interaction can be a
-real problem if you ever want to [unit-test](/#unit-testing) your application.
+Ovo u suštini radi i većina modernih framework-ova. Možda nećete imati stalnu potrebu za ovim, ali
+mešanje logike interakcije sa bazom i prezentacione logike može biti ozbiljan problem ako ikada
+budete želeli da pišete [unit testove](/#unit-testing) za vašu aplikaciju.
 
-[PHPBridge] have a great resource called [Creating a Data Class] which covers a very similar topic, and is great for
-developers just getting used to the concept of interacting with databases.
-
+[PHPBridge] ima sjajan članak na sličnu temu nazvan [Kreiranje Data klase], koji je odličan za
+programere koji se tek uhodavaju sa konceptom interakcije sa bazom podataka.
 
 [MVC]: http://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488
 [PHPBridge]: http://phpbridge.org/
-[Creating a Data Class]: http://phpbridge.org/intro-to-php/creating_a_data_class
+[Kreiranje Data klase]: http://phpbridge.org/intro-to-php/creating_a_data_class
