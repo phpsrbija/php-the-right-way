@@ -1,13 +1,12 @@
 ---
 isChild: false
-title: Templating
+title: Rad sa template-ima
 anchor: templating
 ---
 
-# Templating {#templating_title}
+# Rad sa template-ima {#templating_title}
 
-Templates provide a convenient way of separating your controller and domain logic from your presentation logic.
-Templates typically contain the HTML of your application, but may also be used for other formats, such as XML.
-Templates are often referred to as "views", the second component of the
-[model–view–controller](http://www.phptherightway.com/pages/Design-Patterns.html#model-view-controller) (MVC)
-software architecture pattern.
+Templejti nude način za razdvajanje kontrolerske i domen logike od prezentacione. Obično sadrže HTML
+vaše aplikacije, ali i druge formate podataka, kao što je XML. Templejti se često definišu kao "view-ovi (views)",
+koji čine deo druge komponente [Model-View-Controller](/pages/Design-Patterns.html#model-view-controller)
+(MVC) softverskog arhitekturalnog pattern-a.
