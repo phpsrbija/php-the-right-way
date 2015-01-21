@@ -18,7 +18,14 @@ Možete da instalirate Composer u lokalu (u vašem trenutnom radnom direktorijum
 globalno (npr /usr/local/bin). Hajde da pretpostavimo da želite da instalirate Composer u lokalu. Iz vašeg korenog
 direktorijuma projekta:
 
-    curl -s https://getcomposer.org/installer | php
+{% highlight console %}
+curl -s https://getcomposer.org/installer | php
+{% endhighlight %}
+
+This will download `composer.phar` (a PHP binary archive). You can run this with `php` to manage your project
+dependencies.
+<strong>Please Note:</strong> If you pipe downloaded code directly into an interpreter, please read the
+code online first to confirm it is safe.
 
 Ovo će preuzeti `composer.phar` (PHP binarnu arhivu). Možete je pokrenuti pomoću `php` radi upravljanja zavisnostima
 vašeg projekta. <strong>Zapamtite:</strong> Ako preusmerite izvršavanje preuzetog koda direktno u interpreter (koristite pajp),
@@ -39,15 +46,21 @@ obezbedila da:
 Pošto ručna instalacija ne vrši nijednu od ovih provera, morate doneti odluku da li vam se ovaj kompromis isplati.
 Imajući to u vidu, evo uputstva kako nabaviti Composer ručno:
 
-    curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
-    chmod +x $HOME/local/bin/composer
+{% highlight console %}
+curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
+chmod +x $HOME/local/bin/composer
+{% endhighlight %}
 
 Putanja `$HOME/local/bin` (ili direktorijum po vašem izboru) bi trebalo da se nalazi u vašoj promenljivoj okruženja
 `$PATH`. Time će komanda `composer` postati dostupna.
 
 Kada se sretnete sa dokumentacijom koja pokreće Composer kao `php composer.phar install`, to možete zameniti sa:
 
-    composer install
+{% highlight console %}
+composer install
+{% endhighlight %}
+
+This section will assume you have installed composer globally.
 
 ### Kako definisati i instalirati zavisnosti
 

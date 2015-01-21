@@ -15,7 +15,7 @@ web GUI (grafički interfejs) za nju. Samo nemojte staviti vaše CLI PHP skripte
 
 Pokušajte da pokrenete PHP sa komandne linije:
 
-{% highlight bash %}
+{% highlight console %}
 > php -i
 {% endhighlight %}
 
@@ -29,7 +29,7 @@ je dole prikazano.
 
 {% highlight php %}
 <?php
-if ($argc != 2) {
+if ($argc !== 2) {
     echo "Usage: php hello.php [name].\n";
     exit(1);
 }
@@ -46,7 +46,7 @@ korišćeni izlazni kodovi se mogu pronaći [ovde][exit-codes]
 
 Da pokrenete našu skriptu, prikazanu gore, sa komandne linije:
 
-{% highlight bash %}
+{% highlight console %}
 > php hello.php
 Usage: php hello.php [name]
 > php hello.php world
@@ -56,10 +56,11 @@ Hello, world
  * [Naučite o pokretanju PHP sa komandne linije][php-cli]
  * [Naučite o podešavanju Windows-a da bi pokrenuo PHP sa komandne linije][php-cli-windows]
 
-[phpinfo]: http://php.net/manual/en/function.phpinfo.php
-[cli-options]: http://www.php.net/manual/en/features.commandline.options.php
-[argc]: http://php.net/manual/en/reserved.variables.argc.php
-[argv]: http://php.net/manual/en/reserved.variables.argv.php
-[php-cli]: http://php.net/manual/en/features.commandline.php
-[php-cli-windows]: http://www.php.net/manual/en/install.windows.commandline.php
-[exit-codes]: http://www.gsp.com/cgi-bin/man.cgi?section=3&topic=sysexits
+
+[phpinfo]: http://php.net/function.phpinfo
+[cli-options]: http://php.net/features.commandline.options
+[argc]: http://php.net/reserved.variables.argc
+[argv]: http://php.net/reserved.variables.argv
+[exit-codes]: http://www.gsp.com/cgi-bin/man.cgi?section=3&amp;topic=sysexits
+[php-cli]: http://php.net/features.commandline
+[php-cli-windows]: http://php.net/install.windows.commandline

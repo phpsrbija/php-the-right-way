@@ -47,3 +47,5 @@ koji poznaju sve sadašnje i buduće osobe koje će možda raditi na kodu.
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
 [phpcsfixer]: http://cs.sensiolabs.org/
+[phptools]: https://github.com/dericofilho/php.tools
+[sublime-phpfmt]: https://github.com/dericofilho/sublime-phpfmt

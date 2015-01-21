@@ -16,9 +16,9 @@ metodu da konvertujete DateTime nazad u string za izlaz.
 {% highlight php %}
 <?php
 $raw = '22. 11. 1968';
-$start = \DateTime::createFromFormat('d. m. Y', $raw);
+$start = DateTime::createFromFormat('d. m. Y', $raw);
 
-echo 'Start date: ' . $start->format('m/d/Y') . "\n";
+echo 'Start date: ' . $start->format('Y-m-d') . "\n";
 {% endhighlight %}
 
 Računanje sa DateTime je moguće korišćenjem klase DateInterval. DateTime ima metode kao `add()` and `sub()` koje primaju
@@ -29,7 +29,7 @@ računanje razlike u datumima koristite metodu `diff()`. Ona vraća new DateInte
 <?php
 // kreiramo kopiju $start i dodajemo jedan mesec i 6 dana
 $end = clone $start;
-$end->add(new \DateInterval('P1M6D'));
+$end->add(new DateInterval('P1M6D'));
 
 $diff = $end->diff($start);
 echo 'Razlika: ' . $diff->format('%m mesec, %d dana (ukupno: %a dana)') . "\n";
@@ -60,5 +60,5 @@ foreach ($periodIterator as $date) {
 * [Pročitajte o DateTime][datetime]
 * [Pročitajte o formatiranju datuma][dateformat] (prihvaćene opcije za formatiranje datuma)
 
-[datetime]: http://www.php.net/manual/book.datetime.php
-[dateformat]: http://www.php.net/manual/function.date.php
+[datetime]: http://php.net/book.datetime
+[dateformat]: http://php.net/function.date

@@ -62,7 +62,7 @@ included in the project:
    git checkout -b <topic-branch-name>
    ```
 
-4. Install the [Jekyll](https://github.com/mojombo/jekyll/) gem to preview locally.
+4. Install the [Jekyll](https://github.com/jekyll/jekyll/) gem to preview locally.
 
 5. Commit your changes in logical chunks. Please adhere to these [git commit
    message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
@@ -109,3 +109,4 @@ All content is completely free now, and always will be.
 3. Wrap all text to 120 characters
 4. Code samples should adhere to PSR-1 or higher
 5. Use [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) for all content
+6. Use language agnostic urls when refering to external websites such as the [php.net](http://php.net/urlhowto.php) manual

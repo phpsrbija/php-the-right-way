@@ -23,9 +23,9 @@ IIS7 dolazi sa FastCGI ugradjenim i spremnim za upotrebu, samo je podtreno konfi
 Za podrsku i dodatne resurse pogledajte [deo posvecen PHP na iis.net][php-iis]
 
 [php-downloads]: http://windows.php.net
-[phpmanager]: http://phpmanager.codeplex.com/
 [wpi]: http://www.microsoft.com/web/downloads/platform.aspx
-[zsce]: http://www.zend.com/en/products/server-ce/
 [xampp]: http://www.apachefriends.org/en/xampp.html
-[wamp]: http://www.wampserver.com/
+[easyphp]: http://www.easyphp.org/
+[wamp]: http://www.wampserver.com/en/
+[phpmanager]: http://phpmanager.codeplex.com/
 [php-iis]: http://php.iis.net/
