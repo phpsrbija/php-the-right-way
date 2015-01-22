@@ -1,22 +1,23 @@
 ---
 isChild: true
-title: Benefits
+title: Prednosti
 anchor: templating_benefits
 ---
 
-## Benefits {#templating_benefits_title}
+## Prednosti {#templating_benefits_title}
 
-The main benefit to using templates is the clear separation they create between the presentation logic and the rest of
-your application. Templates have the sole responsibility of displaying formatted content. They are not responsible for
-data lookup, persistence or other more complex tasks. This leads to cleaner, more readable code which is especially
-helpful in a team environment where developers work on the server-side code (controllers, models) and designers work on
-the client-side code (markup).
+Glavna korist od korišćenja templejta je jasno razdvajanje prezentacione logike od ostatka aplikacije.
+Templejti imaju odgovornost isključivo za formatiranje i prikazivanje podataka. Oni nisu zaduženi za
+dohvatanje i čuvanje podataka, niti za neke druge kompleksnije poslove. To za rezultat ima
+čistiji, čitljiviji kôd, što je posebno korisno u timovima gde programeri rade na server-side kôdu
+(kontroleri, modeli), a dizajneri na client-side delu (markup).
 
-Templates also improve the organization of presentation code. Templates are typically placed in a "views" folder, each
-defined within a single file. This approach encourages code reuse where larger blocks of code are broken into smaller,
-reusable pieces. For example, your site header and footer can each be defined as templates, which are then included
-before and after each page template.
+Takođe, templejti unapređuju organizaciju prezentacione logike. Oni su najčešće smešteni u "views"
+folderu, svaki u posebnom fajlu. Ovo doprinosi praktičnijem iskorišćenju kôda, jer su veći blokovi
+podeljeni na manje, višekratne (reusable) delove, takozvane parcele (partials). Na primer, header i
+footer sekije vašeg sajta mogu biti definisane kao templejti, koji se onda učitavaju pre i posle
+templejta za svaku pojedinačnu stranicu.
 
-Finally, depending on the library you use, templates can offer more security by automatically escaping user-generated
-content. Some libraries even offer sand-boxing, where template designers are only given access to white-listed
-variables and functions.
+Konačno, u zavisnosti od biblioteke koju koristite, templejti obično brinu o bezbednosti, tako što automatski
+escape-uju sadržaj koji potiče od korisnika. Neke biblioteke čak omogućavaju sandbox-ovanje, pri čemu
+je dizajnerima omogućen pristup isključivo određenim, proverenim promenljivama i funkcijama.

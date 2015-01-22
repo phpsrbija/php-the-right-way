@@ -1,23 +1,26 @@
 ---
 isChild: true
-title: Compiled Templates
+title: Kompajlirani templejti
 anchor: compiled_templates
 ---
 
-## Compiled Templates {#compiled_templates}
+## Kompajlirani templejti {#compiled_templates_title}
 
-While PHP has evolved into a mature, object oriented language, it
-[hasn't improved much](http://fabien.potencier.org/article/34/templating-engines-in-php) as a templating language.
-Compiled templates, like [Twig](http://twig.sensiolabs.org/) or [Smarty](http://www.smarty.net/), fill this void by
-offering a new syntax that has been geared specifically to templating. From automatic escaping, to inheritance and
-simplified control structures, compiled templates are designed to be easier to write, cleaner to read and safer to use.
-Compiled templates can even be shared across different languages, [Mustache](http://mustache.github.io/) being a good
-example of this. Since these templates must be compiled there is a slight performance hit, however this is very minimal
-when proper caching is used.
+PHP jeste evoluirao u zreo, objektno-orijenisan jezik, ali [nije mnogo napredovao][article_templating_engines]
+kao templejt jezik. Kompajlirani templejt engine-i, kao što su [Twig] i [Smarty]*, upotpunjuju ovaj
+aspekt sa novom sintaksom osmišljenom upravo za potrebe templejta. Od automatskog escape-ovanja,
+preko nasleđivanja i pojednostavljenih kontrolnih struktura, kompajlirani templejti su mnogo
+čitljiviji, lakši za pisanje, ali i bezbedniji. Oni takođe mogu biti kompatibilni sa više različitih
+programskih jezika, za šta je dobar primer [Mustache]. Pošto se templejti moraju kompajlirati,
+neizbežan je određeni negativan uticaj na performanse, koji je ipak zanemarljiv ako se koristi keširanje.
 
-Example of a compiled template (using the [Twig](http://twig.sensiolabs.org/) library):
+**Smarty omogućava automatsko escape-ovanje, ali ova funkcionalnost NIJE podrazumevano uključena.*
 
-{% highlight text %}
+### Jednostavan primer kompajliranog templejta
+
+Primer baziran na [Twig] biblioteci.
+
+{% highlight html+jinja %}
 {% raw %}
 {% include 'header.html' with {'title': 'User Profile'} %}
 
@@ -27,3 +30,46 @@ Example of a compiled template (using the [Twig](http://twig.sensiolabs.org/) li
 {% include 'footer.html' %}
 {% endraw %}
 {% endhighlight %}
+
+### Primer kompajliranog templejta koji koristi nasleđivanje
+
+Primer baziran na [Twig] biblioteci.
+
+{% highlight html+jinja %}
+{% raw %}
+// template.html
+
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>
+{% endraw %}
+{% endhighlight %}
+
+{% highlight html+jinja %}
+{% raw %}
+// user_profile.html
+
+{% extends "template.html" %}
+
+{% block title %}User Profile{% endblock %}
+{% block content %}
+    <h1>User Profile</h1>
+    <p>Hello, {{ name }}</p>
+{% endblock %}
+{% endraw %}
+{% endhighlight %}
+
+
+[article_templating_engines]: http://fabien.potencier.org/article/34/templating-engines-in-php
+[Twig]: http://twig.sensiolabs.org/
+[Smarty]: http://www.smarty.net/
+[Mustache]: http://mustache.github.io/

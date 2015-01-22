@@ -1,25 +1,30 @@
 ---
 isChild: true
-title: Plain PHP Templates
+title: Nativni PHP templejti
 anchor: plain_php_templates
 ---
 
-## Plain PHP Templates {#plain_php_templates_title}
+## Nativni PHP templejti {#plain_php_templates_title}
 
-Plain PHP templates are simply templates that use native PHP code. They are a natural choice since PHP is actually a
-template language itself. That simply means that you can combine PHP code within other code, like HTML. This is
-beneficial to PHP developers as there is no new syntax to learn, they know the functions available to them, and their
-code editors already have PHP syntax highlighting and auto-completion built-in. Further, plain PHP templates tend to be
-very fast as no compiling stage is required.
+Nativni PHP templejti u osnovi koriste standardnu PHP sintaksu. Oni predstavljaju logičan izbor
+pošto je PHP sam po sebi templejt jezik. Ovo znači da je moguće kombinovati PHP kôd u okviru nečeg
+drugog, kao što je HTML. Ovo dosta znači PHP programerima, jer nije neophodno učiti novi sintaksu,
+znaju koje su im funkcije dostupne, a njihovi editori omogućavaju highlighting sintakse, kao i
+auto-complete. Takođe, nativni PHP templejti su veoma brzi imajući u vidu da u njihovom slučaju
+nije potrebno kompajliranje.
 
-Every modern PHP framework employs some kind of template system, most of which use plain PHP by default. Outside of
-frameworks, libraries like [Plates](http://platesphp.com/) or [Aura.View](https://github.com/auraphp/Aura.View) make
-working with plain PHP templates easier by offering modern template functionality such as inheritance, layouts and
-extensions.
+Svaki moderan PHP framework poseduje neku vrstu templejt sitema, pri čemu većina podrazumevano
+koristi nativan PHP. Pored framework-ova, biblioteke kao [Plates][plates] i [Aura.View][aura]
+omogućavaju jednostavniji rad sa nativnim PHP templejetima, putem funkcionalnosti kao što su
+nasleđivanje, layout-i i ekstenzije.
 
-Example of a plain PHP template (using the [Plates](http://platesphp.com/) library):
+### Jednostavan primer nativnog PHP templejta
+
+Primer baziran na [Plates][plates] biblioteci.
 
 {% highlight php %}
+<?php // user_profile.php ?>
+
 <?php $this->insert('header', ['title' => 'User Profile']) ?>
 
 <h1>User Profile</h1>
@@ -27,3 +32,37 @@ Example of a plain PHP template (using the [Plates](http://platesphp.com/) libra
 
 <?php $this->insert('footer') ?>
 {% endhighlight %}
+
+### Primer nativnog PHP templejta koji koristi nasleđivanje
+
+Primer baziran na [Plates][plates] biblioteci.
+
+{% highlight php %}
+<?php // template.php ?>
+
+<html>
+<head>
+    <title><?=$title?></title>
+</head>
+<body>
+
+<main>
+    <?=$this->section('content')?>
+</main>
+
+</body>
+</html>
+{% endhighlight %}
+
+{% highlight php %}
+<?php // user_profile.php ?>
+
+<?php $this->layout('template', ['title' => 'User Profile']) ?>
+
+<h1>User Profile</h1>
+<p>Hello, <?=$this->escape($name)?></p>
+{% endhighlight %}
+
+
+[plates]: http://platesphp.com/
+[aura]: https://github.com/auraphp/Aura.View
