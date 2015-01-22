@@ -1,18 +1,16 @@
 ---
 isChild: false
-title: Injektovanje zavisnosti (Dependency Injection)
+title: Dependency Injection
 anchor: dependency_injection
 ---
 
-# Injektovanje zavisnosti (Dependency Injection) {#dependency_injection_title}
+# Dependency Injection {#dependency_injection_title}
 
 Sa [Wikipedia](http://en.wikipedia.org/wiki/Dependency_injection)-je:
 
-> Injektovanje zavisnosti je softverski dizajn patern koji omogućava uklanjanje hardkodovanih zavisnosti
-> i čini ih mogućim da se zamene, bilo u vreme izvršavanja koda ili u vreme kompajliranja koda.
+> Dependency Injection je softverski dizajn patern koji omogućava uklanjanje hardkodovanih zavisnosti
+> i čini ih zamenjivim, bilo u vreme izvršavanja ili kompajliranja kôda.
 
-> Dependency injection is a software design pattern that allows the removal of hard-coded dependencies and makes it
-> possible to change them, whether at run-time or compile-time.
-
-Ovaj citat predstavlja koncept mnogo komplikovanijim nego što on to zaista jeste. Dependency Injection nudi komponentu
-sa svojim zavisnostima ili kroz injekciju putem konstruktora, poziva metode ili setovanjem polja. Jednostavno tako.
+Ovaj citat predstavlja koncept mnogo komplikovanijim nego što on to zaista jeste. Dependency Injection
+nekoj komponenti dostavlja neophodne zavisnosti (dependencies) bilo putem konstruktora, poziva
+odgovarajućih setter metoda ili direktnim setovanjem polja. Jako jednostavno.
