@@ -1,30 +1,29 @@
 ---
 isChild: true
-title:   Abstraction Layers
-anchor:  databases_abstraction_layers
+title: Slojevi za apstrakciju (Database Abstraction Layers - DAL)
+anchor: databases_abstraction_layers
 ---
 
-## Abstraction Layers {#databases_abstraction_layers_title}
+## Slojevi za apstrakciju (Database Abstraction Layers - DAL) {#databases_abstraction_layers_title}
 
-Many frameworks provide their own abstraction layer which may or may not sit on top of [PDO][1]. These will often
-emulate features for one database system that is missing from another by wrapping your queries in PHP methods, giving
-you actual database abstraction instead of just the connection abstraction that PDO provides. This will of course add a
-little overhead, but if you are building a portable application that needs to work with MySQL, PostgreSQL and SQLite
-then a little overhead will be worth it the sake of code cleanliness.
+Mnogi framework-ovi imaju sopstveni DAL koji može, a ne mora da bude "nad" [PDO-om][1].
+Oni najčešće emuliraju mogućnosti jednog sistema baze podataka koje nedostaju u drugom, tako što
+pretvaraju upite u PHP metode, dajući nam apstrakciju same baze, a ne samo konekcije na bazu kao
+što je to slučaj sa PDO-om. Ovo će naravno uneti i malo overhead-a, ali ako pravite portabilnu aplikaciju
+koja treba da radi sa MySQL, PostgreSQL i SQLite bazama, onda se malo overhead-a isplati u korist čistote kôda.
 
-Some abstraction layers have been built using the [PSR-0][psr0] or [PSR-4][psr4] namespace standards so can be
-installed in any application you like:
+Neki slojevi za apstrakciju su napravljeni u skladu sa [PSR-0][psr0] i [PSR-4][psr4] namespace
+standardima, tako da mogu da se integrišu u bilo koju aplikaciju:
 
 * [Aura SQL][6]
 * [Doctrine2 DBAL][2]
 * [Propel][7]
 * [ZF2 Db][4]
 
-
-[1]: http://php.net/book.pdo
+[1]: http://www.php.net/manual/en/book.pdo.php
 [2]: http://www.doctrine-project.org/projects/dbal.html
 [4]: http://packages.zendframework.com/docs/latest/manual/en/index.html#zend-db
 [6]: https://github.com/auraphp/Aura.Sql
-[7]: http://propelorm.org/
+[7]: http://propelorm.org/Propel/
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md

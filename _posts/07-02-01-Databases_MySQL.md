@@ -1,24 +1,21 @@
 ---
 isChild: true
-title:   MySQL Extension
-anchor:  mysql_extension
+title: MySQL ekstenzija
+anchor: mysql_extension
 ---
 
-## MySQL Extension {#mysql_extension_title}
+# MySQL ekstenzija {#mysql_extension_title}
 
-The [mysql] extension for PHP is no longer in active development, and is [officially deprecated as of PHP 5.5.0]
-[mysql_deprecated], meaning that it will be removed within the next few releases. If you are using any functions that
-start with `mysql_*` such as `mysql_connect()` and `mysql_query()` in your applications then these will simply not be
-available in later versions of PHP. This means you will be faced with a rewrite at some point down the line, so the
-best option is to replace mysql usage with [mysqli] or [PDO] in your applications within your own development schedules
-so you won't be rushed later on.
+[mysql] ekstenzija za PHP više nije u aktivnom razvoju i [zvanično je deprecated od verzije PHP 5.5.0][mysql_deprecated],
+što znači da će biti uklonjena u nekoj od sledećih verzija. Ako u vašim aplikacijama koristite `mysql_*` funkcije,
+kao što su `mysql_connect()`, onda ćete u nekom momentu biti prinuđeni da prepravite kôd, a najbolja opcija je da
+zamenite korišćenje mysql esktenzije sa [mysqli] ili [PDO] u skladu sa sopstvenim tempom razvoja.
 
-**If you are starting from scratch then absolutely do not use the [mysql] extension: use the [MySQLi extension][mysqli],
-or use [PDO].**
+**Ako počinjete od nule onda nikako nemojte koristiti [mysql] ekstenziju: koristite ili
+[MySQLi ekstenziju][mysqli] ili [PDO].**
 
-* [PHP: Choosing an API for MySQL][mysql_api]
-* [PDO Tutorial for MySQL Developers][pdo4mysql_devs]
-
+* [PHP: Izbor API-a za MySQL][mysql_api]
+* [PDO tutorijal za MySQL programere][pdo4mysql_devs]
 
 [mysql]: http://php.net/mysql
 [mysql_deprecated]: http://php.net/migration55.deprecated

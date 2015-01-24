@@ -1,14 +1,14 @@
 ---
 isChild: true
-title:   PDO Extension
-anchor:  pdo_extension
+title: PDO ekstenzija
+anchor: pdo_extension
 ---
 
-## PDO Extension {#pdo_extension_title}
+# PDO ekstenzija {#pdo_extension_title}
 
-[PDO] is a database connection abstraction library &mdash; built into PHP since 5.1.0 &mdash; that provides a common
-interface to talk with many different databases. For example, you can use basically identical code to interface with
-MySQL or SQLite:
+[PDO] je biblioteka za apstrakciju povezivanja sa bazom podataka &mdash; dostupna od verzije PHP
+5.1.0 &mdash; koja obezbeđuje zajednički interfejs za komunikaciju sa više različitih tipova baza podataka.
+Tako na primer možete imati praktično identičan kôd koji radi sa MySQL i SQLite bazom:
 
 {% highlight php %}
 <?php
@@ -25,53 +25,54 @@ $row = $statement->fetch(PDO::FETCH_ASSOC);
 echo htmlentities($row['some_field']);
 {% endhighlight %}
 
-PDO will not translate your SQL queries or emulate missing features; it is purely for connecting to multiple types of
-database with the same API.
+PDO neće prevoditi vaše SQL upite ili emulirati nedostajuće opcije; on služi isključivo za povezivanje
+sa različitim tipovima baza podataka pomoću istog API-ja.
 
-More importantly, `PDO` allows you to safely inject foreign input (e.g. IDs) into your SQL queries without worrying
-about database SQL injection attacks.
-This is possible using PDO statements and bound parameters.
+Ono što je još bitnije, `PDO` omogućava da bezbedno ubacite podatke koji potiču iz nekog stranog izvora (npr. ID-eve)
+u vaš SQL upit bez bojazni od SQL Injection napada. Ovo je moguće korišćenjem PDO naredbi (statements) i bound parametara.
 
-Let's assume a PHP script receives a numeric ID as a query parameter. This ID should be used to fetch a user record
-from a database. This is the `wrong` way to do this:
+Pretpostavimo da PHP skripta prima numerički ID kao parametar upita. Ovaj ID se koristi da vrati korisnički podatak iz
+baze. Ovo je `pogrešan` način da se to uradi:
 
 {% highlight php %}
 <?php
 $pdo = new PDO('sqlite:/path/db/users.db');
-$pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- NO!
+$pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- NE!
 {% endhighlight %}
 
-This is terrible code. You are inserting a raw query parameter into a SQL query. This will get you hacked in a
-heartbeat, using a practice called [SQL Injection]. Just imagine if a hacker passes in an inventive `id` parameter by
-calling a URL like `http://domain.com/?id=1%3BDELETE+FROM+users`. This will set the `$_GET['id']` variable to `1;DELETE
-FROM users` which will delete all of your users! Instead, you should sanitize the ID input using PDO bound parameters.
+Ovo je katastrofalan kôd. Ubacujete "sirov" parametar u SQL upit. Bićete hakovani u trenutku putem [SQL Injection] napada. Zamislite da haker
+prosledi maliciozan `id` parametar putem URL-a kao što je `http://domain.com/?id=1%3BDELETE+FROM+users`. Ovo će postaviti
+promenljivu `$_GET['id']` na `1;DELETE FROM users` što će obrisati sve vaše korisnike! Umesto toga, trebalo bi da sanirate ID
+input korišćenjem PDO bound parametara:
 
 {% highlight php %}
 <?php
 $pdo = new PDO('sqlite:/path/db/users.db');
 $stmt = $pdo->prepare('SELECT name FROM users WHERE id = :id');
-$id = filter_input(FILTER_GET, 'id', FILTER_SANITIZE_NUMBER_INT); // <-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
-$stmt->bindParam(':id', $id, PDO::PARAM_INT); // <-- Automatically sanitized for SQL by PDO
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT); // <-- najpre filtrirajte podatke (vidi [Filtriranje podataka](#data_filtering)), posebno bitno za upite kao što su INSERT, UPDATE, itd.
+$stmt->bindParam(':id', $id, PDO::PARAM_INT); // <-- automatski sanirano
 $stmt->execute();
 {% endhighlight %}
 
-This is correct code. It uses a bound parameter on a PDO statement. This escapes the foreign input ID before it is
-introduced to the database preventing potential SQL injection attacks.
+Ovo je ispravan kôd koji radi bind-ovanje parametra u PDO naredbu. Na taj način se sanira strani ID podatak pre nego što se
+uopšte pošalje bazi, čime se sprečava potencijalni SQL injection napad.
 
-For writes, such as INSERT or UPDATE, it's especially critical to still [filter your data](#data_filtering) first and sanitize it for other things (removal of HTML tags, JavaScript, etc).  PDO will only sanitize it for SQL, not for your application.
+U slučaju upita kao što su INSERT ili UPDATE, svejedno morate sami [filtrirati podatke](#data_filtering)
+zbog drugih stvari (uklanjanje HTML tagova, JavaScript-a i slično). PDO će sanirati podatke samo u
+slučaju SQL upita, a ne za potrebe vaše aplikacije.
 
-* [Learn about PDO]
+* [Naučite o PDO-u][1]
 
-You should also be aware that database connections use up resources and it was not unheard-of to have resources
-exhausted if connections were not implicitly closed, however this was more common in other languages. Using PDO you can
-implicitly close the connection by destroying the object by ensuring all remaining references to it are deleted, i.e.
-set to NULL. If you don't do this explicitly, PHP will automatically close the connection when your script ends -
-unless of course you are using persistent connections.
+Trebate imati svest o tome da konekcije sa bazom podataka troše sistemske resurse i neretko se dešava
+da dođe do trošenja resursa ako se konekcije ne zatvaraju implicitno. Ipak, to se dosta češće dešava
+u slučaju drugih programskih jezika. Pomoću PDO-a možete implicitno zatvoriti konekciju uništavanjem
+samog PDO objekta, na primer postavljanjem njegove vrednosti na NULL. Ako ne uradite ovo eksplicitno,
+PHP će automatski zatvoriti konekciju po završetku izvršavanja vaše skripte, osim ako naravno ne
+koristite perzistentne konekcije.
 
-* [Learn about PDO connections]
-
+* [Naučite o PDO konekcijama][1]
 
 [pdo]: http://php.net/pdo
 [SQL Injection]: http://wiki.hashphp.org/Validation
-[Learn about PDO]: http://php.net/book.pdo
-[Learn about PDO connections]: http://php.net/pdo.connections
+[Naučite o PDO-u]: http://php.net/book.pdo
+[Naučite o PDO konekcijama]: http://php.net/pdo.connections
