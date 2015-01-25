@@ -3,27 +3,27 @@ isChild: true
 anchor:  opcode_cache
 ---
 
-## Opcode Cache {#opcode_cache_title}
+## Opcode keš {#opcode_cache_title}
 
-When a PHP file is executed, under the hood it is first compiled to opcodes and, only then, the opcodes are executed.
-If a PHP file is not modified, the opcodes will always be the same. This means that the compilation step is a waste of
-CPU resources.
+Kada se PHP fajl izvršava, on se u pozadini najpre kompajlira u opcode, a zatim se taj opcode izvršava.
+Ako se PHP fajl ne menja, odgovarajući opcode će biti isti. To znači da korak kompajliranja predstavlja samo
+bespotrebno trošenje procesorskih resursa.
 
-This is where opcode caches come in. They prevent redundant compilation by storing opcodes in memory and reusing it on
-successive calls. Setting up an opcode cache takes a matter of minutes, and your application will speed up
-significantly. There's really no reason not to use it.
+Upravo ovde opcode keširanje stupa na scenu. Ono sprečava suvišno kompajliranje, tako što se rezultujući
+opcode čuva u memoriji, a zatim se koristi u narednim izvršavanjima. Instalacija opcode keša je brza i
+jednostavna, a vaša aplikacija će raditi znatno brže. Zaista nema razloga da ga ne koristite.
 
-As of PHP 5.5, there is a built-in opcode cache called [OPcache][opcache-book]. It is also available for earlier
-versions.
+Od verzije PHP 5.5, postoji ugrađen opcode keš nazvan [OPcache][opcache-book]. On je takođe
+dostupan i za prethodne verzije.
 
-Read more about opcode caches:
+Saznajte više o opcode keširanju:
 
-* [OPcache][opcache-book] (built-in since PHP 5.5)
-* [APC] (PHP 5.4 and earlier)
+* [OPcache][opcache-book] (ugrađen od verzije PHP 5.5)
+* [APC] (PHP <= 5.4)
 * [XCache]
-* [Zend Optimizer+] (part of Zend Server package)
-* [WinCache] (extension for MS Windows Server)
-* [list of PHP accelerators on Wikipedia][PHP_accelerators]
+* [Zend Optimizer+] (deo Zend Server paketa)
+* [WinCache] (ekstenzija za MS Windows Server)
+* [lista PHP akceleratora][PHP_accelerators]
 
 
 [opcache-book]: http://php.net/book.opcache
