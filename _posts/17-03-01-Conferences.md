@@ -3,13 +3,13 @@ isChild: true
 anchor:  conferences
 ---
 
-## PHP Conferences {#conferences_title}
+## PHP konferencije {#conferences_title}
 
-The PHP community also hosts larger regional and national conferences in many countries around the world. Well-known
-members of the PHP community usually speak at these larger events, so it's a great opportunity to learn directly from
-industry leaders.
+PHP zajednica takođe organizuje velike regionalne i nacionalne konferencije u zemljama širom sveta.
+Poznati članovi PHP zajednice obično govore na većim događajima, te je to dobra prilika da učite
+direktno od vodećih ljudi iz ove branše.
 
-[Find a PHP Conference][php-conf]
+[Pretražite PHP konferencije][php-conf]
 
 
 [php-conf]: http://php.net/conferences/index.php
