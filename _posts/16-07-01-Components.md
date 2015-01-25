@@ -3,34 +3,37 @@ isChild: true
 anchor:  components
 ---
 
-## Components {#components_title}
+## Komponente {#components_title}
 
-As mentioned above "Components" are another approach to the common goal of creating, distributing and implementing
-shared code. Various component repositories exist, the main two of which are:
+Kao što je prethodno pomenuto, komponente predstavljau još jedan pristup u cilju kreiranja,
+distribuiranja i implementiranja deljenog kôda. Postoje različiti repozitorijumi (repositories) komponenata,
+od kojih su najpoznatija sledeća dva:
 
 * [Packagist]
 * [PEAR]
 
-Both of these repositories have command line tools associated with them to help the installation and upgrade processes,
-and have been explained in more detail in the [Dependency Management] section.
+Za oba repozitorijuma postoje CLI alati putem kojih se obavlja instalacija i update-ovanje komponenti,
+što je detaljnije objašnjeno u poglavlju ["Upravljanje zavisnostima"][Dependency Management].
 
-There are also component-based frameworks and component-vendors that offer no framework at all. These projects provide
-another source of packages which ideally have little to no dependencies on other packages, or specific frameworks.
+Takođe, postoje i framework-ovi bazirani na komponentama i vendori komponenti koji zapravo nisu framework.
+Ovi projekti nude još jedan izvor paketa koji imaju malo ili u najboljem slučaju uopšte nemaju zavisnosti
+ka drugim paketima ili određenim framework-ovima.
 
-For example, you can use the [FuelPHP Validation package], without needing to use the FuelPHP framework itself.
+Tako na primer možete koristiti [FuelPHP paket za validaciju][FuelPHP Validation package], bez potrebe da
+koristite sâm FuelPHP framework.
 
 * [Aura]
 * [FuelPHP]
 * [Hoa Project]
 * [Orno]
-* [Symfony Components]
-* [The League of Extraordinary Packages]
-* Laravel's Illuminate Components
+* [Symfony komponente]
+* [The League of Extraordinary paketi]
+* Laravel's Illuminate komponente
     * [Eloquent ORM]
     * [Queue]
 
-_Laravel's [Illuminate components] will become better decoupled from the Laravel framework. For now, only the
-components best decoupled from the Laravel framework are listed above._
+_Laravel-ove [Illuminate komponente] će biti još bolje izdvojene iz samog Laravel framework-a. Za sada,
+samo one koju su najbolje izdvojene su na prethodnom spisku._
 
 
 [Packagist]: /#composer_and_packagist
@@ -41,8 +44,8 @@ components best decoupled from the Laravel framework are listed above._
 [FuelPHP]: https://github.com/fuelphp
 [Hoa Project]: https://github.com/hoaproject
 [Orno]: https://github.com/orno
-[Symfony Components]: http://symfony.com/doc/current/components/index.html
-[The League of Extraordinary Packages]: http://thephpleague.com/
+[Symfony komponente]: http://symfony.com/doc/current/components/index.html
+[The League of Extraordinary paketi]: http://thephpleague.com/
 [Eloquent ORM]: https://github.com/illuminate/database
 [Queue]: https://github.com/illuminate/queue
-[Illuminate components]: https://github.com/illuminate
+[Illuminate komponente]: https://github.com/illuminate
