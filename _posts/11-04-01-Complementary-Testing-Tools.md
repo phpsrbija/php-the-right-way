@@ -1,16 +1,24 @@
 ---
 isChild: true
-title: Alati za komplementarno testiranje
-anchor: complementary_testing_tools
+anchor:  complementary_testing_tools
 ---
 
 ## Alati za komplementarno testiranje {#complementary_testing_tools_title}
 
-Pored individualnog testiranja i frejmvorkova zasnovanih na ponašanju, takođe postoji i niz generičkih frejmvorkova i
-pomoćnih biblioteka korisnih za bilo koji izabrani pristup.
+Pored pojedinačnih TDD i BDD framework-ova, postoji i niz generičkih framework-ova i biblioteka
+koje mogu biti od koristi za bilo koji od ova dva pristupa.
 
-### Linkovi alata
+### Linkovi
 
-* [Selenium](http://seleniumhq.org/) je alat za automatizaciju pretraživača koji može biti [integrisan u PHPUnit](http://www.phpunit.de/manual/3.1/en/selenium.html)
-* [Mockery](https://github.com/padraic/mockery) je Mock objektni frejmvork koji može biti integrisan u [PHPUnit](http://phpunit.de/) ili [PHPSpec](http://www.phpspec.net/)
-* [Prophecy](https://github.com/phpspec/prophecy) is a highly opinionated yet very powerful and flexible PHP object mocking framework. It's integrated with [PHPSpec](http://www.phpspec.net/) and can be used with [PHPUnit](http://phpunit.de/).
+* [Selenium] je alat za automatizaciju browser-a koji može biti [integrisan u PHPUnit]
+* [Mockery] je framework za mock-ovanje koji se može integrisati u [PHPUnit] ili [PHPSpec]
+* [Prophecy] je dosta "svojeglav", ali isto tako dosta moćan i fleksibilan framework za mock-ovanje.
+Integrisan je u [PHPSpec], a može se koristiti i unutar [PHPUnit-a][PHPUnit].
+
+
+[Selenium]: http://seleniumhq.org/
+[integrisan u PHPUnit]: http://phpunit.de/manual/current/en/selenium.html
+[Mockery]: https://github.com/padraic/mockery
+[PHPUnit]: http://phpunit.de/
+[PHPSpec]: http://www.phpspec.net/
+[Prophecy]: https://github.com/phpspec/prophecy

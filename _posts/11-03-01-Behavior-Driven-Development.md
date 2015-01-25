@@ -1,25 +1,31 @@
 ---
 isChild: true
-title: Razvoj zasnovano na ponašanju
-anchor: behavior_driven_development
+anchor:  behavior_driven_development
 ---
 
-## Razvoj zasnovano na ponašanju {#behavior_driven_development_title}
+## Razvoj vođen ponašanjanjem (Behavior Driven Development - BDD) {#behavior_driven_development_title}
 
-Postoje dva različita tipa razvoja zasnovana na ponašanju (BDD): SpecBDD i StoryBDD. SpecBDD je fokusiran na tehničko
-ponašanje tj na kod, dok je StoryBDD fokusiran na logičko ponašanje ili ponašanje karakteristika ili interakcije. PHP ima
-frejmvorkove za oba tipa BDD.
+Postoje dva različita tipa BDD-a: SpecBDD i StoryBDD. SpecBDD se fokusira na tehničko ponašanje kôda,
+dok je StoryBDD fokusiran na proizvod, ponašanje određene funkcionalnosti i interakciju. PHP ima
+framework-ove za oba tipa BDD-a.
 
-Kod StoryBDD piše se lako čitljiv sadržaj čoveku koji opisuje ponašanje aplikacije. Ovaj sadržaj može se pokrenuti kao
-aktuelni test vaše aplikacije. Frejvork koji se koristi u PHP aplikacijama za StoryBDD je Behat, koji je inspirisan Rubi
-[Cucumber](http://cukes.info/) projektom i implementira Gherkin DSL za opis ponašanja karakteristika.
+U slučaju StoryBDD-a, pišu se čitljive "priče" koje opisuje ponašanje aplikacije. One se zatim mogu
+pokrenuti kao testovi nad vašom aplikacijom. Framework koji se koristi u PHP aplikacijama za StoryBDD
+je [Behat], koji je inspirisan Ruby [Cucumber] projektom i koji implementira Gherkin DSL za opis
+ponašanja funkcionalnosti.
 
-Sa SpecBDD pišu se specifikacije koje opisuju kako kod u stvarnosti treba da se ponaša. Umesto testiranja funkcije ili
-metode, opisuje se kako bi funkcija ili metod trebalo da se ponašaju. PHP nudi PHPSpec frejmvork za ovu svrhu. Ovaj
-frejmvork je inspirisan [RSpec projektom](http://rspec.info/) za Rubi.
+U slučaju SpecBDD-a, pišu se specifikacije koje opisuju kako sâm kôd treba da se ponaša. Umesto testiranja
+funkcije ili metode, vi opisujete kako ta funkcija ili metod treba da se ponaša. PHP nudi [PHPSpec]
+framework u te svrhe. Ovaj framework je inspirisan [RSpec projektom][Rspec] za Ruby.
 
 ### BDD linkovi
 
-* [Behat](http://behat.org/), StoryBDD frejmvork za PHP, inspirisan Rubijevim [Cucumber](http://cukes.info/) projektom;
-* [PHPSpec](http://www.phpspec.net/), SpecBDD frejmvork PHP, inspirisan Rubijevim [RSpec](http://rspec.info/) projektom;
-* [Codeception](http://www.codeception.com) je potpuni frejmvork za testiranje koji koristi BDD principe.
+* [Behat] - StoryBDD framework za PHP, inspirisan Ruby [Cucumber] projektom
+* [PHPSpec] - SpecBDD framework za PHP, inspirisan Ruby [Rspec] projektom
+* [Codeception] - full-stack framework za testiranje koji koristi BDD principe
+
+[Behat]: http://behat.org/
+[Cucumber]: http://cukes.info/
+[PHPSpec]: http://www.phpspec.net/
+[RSpec]: http://rspec.info/
+[Codeception]: http://codeception.com/
