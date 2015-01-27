@@ -1,14 +1,13 @@
 ---
-isChild: false
-title: Testiranje
 anchor: testing
 ---
+
 # Testiranje {#testing_title}
 
-Pisanje automatizovanih testova za vaš PHP kod se smatra najboljom praksom koja vodi do pravilne izrade aplikacije.
-Automatizovani testovi su odličan alat kako bi bili sigurni da aplikacija neće pući prilikom izmene ili dodavanja novih
-funkcionalnosti, i ne bi ih trebalo ignorisati.
+Pisanje automatizovanih testova za vaš PHP kôd se smatra veoma dobrom praksom koja za rezultat ima
+kvalitetno napravljene aplikacije. Automatizovani testovi predstavljaju odličan alat koji obezbeđuje
+da aplikacija neće "pucati" nakon izmene ili dodavanja novih funkcionalnosti, te ih ne bi trebalo ignorisati.
 
-Postoji nekoliko različitih tipova alata za testiranje (ili frejmvorkova) dostupnih za PHP, koji koriste različite
-pristupe - a svi oni pokušavaju da izbegnu ručno testiranje i potrebu za visokim Quality Assurance timom, koji bi samo
-proveravao da skorašnje promene nisu pokvarile postojeću funkcionalnost aplikacije.
+Postoji nekoliko različitih tipova alata za testiranje (ili framework-ova) u PHP-u, koji imaju različite
+pristupe, ali svi teže tome da se izbegne ručno testiranje i potreba za velikim Q/A (Quality Assurance) timovima,
+sve u cilju da najnovije izmene ne "razbiju" postojeću funkcionalnost aplikacije.
