@@ -24,13 +24,13 @@ injection-a i kreiranjem mock ("lažnih") klasa i stub-ova možete utvrditi da l
 koriste u cilju još bolje pokrivenosti kôda testovima.
 
 Kada kreirate klasu ili funkciju, treba da kreirate i odgovarajući unit test za različite slučajeve njenog
-korišćenja. Osnova stvar koju treba obezbediti jeste prijava grešaka u slučaju loših argumenata, odnosno
-ispravan rad u slučaju dobrih argumenata koji joj se proslede. Na taj način ćete biti sigurni da ako kasnije
+korišćenja. Osnova stvar koju treba obezbediti jeste prijava grešaka u slučaju prosleđivanja loših argumenata,
+odnosno ispravan rad u slučaju dobrih argumenata koji joj se proslede. Na taj način ćete biti sigurni da ako kasnije
 napravite određene izmene u toj klasi ili funkciji, da će prethodne funkcionalnosti nastaviti da rade ispravno.
 Jedina alternativa ovome je `var_dump()` u test.php, što naravno nikako nije način za izradu aplikacije,
 bila ona mala ili velika.
 
-Još jedna primena unit testova je contribute-ovanje open source projektima. Ako umeta da napišete test koji
+Još jedna primena unit testova je contribute-ovanje open source projektima. Ako umete da napišete test koji
 prikazuje neispravnu funkcionalnost, a onda je popravite tako da test prolazi, mnogo su veće šanse da će
 vaši patch-evi biti prihvaćeni. Ako imate projekat koji prihvata pull request-ove, onda bi ovo trebalo da
 bude uslov za njihovo slanje.
