@@ -3,7 +3,7 @@ isChild: true
 anchor:  php_paas_providers
 ---
 
-## PHP PaaS Providers {#php_paas_providers_title}
+## PHP PaaS provajderi {#php_paas_providers_title}
 
 * [PagodaBox](https://pagodabox.com/)
 * [AppFog](https://appfog.com/)

@@ -3,26 +3,27 @@ isChild: true
 anchor:  frameworks
 ---
 
-## Frameworks {#frameworks_title}
+## Framework-ovi {#frameworks_title}
 
-Rather than re-invent the wheel, many PHP developers use frameworks to build out web applications. Frameworks abstract
-away many of the low-level concerns and provide helpful, easy-to-use interfaces to complete common tasks.
+Umesto da "izmišljaju toplu vodu", dosta PHP programera koristi framework-ove za razvoj web aplikacija.
+Framework apstrahuje većinu low-level pitanja i pruža koristan, jednostavan interejs za rešavanje nekih
+uobičajenih zadataka.
 
-You do not need to use a framework for every project. Sometimes plain PHP is the right way to go, but if you do need a
-framework then there are three main types available:
+Ne morate da koristite framework za svaki projekat. Nekada je "čist" PHP bolji izbor, ali ako vam je potreban
+framework postoje tri glavne kategorije:
 
-* Micro Frameworks
-* Full-Stack Frameworks
-* Component Frameworks
+* Micro framework-ovi
+* Full-Stack framework-ovi
+* Framework-ovi bazirani na komponentama (glue framework-ovi)
 
-Micro-frameworks are essentially a wrapper to route a HTTP request to a callback, controller, method, etc as quickly as
-possible, and sometimes come with a few extra libraries to assist development such as basic database wrappers and the
-like. They are prominently used to build remote HTTP services.
+Micro framework-ovi su u suštini maksimalno optimizovani wrapper-i za rutiranje HTTP request-a na callback,
+kontroler, metod, itd. Ponekad dolaze sa dodatnim bibliotekama koje potpomažu razvoj, kao što su komponente
+za komunikaciju sa bazom i slično. Najčešće se koriste za razvoj web servisa.
 
-Many frameworks add a considerable number of features on top of what is available in a micro-framework and these are
-known Full-Stack Frameworks. These often come bundled with ORMs, Authentication packages, etc.
+Mnogi framework-ovi dodaju priličan broj funkcionalnosti na ono što nude micro framework-ovi, i takvi su poznati
+kao Full-Stack framework-ovi. Oni često poseduju ugrađene ORM-ove, komponente za autentifikaciju, itd.
 
-Component-based frameworks are collections of specialized and single-purpose libraries. Disparate component-based
-frameworks can be used together to make a micro- or full-stack framework.
+Framework-ovi bazirani na komponentama su zapravo kolekcije usko specijalizovanih i jednonamenskih biblioteka.
+Moguće je iskombinovati komponente nekoliko framework-ova ovog tipa i tako napraviti micro ili full-stack framework.
 
-* [Popular PHP Frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
+* [Popularni PHP framework-ovi](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
