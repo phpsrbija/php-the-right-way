@@ -1,15 +1,19 @@
 ---
+title:   Standardna PHP biblioteka (SPL)
 isChild: true
-title:   Standardna PHP biblioteka
-anchor: standard_php_library
+anchor:  standard_php_library
 ---
 
-## Standardna PHP biblioteka {#standard_php_library_title}
+## Standardna PHP biblioteka (SPL) {#standard_php_library_title}
 
-Standardna PHP biblioteka (Standard PHP Library) (SPL) dolazi u paketu sa PHP-om i pruža zbirku klasa i interfejsa.
-Sastoji se pretežno od najčešće korišćenih datastructure klasa (stack, queue, heap, i druge), i iteratora koji mogu
-prolaziti kroz te strukture podataka ili vaše sopstvene klase koje implementiraju interfejs standardne PHP biblioteke.
+Standardna PHP biblioteka (Standard PHP Library - SPL) dolazi u paketu sa PHP-om i na raspolaganje stavlja
+kolekciju klasa i interfejsa. Sastoji se pretežno od nekih najčešće korišćenih data-structure klasa (stack, queue, heap, itd.),
+kao i iteratora koji mogu da prolaze kroz te strukture podataka ili neke vaše klase koje implementiraju
+odgovarajući SPL interfejs.
 
 * [Pročitajte o standardnoj PHP biblioteci (SPL)][spl]
+* [SPL video kurs na Lynda.com (naplaćuje se)][spllynda]
 
-[spl]: http://php.net/manual/en/book.spl.php
+
+[spl]: http://php.net/book.spl
+[spllynda]: http://www.lynda.com/PHP-tutorials/Up-Running-Standard-PHP-Library/175038-2.html

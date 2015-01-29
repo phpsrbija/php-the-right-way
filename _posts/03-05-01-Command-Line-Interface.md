@@ -1,17 +1,16 @@
 ---
 isChild: true
-title: Interfejs sa komandne linije
-anchor: command_line_interface
+anchor:  command_line_interface
 ---
 
-## Interfejs sa komandne linije (Command Line Interface) {#command_line_interface_title}
+## Interfejs sa komandne linije (Command Line Interface - CLI) {#command_line_interface_title}
 
 PHP je napravljen prvenstveno radi pisanja web aplikacija, ali je takođe koristan za skriptne programe koji se
 izvršavaju sa komandne linije. PHP programi sa komandne linije mogu vam pomoći da automatizujete uobičajene zadatke
-kao što su testiranje, razvoj, i administraciju aplikacije.
+kao što su testiranje, razvoj i administracija aplikacije.
 
-CLI PHP programi su moćni jer možete da koristite kod vaše aplikacije direktno, bez potrebe da napravite i obezbedite
-web GUI (grafički interfejs) za nju. Samo nemojte staviti vaše CLI PHP skripte u vaš javni root direktorijum!
+CLI PHP programi su moćni jer možete da koristite kôd vaše aplikacije direktno, bez potrebe da napravite i obezbedite
+web GUI (grafički interfejs) za nju. Samo nikako **nemojte** smeštati vaše CLI PHP skripte u javni root direktorijum!
 
 Pokušajte da pokrenete PHP sa komandne linije:
 
@@ -21,11 +20,11 @@ Pokušajte da pokrenete PHP sa komandne linije:
 
 Opcija `-i` će ispisati vašu PHP konfiguraciju isto kao i [`phpinfo`][phpinfo] funkcija.
 
-Opcija `-a` pruža interaktivni shell, sličan Ruby-jevom IRB ili Python-ovom interaktivnom shell-u. Postoji još dosta
-korisnih [opcija sa komandne linije][cli-options].
+Opcija `-a` omogućava interaktivni shell, sličan Ruby-jevom IRB ili Python-ovom interaktivnom shell-u. Postoji još dosta
+korisnih [CLI opcija][cli-options].
 
-Hajde da napišemo jednostavan "Hello, $name" CLI program. Da ga isprobate, napravite fajl sa imenom `hello.php`, kao što
-je dole prikazano.
+Hajde da napišemo jednostavan "Hello, $name" CLI program. Najpre napravite fajl sa imenom `hello.php`,
+sa sledećim sadržajem:
 
 {% highlight php %}
 <?php
@@ -37,14 +36,14 @@ $name = $argv[1];
 echo "Hello, $name\n";
 {% endhighlight %}
 
-PHP postavlja dve specijalne promenljive na bazi argumenata na osnovu kojih se pokreće vaša skripta. [`$argc`][argc] je
-celobrojna promenljiva koja sadrži argument *count* i [`$argv`][argv] je niz koji sadrži *vrednost* svakog argumenta.
-Prvi argument je uvek naziv vašeg fajla sa PHP skriptom, u ovom slučaju `hello.php`.
+PHP postavlja dve specijalne promenljive na osnovu argumenata koje se prosleđuju pri pokretanju vaše skripte. [`$argc`][argc] je
+integer koji sadrži *broj* argumenata, a [`$argv`][argv] je niz koji sadrži *vrednost* svakog argumenta.
+Prvi argument je uvek naziv fajla vaše PHP skripte, u ovom slučaju to je `hello.php`.
 
-Izraz `exit()` se koristi sa brojem različitim od nule da bi shell-u skrenuo pažnju da komanda nije uspela. Najčešće
-korišćeni izlazni kodovi se mogu pronaći [ovde][exit-codes]
+Komandi `exit()` se prosleđuje broj različit od nule kako bi se shell-u skrenula pažnja da komanda nije uspela. Najčešće
+korišćeni izlazni kodovi su dostupni [ovde][exit-codes].
 
-Da pokrenete našu skriptu, prikazanu gore, sa komandne linije:
+Pokretanje prethodne skripte iz komandne linije:
 
 {% highlight console %}
 > php hello.php
@@ -53,8 +52,8 @@ Usage: php hello.php [name]
 Hello, world
 {% endhighlight %}
 
- * [Naučite o pokretanju PHP sa komandne linije][php-cli]
- * [Naučite o podešavanju Windows-a da bi pokrenuo PHP sa komandne linije][php-cli-windows]
+ * [Naučite o izvršavanju PHP-a sa komandne linije][php-cli]
+ * [Naučite o podešavanju Windows-a sa ciljem izvršavanja PHP-a sa komandne linije][php-cli-windows]
 
 
 [phpinfo]: http://php.net/function.phpinfo
