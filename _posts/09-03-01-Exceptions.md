@@ -3,23 +3,23 @@ isChild: true
 anchor:  exceptions
 ---
 
-## Exceptions {#exceptions_title}
+## Izuzeci (exceptions) {#exceptions_title}
 
-Exceptions are a standard part of most popular programming languages, but they are often overlooked by PHP programmers.
-Languages like Ruby are extremely Exception heavy, so whenever something goes wrong such as a HTTP request failing, or
-a DB query goes wrong, or even if an image asset could not be found, Ruby (or the gems being used) will throw an
-exception to the screen meaning you instantly know there is a mistake.
+Izuzeci su sastavni deo većine popularnih programskih jezika, ali ih PHP programeri često previđaju.
+Jezici kao što je Ruby su izuzetno "exception-intenzivnim", tako da kad god nešto pođe po zlu, kao
+na primer neuspeo HTTP request ili upit ka bazi podataka, ili čak u slučaju nepostojeće slike, Ruby
+(odnosno gem-ovi koji se koriste) će ispisati izuzetak na ekranu tako da odmah znate u čemu je problem.
 
-PHP itself is fairly lax with this, and a call to `file_get_contents()` will usually just get you a `FALSE` and a
-warning.
-Many older PHP frameworks like CodeIgniter will just return a false, log a message to their proprietary logs and maybe
-let you use a method like `$this->upload->get_error()` to see what went wrong. The problem here is that you have to go
-looking for a mistake and check the docs to see what the error method is for this class, instead of having it made
-extremely obvious.
+PHP je sam po sebi tolerantan što se ovoga tiče, tako da će poziv `file_get_contents()` funkcije
+može rezultovati samo sa vraćenim `FALSE` i warning-om.
+Mnogi stariji PHP framework-ovi kao što je CodeIgniter će samo vratiti false, logovati poruku u
+njihove logove i eventualno će vam omogućiti da koristite metod kao što je `$this->upload->get_error()`
+kako biste videli šta se zapravo desilo. Problem s tim je što mora da tražite grešku i čitate dokumentaciju
+kako biste našli odgovarajući error metod, umesto da to bude veoma očigledno.
 
-Another problem is when classes automatically throw an error to the screen and exit the process. When you do this you
-stop another developer from being able to dynamically handle that error. Exceptions should be thrown to make a
-developer aware of an error; they then can choose how to handle this. E.g.:
+Još jedan problem postoji u slučaju kada klase automatski ispisuju grešku i prekidaju izvršavanje.
+Kada uradite tako nešto, sprečavate drugog programera da dinamički obradi tu grešku. Izuzetke treba
+bacati sa svrhom obaveštavanja programera o grešci, a oni onda mogu da odluče šta da rade sa njim. Na primer:
 
 {% highlight php %}
 <?php
@@ -34,40 +34,40 @@ try
 }
 catch(Fuel\Email\ValidationFailedException $e)
 {
-    // The validation failed
+    // Neuspela validacija
 }
 catch(Fuel\Email\SendingFailedException $e)
 {
-    // The driver could not send the email
+    // Nuspelo slanje email poruke
 }
 finally
 {
-    // Executed regardless of whether an exception has been thrown, and before normal execution resumes
+    // Deo koji se izvršava uvek, bez obzira da li je izuzetak bačen i pre nego što se nastavi dalje izvršavanje
 }
 {% endhighlight %}
 
-### SPL Exceptions
+### SPL izuzeci
 
-The generic `Exception` class provides very little debugging context for the developer; however, to remedy this, it is
-possible to create a specialized `Exception` type by sub-classing the generic `Exception` class:
+Generička `Exception` klasa pruža vrlo malo debug prostora za programera. Ipak, u cilju bolje situacije po tom pitanju,
+moguće je kreirati specijalizovanu `Exception` klasu, izvođenjem iz generičke:
 
 {% highlight php %}
 <?php
 class ValidationException extends Exception {}
 {% endhighlight %}
 
-This means you can add multiple catch blocks and handle different Exceptions differently. This can lead to the
-creation of a <em>lot</em> of custom Exceptions, some of which could have been avoided using the SPL Exceptions
-provided in the [SPL extension][splext].
+Ovo zapravo znači da možete imati nekoliko catch blokova i ponaosob obrađivati različite izuzetke. Ovo može dovesti
+do toga da imate _mnogo_ custom Exception klasa, a pritom su umesto nekih od njih mogli biti korišćene
+SPL Exception klase, dostupne kroz [SPL ekstenziju][splext].
 
-If for example you use the `__call()` Magic Method and an invalid method is requested then instead of throwing a
-standard Exception which is vague, or creating a custom Exception just for that, you could just
-`throw new BadMethodCallException;`.
+Ako na primer koristite `__call()` magični metod i zatražen je neki nepostojeći metod, onda umesto bacanja
+standardnog izuzetka, što bi bilo nejasno, ili kreiranja custom Exception klase samo u te svrhe, možete baciti
+`BadMethodCallException`.
 
-* [Read about Exceptions][exceptions]
-* [Read about SPL Exceptions][splexe]
-* [Nesting Exceptions In PHP][nesting-exceptions-in-php]
-* [Exception Best Practices in PHP 5.3][exception-best-practices53]
+* [Pročitajte još o izuzecima][exceptions]
+* [Pročitajte još o SPL izuzecima][splexe]
+* [Ugnježdeni izuzeci u PHP-u][nesting-exceptions-in-php]
+* [Najbolja praksa za izuzetke u PHP 5.3][exception-best-practices53]
 
 
 [splext]: /#standard_php_library
