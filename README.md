@@ -5,7 +5,7 @@
 Ovo je GitHub Pages repozitorijum projekta _PHP: The Right Way_ .
 
 * Ovaj sajt je Jekyll projekat.
-* Svaka sekcija i podsekcija su Markdown fajlovi u `_posts/`.
+* Svaka sekcija i podsekcija su Markdown fajlovi u `_posts/` folderu.
 * Podsekcije u zaglavlju imaju `isChild: true`.
 * Navigacija i struktura stranica se generišu automatski.
 
@@ -33,19 +33,25 @@ _PHP: The Right Way_ sadrži slike za web banere koje možete da koristite na va
 <http://www.phptherightway.com>
 
 * [Engleski](http://www.phptherightway.com)
-* [Katalonski](http://ca.phptherightway.com)
-* [Kineski](http://wulijun.github.com/php-the-right-way)
+* [Bugarski](http://bg.phptherightway.com/)
+* [Fransuski](http://eilgin.github.io/php-the-right-way/)
+* [Indonežanski](http://id.phptherightway.com/)
+* [Italijanski](http://it.phptherightway.com/)
 * [Japanski](http://ja.phptherightway.com)
-* [Korejski](http://wafe.github.io/php-the-right-way)
-* [Italijanski](http://it.phptherightway.com)
-* [Poljski](http://pl.phptherightway.com)
-* [Portugalski](http://br.phptherightway.com)
+* [Kineski (uprošćen)](http://wulijun.github.com/php-the-right-way)
+* [Kineski (tradicionalni)](http://laravel-taiwan.github.io/php-the-right-way)
+* [Korejski](http://wafe.github.io/php-the-right-way/)
+* [Nemački](http://rwetzlmayr.github.io/php-the-right-way/)
+* [Persijski](http://novid.github.io/php-the-right-way/)
+* [Poljski](http://pl.phptherightway.com/)
+* [Portugalski](http://br.phptherightway.com/)
+* [Rumunski](https://bgui.github.io/php-the-right-way/)
 * [Ruski](http://getjump.github.io/ru-php-the-right-way)
-* [Španski](http://es.phptherightway.com)
-* [Ukrajinski](http://iflista.github.com/php-the-right-way)
-* [Bugarski](http://bg.phptherightway.com)
-* [Nemački](http://rwetzlmayr.github.io/php-the-right-way)
+* [Slovenski](http://sl.phptherightway.com)
+* [Španski](http://phpdevenezuela.github.io/php-the-right-way/)
+* [Tai](https://apzentral.github.io/php-the-right-way/)
 * [Turski](http://hkulekci.github.io/php-the-right-way/)
+* [Ukrajinski](http://iflista.github.com/php-the-right-way/)
 
 ### Prevodi
 
