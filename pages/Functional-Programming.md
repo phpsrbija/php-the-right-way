@@ -1,40 +1,40 @@
 ---
 layout: page
-title:  Functional Programming in PHP
+title:  Funkcionalno programiranje u PHP-u
 sitemap: true
 ---
 
-# Functional Programming in PHP
+# Funkcionalno programiranje u PHP-u
 
-PHP supports first-class functions, meaning that a function can be assigned to a variable. Both user-defined and
-built-in functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to
-other functions and a function can return other functions (a feature called higher-order functions).
+PHP podržava funkcije prve klase (first-class funkcije), što znači da funkcija može biti dodeljena promenljivoj. I korisnički definisane i
+ugrađene funkcije mogu biti referencirane promenljivom i pozvane dinamički. Funkcije se mogu prosleđivati kao argumenti
+drugim funkcijama (odlika nazvana _Funkcije višeg reda_) i funkcija može vratiti druge funkcije.
 
-Recursion, a feature that allows a function to call itself, is supported by the language, but most of the PHP code
-focus is on iteration.
+Rekurzija, osobina koja omogućava funkciji da poziva samu sebe, je podržana u samom jeziku, ali se
+većina PHP kôda fokusira na iteriranje.
 
-Anonymous functions (with support for closures) have been present since PHP 5.3 (2009).
+Anonimne (anonymous) funkcije (sa podrškom za closures) su prisutne od verzije PHP 5.3 (2009).
 
-PHP 5.4 added the ability to bind closures to an object's scope and also improved support for callables such that they
-can be used interchangeably with anonymous functions in almost all cases.
+PHP 5.4 je dodao mogućnost da se closure poveže sa scope-om objekta, a takođe i poboljšao podršku za callable tipove,
+tako da se oni praktično u skoro svim slučajevima mogu koristiti na isti način kao anonimne funkcije.
 
-The most common usage of higher-order functions is when implementing a strategy pattern. The built-in `array_filter()`
-function asks both for the input array (data) and a function (a strategy or a callback) used as a filter function on
-each array item.
+Najčešći slučaj korišćenja funkcija višeg reda pri implementaciji Strategy pattern-a. Ugrađena `array_filter()`
+funkcija od parametara zahteva niz (data) i funkciju (strategiju ili callback) koja će biti korišćena kao filter nad
+svakim elementom prosleđenog niza.
 
 {% highlight php %}
 <?php
 $input = array(1, 2, 3, 4, 5, 6);
 
-// Creates a new anonymous function and assigns it to a variable
+// Definisanje anonimne funkcije u promenljivu
 $filter_even = function($item) {
     return ($item % 2) == 0;
 };
 
-// Built-in array_filter accepts both the data and the function
+// Ugrađena array_filter funkcija prihvata niz i callback funkciju
 $output = array_filter($input, $filter_even);
 
-// The function doesn't need to be assigned to a variable. This is valid too:
+// Callback funkcija ne mora da bude assign-ovana nekoj promenljivoj. Ovo je takođe ispravno:
 $output = array_filter($input, function($item) {
     return ($item % 2) == 0;
 });
@@ -42,19 +42,19 @@ $output = array_filter($input, function($item) {
 print_r($output);
 {% endhighlight %}
 
-A closure is an anonymous function that can access variables imported from the outside scope without using any global
-variables. Theoretically, a closure is a function with some arguments closed (e.g. fixed) by the environment when it is
-defined. Closures can work around variable scope restrictions in a clean way.
+Closure je anonimna funkcija koja može da pristupi promenljivama izvan svog scope-a bez korišćenja globalnih
+promenljivih. U teoriji, closure je funkcija sa određenim argumentima koji su zatvoreni njenom definicijom.
+Closure funkcije mogu da prevaziđu ograničenja po pitanju scope-a na dosta čist način.
 
-In the next example we use closures to define a function returning a single filter function for `array_filter()`, out
-of a family of filter functions.
+U sledećem primeru je closure u vidu funkcije koja vraća jednu filter funkciju za potrebe `array_filter()` iz
+grupe filter funkcija.
 
 {% highlight php %}
 <?php
 /**
- * Creates an anonymous filter function accepting items > $min
+ * Kreira anonimnu filter funkciju koja prihvata item-e > $min.
  *
- * Returns a single filter out of a family of "greater than n" filters
+ * Vraća funkciju iz grupe "veće od n" filtera
  */
 function criteria_greater_than($min)
 {
@@ -65,23 +65,23 @@ function criteria_greater_than($min)
 
 $input = array(1, 2, 3, 4, 5, 6);
 
-// Use array_filter on a input with a selected filter function
+// Poziv array_filter nad nizom i određenom filter funkcijom
 $output = array_filter($input, criteria_greater_than(3));
 
 print_r($output); // items > 3
 {% endhighlight %}
 
-Each filter function in the family accepts only elements greater than some minimum value. Single filter returned by
-`criteria_greater_than` is a closure with `$min` argument closed by the value in the scope (given as an argument when
-`criteria_greater_than` is called).
+Svaka filter funkcija iz grupe prihvata samo elemente koji su veći od oređene minimalne vrednosti. Filter kojeg vraća
+`criteria_greater_than` je closure sa `$min` argumentom čija je vrednost zatvorena u scope-u (prosleđuje se kao argument pri
+pozivu `criteria_greater_than` funkcije).
 
-Early binding is used by default for importing `$min` variable into the created function. For true closures with late
-binding one should use a reference when importing. Imagine a templating or input validation library, where closure is
-defined to capture variables in scope and access them later when the anonymous function is evaluated.
+Rano bind-ovanje se podrazumevano koristi za import `$min` promenljive u kreiranu funkciju. Za prave closure-e sa kasnim
+bind-ovanje je potrebno koristiti referencu prilikom import-a. Zamislite neku template biblioteku ili biblioteku za validaciju
+input-a, gde se definiše closure koji zatvara promenljive u scope, a pristupa im se kasnije pri izvršavanju anonimne funkcije.
 
-* [Read about Anonymous functions][anonymous-functions]
-* [More details in the Closures RFC][closures-rfc]
-* [Read about dynamically invoking functions with `call_user_func_array()`][call-user-func-array]
+* [Pročitajte o anonimnim funkcijama][anonymous-functions]
+* [Više detalja o Closures RFC-u][closures-rfc]
+* [Pročitajte o dinamičkim pozivima funkcija pomoću `call_user_func_array()`][call-user-func-array]
 
 
 [anonymous-functions]: http://php.net/functions.anonymous
