@@ -4,25 +4,25 @@ title: Hešovanje lozinki
 anchor: password_hashing
 ---
 
-## Hešovanje lozinki {#password_hashing_title}
+## Hešovanje (Hashing) lozinki {#password_hashing_title}
 
-Kad-tad svako napravi PHP aplikaciju koja se oslanja na logovanje korisnika. Korisnička imena i lozinke se čuvaju u bazi
-podataka i kasnije se koriste za autentifikaciju korisnika pri logovanju.
+Većina PHP aplikacija ima funkcionalnost koja podrazumeva prijavu korisnika (login). Korisnička imena
+i lozinke se čuvaju u bazi podataka i kasnije se koriste za autentifikaciju korisnika pri prijavi.
 
-Bitno je da pravilno [_hešujete_][3] lozinke pre nego što ih sačuvate u bazi. Hešovanje lozinki je nepovratan,
-jednosmeran proces, koji se vrši nad lozinkama korisnika. Kreira se string fiksne dužine koji se ne može lako
-rekonstruisati. Ovo znači da možete uporediti dva heša da biste utvrdili da li potiču od istog stringa, ali ne možete
-znati originalni string. Ako lozinke nisu hešovane a vašoj bazi neovlašćeno pristupi treća strana, svi korisnički nalozi
- biće kompromitovani. Neki korisnici (na nesreću) mogu koristiti istu lozinku i za druge servise. Zbog toga je neophodno
-da sigurnost shvatite ozbiljno.
+Veoma je važno da pravilno [_hešujete_][3] lozinke pre nego što ih sačuvate u bazi. Hešovanje lozinki je nepovratan,
+jednosmeran proces, koji se vrši nad korisničkom lozinikom. Pritom se kreira string fiksne dužine koji se ne može lako
+rekonstruisati. Ovo znači da možete da uporedite dva heša da biste utvrdili da li potiču od istog stringa, ali ne možete
+saznati vrednost izvornog stringa. Ako lozinke nisu hešovane, a vašoj bazi pristupa neka neovlašćena osoba,
+svi korisnički nalozi biće kompromitovani. Neki korisnici (nažalost) koriste istu lozinku i za druge sajtove i servise.
+Zbog toga je neophodno da bezbednosne aspekte tretirate ozbiljno.
 
 **Hešovanje lozinki pomoću `password_hash`**
 
-U verziji PHP 5.5 će biti uveden `password_hash`. Trenutno se koristi BCrypt, najjači algoritam koji PHP trenutno
+U verziji PHP 5.5 je uvedena `password_hash()` funkcija. Ona trenutno koristi BCrypt, najjači algoritam koji PHP trenutno
 podržava. U budućnosti će biti ažuriran da bi podržao više algoritama ako bude neophodno. Biblioteka The
-`password_compat` je napravljena kako bi pružila kompatibilnost sa verzijama PHP >= 5.3.7.
+`password_compat` je napravljena kako bi pružila kompatibilnost za starije verzije (PHP >= 5.3.7).
 
-U donjem primeru hešujemo string, a onda proveravamo heš sa novim stringom. Pošto se naša dva izvorna stringa razlikuju
+U primeru koji sledi hešujemo string, a onda proveravamo heš sa novim stringom. Pošto se naša dva izvorna stringa razlikuju
 ('secret-password' vs. 'bad-password') ovo logovanje će biti neuspešno.
 
 {% highlight php %}
@@ -32,20 +32,19 @@ require 'password.php';
 $passwordHash = password_hash('secret-password', PASSWORD_DEFAULT);
 
 if (password_verify('bad-password', $passwordHash)) {
-    //Correct Password
+    // Ispravan password
 } else {
-    //Wrong password
+    // Pogrešan password
 }
 {% endhighlight %}
 
 
-
-* [Naučite o `password_hash`] [1]
-* [`password_compat` za PHP  >= 5.3.7 && < 5.5] [2]
+* [Naučite o `password_hash()`] [1]
+* [`password_compat` za PHP >= 5.3.7 && < 5.5] [2]
 * [Naučite o hešovanju s aspekta kriptografije] [3]
-* [PHP `password_hash` RFC] [4]
+* [PHP `password_hash()` RFC] [4]
 
-[1]: http://us2.php.net/manual/en/function.password-hash.php
+[1]: http://php.net/function.password-hash
 [2]: https://github.com/ircmaxell/password_compat
 [3]: http://en.wikipedia.org/wiki/Cryptographic_hash_function
 [4]: https://wiki.php.net/rfc/password_hash

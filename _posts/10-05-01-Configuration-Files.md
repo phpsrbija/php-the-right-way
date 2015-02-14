@@ -6,11 +6,10 @@ anchor: configuration_files
 
 ## Konfiguracioni fajlovi {#configuration_files_title}
 
-Kada pravite konfiguracione fajlove za vašu aplikaciju, dobra praksa preporučuje da poštujete jednu od ovih metoda:
+Pri kreiranju konfiguracionih fajlova vaše aplikacije, preporuka je da to bude u skladu sa jednom od ovih metoda:
 
-- Preporučuje se da čuvate informacije o konfiguraciji tamo gde im se ne može direktno pristupiti i prevući pomoću fajl
-sistema.
-- Ako morate da čuvate konfiguracione fajlove u korenom direktorijumu dokumenata, preimenujte fajlove sa `.php`
-ekstenzijom. To će obezbediti da, čak i ako se skripti pristupi direktno, neće biti prikazana kao običan tekst.
-- Informacije o konfiguracionim fajlovima bi trebalo da se adekvatno zaštite, ili ekripcijom ili pomoću sistemskih
-dozvola pristupa fajlovima od strane korisnika ili grupe korisnika
+- Vaše konfiguracije treba da čuvate na mestu odakle im se ne može direktno pristupiti.
+- Ako ipak morate da čuvate konfiguracione fajlove u document root-u, neka to budu fajlovi sa `.php` ekstenzijom.
+Na taj način ćete obezbediti da, čak iako im se pristupi direktno, kroz browser, neće biti prikazani u plain-text formatu.
+- Informacije u konfiguracionim fajlovima bi trebalo da se adekvatno zaštite, bilo enkripcijom ili sistemskim
+dozvolama za prava pristupa

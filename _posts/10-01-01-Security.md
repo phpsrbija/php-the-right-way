@@ -1,5 +1,6 @@
 ---
+isChild: false
+title: Bezbednost
 anchor: security
 ---
-
-# Security {#security_title}
+# Bezbednost {#security_title}

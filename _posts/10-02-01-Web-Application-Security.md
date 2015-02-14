@@ -1,17 +1,17 @@
 ---
 isChild: true
-title: Sigurnost web aplikacije
+title: Bezbednost web aplikacije
 anchor: web_application_security
 ---
 
-## Sigurnost web aplikacije {#web_application_security_title}
+## Bezbednost web aplikacije {#web_application_security_title}
 
-Postoje loši ljudi koji su spremni i voljni da zloupotrebe vašu web aplikaciju. Važno je da preduzmete neophodne mere
-predostrožnosti da ojačate sigurnost vaše web aplikacije. Na sreću, fini ljudi koji rade na [The Open Web Application
-Security Project][1] (OWASP) su kompajlirali sveobuhvatan spisak poznatih sigurnosnih aspekata i metoda da bi vas
-zaštitili od njih. Ovo je neophodna literatura za svakog programera koji je odgovoran u pogledu sigurnosti.
+Postoje loši ljudi koji žele i spremni su da naude vašoj web aplikaciji. Važno je da preduzmete neophodne mere
+predostrožnosti kako biste povećali bezbednost vaše aplikacije. Srećom, dobri ljudi koji rade na [The Open Web Application
+Security Project][1] (OWASP) projektu su napravili obiman spisak poznatih bezbednosnih propusta i metoda kako biste se
+zaštitili od njih. Ovo je obavezno štivo za svakog programera koji je svestan bezbednosnih aspekata.
 
-* [Pročitaj OWASP-ova uputstva o sigurnosti][2]
+* [OWASP uputstvo o bezbednosti][2]
 
 [1]: https://www.owasp.org/
 [2]: https://www.owasp.org/index.php/Guide_Table_of_Contents
