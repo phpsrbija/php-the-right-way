@@ -1,52 +1,54 @@
 ---
 isChild: true
-title: Izveštaji o greškama
+title: Izveštaji o greškama (Error Reporting)
 anchor: error_reporting
 ---
 
 ## Izveštaji o greškama (Error Reporting) {#error_reporting_title}
 
 Logovanje grešaka može biti korisno prilikom traženja problematičnih mesta u vašoj aplikaciji, ali istovremeno može
-izložiti informacije o strukturi aplikacije spoljnjem svetu. Da biste efikasno zaštitili aplikaciju od problema koje
-može izazvati javno prikazivanje ovih poruka, morate podesiti server različito za razvoj i za produkciju (uživo).
+javno otkriti informacije o strukturi aplikacije. Da biste na pravi način zaštitili vašu aplikaciju od problema koje
+može izazvati javno prikazivanje poruka o greškama, morate posebno podesiti server u slučaju razvojnog (development)
+i produkcionog (live) okruženja aplikacije.
 
-### Razvoj
+### Razvojno okruženje
 
-Da biste prikazali svaku moguću grešku prilikom <strong>razvoja</strong>, podesite sledeće vrednosti u vašem `php.ini`:
+Da biste prikazali svaku moguću grešku prilikom razvoja, postavite sledeće vrednosti u vašem `php.ini` fajlu:
 
-    display_errors = On
-    display_startup_errors = On
-    error_reporting = -1
-    log_errors = On
+{% highlight ini %}
+display_errors = On
+display_startup_errors = On
+error_reporting = -1
+log_errors = On
+{% endhighlight %}
 
-> Prosleđivanje vrednosti `-1` će prikazati svaku moguću grešku, čak i kada budu dodati novi nivoi i konstante u budućim
-verzijama PHP. Konstanta `E_ALL` se takođe ponaša na ovaj način od verzije 5.4. -
-[php.net](http://php.net/manual/function.error-reporting.php)
+> Prosleđivanje vrednosti `-1` će prikazati svaku grešku, čak i nakon što budu dodati novi nivoi i konstante u budućim
+> verzijama PHP-a. Konstanta `E_ALL` takođe ima isti efekat od verzije 5.4 - [php.net](http://php.net/function.error-reporting).
 
-Konstanta nivoa greške `E_STRICT` je uvedena od verzije 5.3.0 i nije deo `E_ALL`, ali je postala deo `E_ALL` u veziji
-5.4.0. Šta to konkretno znači?
-Pod uslovom prikazivanja svake moguće greške u verziji 5.3 to znači da morate da koristite ili `-1` ili
-`E_ALL | E_STRICT`.
+`E_STRICT` nivo je uveden u verziji 5.3.0 i nije bio deo `E_ALL` sve do verzije 5.4.0. Šta to tačno znači?
+Apropo prikazivanja svih grešaka u verziji 5.3, to znači da morate da koristite ili `-1` ili `E_ALL | E_STRICT`.
 
-**Prijavljivanje svake moguće greške po verzijama PHP**
+**Prijavljivanje svih grešaka po verzijama PHP-a**
 
-* &lt; 5.3 `-1` ili `E_ALL`
-* &nbsp; 5.3 `-1` ili `E_ALL | E_STRICT`
-* &gt; 5.3 `-1` ili `E_ALL`
+* &lt; 5.3 `-1` or `E_ALL`
+* &nbsp; 5.3 `-1` or `E_ALL | E_STRICT`
+* &gt; 5.3 `-1` or `E_ALL`
 
-### Produkcija
+### Produkciono (live) okruženje
 
-Da biste sakrili greške u vašoj <strong>produkcionom</strong> okruženju, podesite `php.ini` ovako:
+Da biste sakrili greške u vašem produkcionom okruženju, podesite `php.ini` na sledeći način:
 
-    display_errors = Off
-    display_startup_errors = Off
-    error_reporting = E_ALL
-    log_errors = On
+{% highlight ini %}
+display_errors = Off
+display_startup_errors = Off
+error_reporting = E_ALL
+log_errors = On
+{% endhighlight %}
 
-Sa ovim podešavanjima u produkciji, greške će se i dalje upisivati u log fajl sa greškama na serveru, ali se neće
-prikazivati korisniku. Za više informacija o ovim podešavanjima, pogledajte PHP manual:
+Sa ovim podešavanjima, greške će se i dalje upisivati u error log, ali se neće prikazivati korisniku.
+Za više informacija o ovim podešavanjima, proučite PHP manual:
 
-* [error_reporting](http://php.net/manual/errorfunc.configuration.php#ini.error-reporting)
-* [display_errors](http://php.net/manual/errorfunc.configuration.php#ini.display-errors)
-* [display_startup_errors](http://php.net/manual/errorfunc.configuration.php#ini.display-startup-errors)
-* [log_errors](http://php.net/manual/errorfunc.configuration.php#ini.log-errors)
+* [error_reporting](http://php.net/errorfunc.configuration#ini.error-reporting)
+* [display_errors](http://php.net/errorfunc.configuration#ini.display-errors)
+* [display_startup_errors](http://php.net/errorfunc.configuration#ini.display-startup-errors)
+* [log_errors](http://php.net/errorfunc.configuration#ini.log-errors)
