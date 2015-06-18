@@ -3,49 +3,51 @@ isChild: true
 anchor:  object_caching
 ---
 
-## Object Caching {#object_caching_title}
+## Keširanje podataka/objekata {#object_caching_title}
 
-There are times when it can be beneficial to cache individual objects in your code, such as with data that is expensive
-to get or database calls where the result is unlikely to change. You can use object caching software to hold these
-pieces of data in memory for extremely fast access later on. If you save these items to a data store after you retrieve
-them, then pull them directly from the cache for following requests, you can gain a significant improvement in
-performance as well as reduce the load on your database servers.
+Postoje situacije u kojima je isplativo keširati određene objekte, kao na primer neki podatke koju su
+komplikovani za dohvatanje ili upiti ka bazi čiji se rezultat retko menja. Tada možete koristiti alate
+za keširanje objekata, kako bi ti podaci bili u memoriji radi njihovog bržeg dohvatanja. Ako sačuvate
+te podatke u neki storage nakon što ih dohvatite, a zatim ih izvlačite iz keša u svakom narednom zahtevu,
+dobićete znatno poboljšanje performansi, kao i smanjen load na vaše DB servere.
 
-Many of the popular bytecode caching solutions let you cache custom data as well, so there's even more reason to take
-advantage of them. APCu, XCache, and WinCache all provide APIs to save data from your PHP code to their memory cache.
+Dosta popularnih opcode keš rešenja omogućava keširanje i nekih custom podataka, pa je to još jedan
+razlog da ih koristite. APCu, XCache i WinCache na raspolaganje stavljaju API-e za čuvanje podataka iz
+vašeg PHP kôda u njihov memorijski keš.
 
-The most commonly used memory object caching systems are APCu and memcached. APCu is an excellent choice for object
-caching, it includes a simple API for adding your own data to its memory cache and is very easy to setup and use. The
-one real limitation of APCu is that it is tied to the server it's installed on. Memcached on the other hand is
-installed as a separate service and can be accessed across the network, meaning that you can store objects in a
-hyper-fast data store in a central location and many different systems can pull from it.
+Najčešće korišćeni memorijski sistemi za keširanje su APCu i Memcached. APCu je odličan izbor za keširanje
+objekata, koji poseduje jednostavan API za ubacivanje vaših podataka u njegov memorijski keš i veoma se
+jednostavno instalira i koristi. Jedini veći nedostatak APCu-a je to što je vezan za server na kojem je
+instaliran. S druge strane, Memcached se instalira kao zaseban servis i može mu se pristupati putem mreže,
+što znači da vaše podatke možete čuvati u super-brzom sladištu na centralizovanoj lokaciji, a više
+različitih sistema može da čita podatke iz njega.
 
-Note that when running PHP as a (Fast-)CGI application inside your webserver, every PHP process will have its own cache,
-i.e. APCu data is not shared between your worker processes. In these cases, you might want to consider using memcached
-instead, as it's not tied to the PHP processes.
+Imajte na umu da ako PHP radi kao (Fast-)CGI aplikacija na vašem web serveru, svaki PHP proces će imati svoj keš,
+pa na primer APCu podaci neće biti deljeni među procesima. U tom slučaju bi trebalo razmisliti o korišćenju Memcached-a,
+zato što se on ne vezuje za PHP proces.
 
-In a networked configuration APCu will usually outperform memcached in terms of access speed, but memcached will be
-able to scale up faster and further. If you do not expect to have multiple servers running your application, or do not
-need the extra features that memcached offers then APCu is probably your best choice for object caching.
+U umreženoj konfiguraciji APCu se obično bolje pokazuje od Memcached-a u smislu brzine pristupa, ali Memcached
+se brže i bolje skalira. Ako vaša aplikacija ne radi na više servera ili vam ne trebaju dodatne mogućnosti
+koje Memcached nudi, onda je APCu verovatno najbolja opcija za keširanje.
 
-Example logic using APCu:
+Primer korišćenja APCu-a:
 
 {% highlight php %}
 <?php
-// check if there is data saved as 'expensive_data' in cache
+// provera da li postoji unos u kešu pod ključem 'expensive_data'
 $data = apc_fetch('expensive_data');
 if ($data === false) {
-    // data is not in cache; save result of expensive call for later use
+    // podaci nisu keširani; sačuvaj podatke "skupocenog" poziva za sledeći poziv
     apc_add('expensive_data', $data = get_expensive_data());
 }
 
 print_r($data);
 {% endhighlight %}
 
-Note that prior to PHP 5.5, APC provides both an object cache and a bytecode cache. APCu is a project to bring APC's
-object cache to PHP 5.5+, since PHP now has a built-in bytecode cache (OPcache).
+Pre verzije PHP 5.5, APC je omogućavao keširanje i objekata i opcode-a. APCu je projekat koji omogućava APC-ovo
+keširanje objekata za PHP verzije >= 5.5, pošto PHP sada ima ugrađen opcode keš (OPcache).
 
-### Learn more about popular object caching systems:
+### Saznajte više o popularnim sistemima za keširanje:
 
 * [APCu](https://github.com/krakjoe/apcu)
 * [APC Functions](http://php.net/ref.apc)
