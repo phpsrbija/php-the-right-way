@@ -71,5 +71,6 @@ Primer baziran na [Twig] biblioteci.
 
 [article_templating_engines]: http://fabien.potencier.org/article/34/templating-engines-in-php
 [Twig]: http://twig.sensiolabs.org/
+[Brainy]: https://github.com/box/brainy
 [Smarty]: http://www.smarty.net/
 [Mustache]: http://mustache.github.io/

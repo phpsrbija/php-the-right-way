@@ -19,6 +19,28 @@ Postoji nekoliko načina za instalaciju PHP-a na OS X-u.
 
 Trenutno, moguće je instalirati verzije `php53`, `php54`, `php55` ili `php56` pomoću `brew install` komande, a zatim ih menjati
 izmenom `PATH` varijable.
+At this point, you can install `php53`, `php54`, `php55` or `php56` using the `brew install` command, and switch
+between them by modifying your `PATH` variable. Alternatively you can use [brew-php-switcher][brew-php-switcher] which will switch automatically for you.
+
+### Install PHP via Macports
+
+The [MacPorts] Project is an open-source community initiative to design an
+easy-to-use system for compiling, installing, and upgrading either
+command-line, X11 or Aqua based open-source software on the OS X operating
+system.
+
+MacPorts supports pre-compiled binaries, so you don't need to recompile every
+dependencies from the source tarball files, it saves your life if you don't
+have any package installed on your system.
+
+At this point, you can install `php53`, `php54`, `php55` or `php56` using the `port install` command, for example:
+
+    sudo port install php54
+    sudo port install php55
+
+And you can run `select` command to switch your active php:
+
+    sudo port select --set php php55
 
 ### Instalacija PHP-a preko Macports-a
 
@@ -27,6 +49,11 @@ bilo command-line, X11 ili Aqua baziranih open-source programa na OS X operativn
 
 MacPorts podržava pre-kompajlirane fajlove, tako da ne morate ponovo da kompajlirate svaki dependency
 iz izvornih tarball fajlova, i olakšava vam život ako nemate nijedan instaliran paket na vašem sistemu.
+### Install PHP via Liip's binary installer
+Another popular option is [php-osx.liip.ch] which provides one liner installation methods for versions 5.3 through 5.6.
+It doesn't overwrite the php binaries installed by Apple, but installs everything in a separate location (/usr/local/php5).
+
+### Compile from Source
 
 Trenutno, moguće je instalirati verzije `php53`, `php54`, `php55` ili `php56` pomoću `port install` komande, na primer:
 
@@ -59,8 +86,10 @@ druge programe, ali ta jednostavnost instalacije kao kompromis ima manjak fleksi
 [Homebrew PHP]: https://github.com/Homebrew/homebrew-php#installation
 [MacPorts]: https://www.macports.org/install.php
 [phpbrew]: https://github.com/phpbrew/phpbrew
+[php-osx.liip.ch]: http://php-osx.liip.ch/
 [mac-compile]: http://php.net/install.macosx.compile
 [xcode-gcc-substitution]: https://github.com/kennethreitz/osx-gcc-installer
 ["Command Line Tools za XCode"]: https://developer.apple.com/downloads
 [mamp-downloads]: http://www.mamp.info/en/downloads/
 [xampp]: http://www.apachefriends.org/en/xampp.html
+[brew-php-switcher]: https://github.com/philcook/brew-php-switcher

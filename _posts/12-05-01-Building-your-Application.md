@@ -65,3 +65,30 @@ Dalje čitanje:
 * [Continuous Integration with Jenkins](http://jenkins-ci.org/)
 * [Continuous Integration with PHPCI](http://www.phptesting.org/)
 * [Continuous Integration with Teamcity](http://www.jetbrains.com/teamcity/)
+There are different ways to implement continuous integration for PHP. Recently [Travis CI] has done a great job of
+making continuous integration a reality even for small projects. Travis CI is a hosted continuous integration service
+for the open source community. It is integrated with GitHub and offers first class support for many languages including
+PHP.
+
+#### Further reading:
+
+* [Continuous Integration with Jenkins][Jenkins]
+* [Continuous Integration with PHPCI][PHPCI]
+* [Continuous Integration with Teamcity][Teamcity]
+
+
+[buildautomation]: http://en.wikipedia.org/wiki/Build_automation
+[Phing]: http://www.phing.info/
+[Apache Ant]: http://ant.apache.org/
+[Capistrano]: https://github.com/capistrano/capistrano/wiki
+[phpdeploy_capistrano]: http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/
+[Chef]: http://www.opscode.com/chef/
+[chef_vagrant_and_ec2]: http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/
+[Chef_cookbook]: https://github.com/opscode-cookbooks/php
+[Chef_tutorial]: https://www.youtube.com/playlist?list=PLrmstJpucjzWKt1eWLv88ZFY4R1jW8amR
+[apache_ant_tutorial]: http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/
+[Travis CI]: https://travis-ci.org/
+[Jenkins]: http://jenkins-ci.org/
+[PHPCI]: http://www.phptesting.org/
+[Teamcity]: http://www.jetbrains.com/teamcity/
+[Deployer]: https://github.com/deployphp/deployer

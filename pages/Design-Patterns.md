@@ -74,20 +74,22 @@ instance određene klase. Singleton pattern omogućava upravo tako nešto.
 class Singleton
 {
     /**
-     * Vraća *Singleton* instancu ove klase
+     * @var Singleton The reference to *Singleton* instance of this class
+     */
+    private static $instance;
+    
+    /**
+     * Returns the *Singleton* instance of this class.
      *
-     * @staticvar Singleton $instance *Singleton* instanca ove klase.
-     *
-     * @return Singleton The *Singleton* instanca.
+     * @return Singleton The *Singleton* instance.
      */
     public static function getInstance()
     {
-        static $instance = null;
-        if (null === $instance) {
-            $instance = new static();
+        if (null === static::$instance) {
+            static::$instance = new static();
         }
-
-        return $instance;
+        
+        return static::$instance;
     }
 
     /**

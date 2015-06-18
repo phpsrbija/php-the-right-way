@@ -54,8 +54,10 @@ $db = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8', 'username', 'pa
 // Učitajte klasu modela
 include 'models/FooModel.php';
 
-// Kreirajte instancu
-$fooList = new FooModel($db);
+// Create an instance
+$fooModel = new FooModel($db);
+// Get the list of Foos
+$fooList = $fooModel->getAllFoos();
 
 // Prikažite view
 include 'views/foo-list.php';
@@ -66,7 +68,7 @@ include 'views/foo-list.php';
 
 {% highlight php %}
 <?php
-class FooModel()
+class FooModel
 {
     protected $db;
 
