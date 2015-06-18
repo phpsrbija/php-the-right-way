@@ -1,20 +1,16 @@
 ---
-isChild: false
-title: Upravljanje zavisnostima
 anchor: dependency_management
 ---
 
 # Upravljanje zavisnostima (Dependency) {#dependency_management_title}
 
-Postoji izbor između tone PHP biblioteka, frejmvorkova i komponenti. U vašem projektu koristićete najverovatnije
-nekoliko njih — to su zavisnosti projekta. Do nedavno, PHP nije imao dobar način da upravlja ovim zavisnostima projekta.
-Čak i ako ste njima upravljali ručno, i dalje ste morali da brinete o autoloaderima. Ne više.
+Na raspolaganju imate ogroman broj PHP biblioteka, framework-ova i komponenti. Vaš projekat će verovatno koristiti
+njih nekoliko, što su zapravo zavisnosti projekta. Do nedavno, PHP nije imao adekvatan način za upravljanje ovim
+zavisnostima. Čak i ako ste njima upravljali ručno, i dalje ste morali da brinete o autoloading-u. Ali to više nije slučaj.
 
-Trenutno postoje dva glavna sistema upravljanja paketima za PHP - Composer i PEAR. Koji je pravi za vas? Odgovor je oba.
+Trenutno postoje dva glavna sistema za upravljanja paketima (package managers) za PHP - [Composer] i [PEAR].
+Composer je trenutno izbor broj jedan, ali treba pomenuti da je PEAR dosta dugo bio na toj poziciji.
+Poznavanje PEAR-a može biti korisno, jer i dalje možete naći reference za njega, čak iako ga ne koristite.
 
- * Koristite **Composer** kada upravljate zavisnostima za jedan projekat.
- * Koristite **PEAR** kada upravljate zavisnostima za PHP u celini na vašem sistemu.
-
-U principu, Composer paketi će biti na raspolaganju samo u onim projektima za koje ste posebno naglasili, dok je PEAR
-paket uvek na raspolaganju, za sve vaše PHP projekte. Iako se PEAR može učiniti kao lakši pristup na prvi pogled, pristup
-"od projekta do projekta" za upravljanje zavisnostima ima svojih prednosti.
+[Composer]: /#composer_and_packagist
+[PEAR]: /#pear
