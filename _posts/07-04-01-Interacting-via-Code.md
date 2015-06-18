@@ -54,9 +54,9 @@ $db = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8', 'username', 'pa
 // Učitajte klasu modela
 include 'models/FooModel.php';
 
-// Create an instance
+// Kreirajte instancu
 $fooModel = new FooModel($db);
-// Get the list of Foos
+// Dohvatite listu svih entiteta
 $fooList = $fooModel->getAllFoos();
 
 // Prikažite view

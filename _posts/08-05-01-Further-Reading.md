@@ -20,6 +20,7 @@ anchor: templating_further_reading
 
 * [Aura.View](https://github.com/auraphp/Aura.View) *(nativni)*
 * [Blade](http://laravel.com/docs/templates) *(kompajlirani, specifičan za framework)*
+* [Brainy](https://github.com/box/brainy) *(kompajlirani)*
 * [Dwoo](http://dwoo.org/) *(kompajlirani)*
 * [Latte](https://github.com/nette/latte) *(kompajlirani)*
 * [Mustache](https://github.com/bobthecow/mustache.php) *(kompajlirani)*
@@ -28,14 +29,3 @@ anchor: templating_further_reading
 * [Smarty](http://www.smarty.net/) *(kompajlirani)*
 * [Twig](http://twig.sensiolabs.org/) *(kompajlirani)*
 * [Zend\View](http://framework.zend.com/manual/2.3/en/modules/zend.view.quick-start.html) *(nativni, specifičan za framework)*
-* [Aura.View](https://github.com/auraphp/Aura.View) *(native)*
-* [Blade](http://laravel.com/docs/templates) *(compiled, framework specific)*
-* [Brainy](https://github.com/box/brainy) *(compiled)*
-* [Dwoo](http://dwoo.org/) *(compiled)*
-* [Latte](https://github.com/nette/latte) *(compiled)*
-* [Mustache](https://github.com/bobthecow/mustache.php) *(compiled)*
-* [PHPTAL](http://phptal.org/) *(compiled)*
-* [Plates](http://platesphp.com/) *(native)*
-* [Smarty](http://www.smarty.net/) *(compiled)*
-* [Twig](http://twig.sensiolabs.org/) *(compiled)*
-* [Zend\View](http://framework.zend.com/manual/2.3/en/modules/zend.view.quick-start.html) *(native, framework specific)*
