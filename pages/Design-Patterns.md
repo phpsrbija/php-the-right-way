@@ -6,17 +6,18 @@ sitemap: true
 
 # Design Patterns
 
-There are numerous ways to structure the code and project for your web application, and you can put as much or as little thought as you like into architecting. But it is usually a good idea to follow common patterns because it will
-make your code easier to manage and easier for others to understand.
+Postoje brojni načini i pristupi u izgradnji kôda za vašu web aplikaciju, samo je pitanje koliko ćete vremena posvetiti arhitekturi vašeg sistema.
+Obično je dobra ideja da se vodite nekim uobičajenim šablonima i praksama, zato što će na taj način vaš kôd biti jednostavniji za održavanje i
+lakši za razumevanje.
 
-* [Architectural pattern on Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
-* [Software design pattern on Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
-* [Collection of implementation examples](https://github.com/domnikl/DesignPatternsPHP)
+* [Arhitekturalni pattern (Wikipedia)](https://en.wikipedia.org/wiki/Architectural_pattern)
+* [Design pattern (Wikipedia)](https://en.wikipedia.org/wiki/Software_design_pattern)
+* [Primeri implementacija design pattern-a](https://github.com/domnikl/DesignPatternsPHP)
 
 ## Factory
 
-One of the most commonly used design patterns is the factory pattern. In this pattern, a class simply creates the
-object you want to use. Consider the following example of the factory pattern:
+Jedan od najčešće korišćenih dizajn pattern-a je Factory. U njegovom slučaju, neka klasa jednostavno treba da kreira
+objekat koji nameravate da koristite. Pogledajmo sledeći primer Factory pattern-a:
 
 {% highlight php %}
 <?php
@@ -45,39 +46,39 @@ class AutomobileFactory
     }
 }
 
-// have the factory create the Automobile object
+// Factory kreira Automobile objekat
 $veyron = AutomobileFactory::create('Bugatti', 'Veyron');
 
-print_r($veyron->getMakeAndModel()); // outputs "Bugatti Veyron"
+print_r($veyron->getMakeAndModel()); //ispisuje "Bugatti Veyron"
 {% endhighlight %}
 
-This code uses a factory to create the Automobile object. There are two possible benefits to building your code this
-way; the first is that if you need to change, rename, or replace the Automobile class later on you can do so and you
-will only have to modify the code in the factory, instead of every place in your project that uses the Automobile class.
-The second possible benefit is that if creating the object is a complicated job you can do all of the work in the
-factory, instead of repeating it every time you want to create a new instance.
+Ovaj kôd koristi Factory za kreiranje instance Automobile klase. Postoje dva moguća benefita pisanja kôda
+na ovaj način. Prvi je to što ćete u slučaju izmene, preimenovanja ili zamene Automobile klase, morati da
+menjate jedino kôd u njenom factory-u, umesto na svakom mestu gde se koristi klasa Automobile. Druga prednost
+je ta što u slučaju da je samo kreiranje objekta kompleksna operacija, sav taj posao možete obaviti u factory
+klasi, umesto da ga ponavljate svaki put kada vam treba nova instanca.
 
-Using the factory pattern isn't always necessary (or wise). The example code used here is so simple that a factory
-would simply be adding unneeded complexity. However if you are making a fairly large or complex project you may save
-yourself a lot of trouble down the road by using factories.
+Korišćenje Factory pattern-a nije uvek neophodno (ispravno). Prethodni primer je toliko prost da bi korišćenje
+factory-a bio samo nepotrebna komplikacija. Ipak, ako radite na velikom i kompleksnom projektu korišćenje
+factory-a vas možete lišiti dosta problema.
 
-* [Factory pattern on Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
+* [Factory pattern (Wikipedia)](https://en.wikipedia.org/wiki/Factory_pattern)
 
 ## Singleton
 
-When designing web applications, it often makes sense conceptually and architecturally to allow access to one and only
-one instance of a particular class. The singleton pattern enables us to do this.
+Pri razvoju web aplikacija, često ima smisla konceptualno i arhitekturalno omogućiti korišćenje samo jedne
+instance određene klase. Singleton pattern omogućava upravo tako nešto.
 
 {% highlight php %}
 <?php
 class Singleton
 {
     /**
-     * Returns the *Singleton* instance of this class.
+     * Vraća *Singleton* instancu ove klase
      *
-     * @staticvar Singleton $instance The *Singleton* instances of this class.
+     * @staticvar Singleton $instance *Singleton* instanca ove klase.
      *
-     * @return Singleton The *Singleton* instance.
+     * @return Singleton The *Singleton* instanca.
      */
     public static function getInstance()
     {
@@ -90,16 +91,15 @@ class Singleton
     }
 
     /**
-     * Protected constructor to prevent creating a new instance of the
-     * *Singleton* via the `new` operator from outside of this class.
+     * Konstruktor je protected kako bi izvan klase bilo onemogućeno
+     * kreiranje *Singleton* instance preko `new` operatora.
      */
     protected function __construct()
     {
     }
 
     /**
-     * Private clone method to prevent cloning of the instance of the
-     * *Singleton* instance.
+     * Sprečavanje kloniranja *Singleton* instance.
      *
      * @return void
      */
@@ -108,8 +108,7 @@ class Singleton
     }
 
     /**
-     * Private unserialize method to prevent unserializing of the *Singleton*
-     * instance.
+     * Sprečavanje deserijalizacije *Singleton* instance.
      *
      * @return void
      */
@@ -131,39 +130,38 @@ var_dump($anotherObj === Singleton::getInstance());      // bool(false)
 var_dump($anotherObj === SingletonChild::getInstance()); // bool(true)
 {% endhighlight %}
 
-The code above implements the singleton pattern using a [*static* variable](http://php.net/language.variables.scope#language.variables.scope.static) and the static creation method `getInstance()`.
-Note the following:
+Ovaj kôd implementira singleton pattern koristeći [*statičku* promenljivu](http://php.net/language.variables.scope#language.variables.scope.static)
+i statički `getInstance()` metod. Obratite pažnju i na sledeće:
 
-* The constructor [`__construct()`](http://php.net/language.oop5.decon#object.construct) is declared as protected to
-prevent creating a new instance outside of the class via the `new` operator.
-* The magic method [`__clone()`](http://php.net/language.oop5.cloning#object.clone) is declared as private to prevent
-cloning of an instance of the class via the [`clone`](http://php.net/language.oop5.cloning) operator.
-* The magic method [`__wakeup()`](http://php.net/language.oop5.magic#object.wakeup) is declared as private to prevent
-unserializing of an instance of the class via the global function [`unserialize()`](http://php.net/function.unserialize)
-.
-* A new instance is created via [late static binding](http://php.net/language.oop5.late-static-bindings) in the static
-creation method `getInstance()` with the keyword `static`. This allows the subclassing of the class `Singleton` in the
-example.
+* Konstruktor [`__construct()`](http://php.net/language.oop5.decon#object.construct) je deklarisan kao protected
+kako bi izvan klase bilo onemogućeno kreiranje *Singleton* instance preko `new` operatora.
+* Magični metod [`__clone()`](http://php.net/language.oop5.cloning#object.clone) je deklarisan kao private
+kako bi bilo onemogućeno kloniranje instance preko [`clone`](http://php.net/language.oop5.cloning) operatora.
+* Magični metod [`__wakeup()`](http://php.net/language.oop5.magic#object.wakeup) je deklarisan kao private
+kako bi bila onemogućena deserijalizacija instance preko globalne funkcije [`unserialize()`](http://php.net/function.unserialize).
+* Nova instanca se kreira prek [late static binding](http://php.net/language.oop5.late-static-bindings) mehanizma
+u statičkom metodu `getInstance()` putem ključne reči `static`. Upravo ovo omogućava nasleđivanje klase `Singleton` u primeru.
 
-The singleton pattern is useful when we need to make sure we only have a single instance of a class for the entire
-request lifecycle in a web application. This typically occurs when we have global objects (such as a Configuration
-class) or a shared resource (such as an event queue).
+Signleton pattern je koristan u situacijama kada treba da obezbedimo da imamo samo jednu instancu neke klase
+u toku jednog kompletnog request ciklusa u aplikaciji. Tipičan primer su globalni objekti (kao što je neka Configuration klasa)
+ili deljeni resursi (kao što je event queue).
 
-You should be wary when using the singleton pattern, as by its very nature it introduces global state into your
-application, reducing testability. In most cases, dependency injection can (and should) be used in place of a singleton
-class. Using dependency injection means that we do not introduce unnecessary coupling into the design of our
-application, as the object using the shared or global resource requires no knowledge of a concretely defined class.
+Treba da budete oprezni pri korišćenju Singleton pattern-a, jer sama njegova priroda uvodi globalno stanje
+u vašu aplikaciju, čime se smanjuje njena testabilnost. U većini slučajeva, dependency injection princip može (i treba)
+da se koristi umesto Singleton klasa. Korišćenjem dependency injection-a ne uvodimo nepotrebne direktne zavisnosti u
+dizajn naše aplikacije, jer objekat koji bude koristio taj neki deljen ili globalan resurs neće imati znanja o
+tome o kojoj se tačno klasi radi.
 
-* [Singleton pattern on Wikipedia](https://en.wikipedia.org/wiki/Singleton_pattern)
+* [Singleton pattern (Wikipedia)](https://en.wikipedia.org/wiki/Singleton_pattern)
 
 ## Strategy
 
-With the strategy pattern you encapsulate specific families of algorithms allowing the client class responsible for
-instantiating a particular algorithm to have no knowledge of the actual implementation. There are several variations on
-the strategy pattern, the simplest of which is outlined below:
+Primenom Strategy pattern-a enkapsulirate grupu određenih algoritama, pri je klijentska klasa odgovorna za
+instanciranje konkretnog algoritma, bez znanja o načinu na koji je on implementiran. Postoji nekoliko varijacija
+ovog pattern-a, a najjednostavniji od njih će biti demonstriran u nastavku.
 
-This first code snippet outlines a family of algorithms; you may want a serialized array, some JSON or maybe just an
-array of data:
+Prvi snippet prikazuje grupu algoritama za ispis nekog niza podataka: jedan vrši nativnu, drugi radi JSON
+serijalizaciju, a treći ga ostavlja netaknutim:
 
 {% highlight php %}
 <?php
@@ -198,16 +196,16 @@ class ArrayOutput implements OutputInterface
 }
 {% endhighlight %}
 
-By encapsulating the above algorithms you are making it nice and clear in your code that other developers can easily
-add new output types without affecting the client code.
+Enkapsuliranjem ovih algoritama u zasebne klase, na elegantan i čist način stavljate do znanja drugim programerima
+da lako mogu da dodaju novu output strategiju, bez uticaja na klijenstki kôd.
 
-You will see how each concrete 'output' class implements an OutputInterface - this serves two purposes, primarily it
-provides a simple contract which must be obeyed by any new concrete implementations. Secondly by implementing a common
-interface you will see in the next section that you can now utilise [Type Hinting](http://php.net/language.oop5.typehinting) to ensure that the client which is utilising these behaviours is of the correct type in
-this case 'OutputInterface'.
+Primetićete da svaka 'output' klasa implementira određeni OutputInterface. Ovaj interfejs ima za cilj ima da
+definiše jednostavan "ugovor" koji svaka nova implementacija mora da ispoštuje. Takođe, implementiranjem jednog
+zajedničkog interfejsa, kao što ćete i videti u nastavku, biće omogućena primena [Type Hinting-a](http://php.net/language.oop5.typehinting),
+kako bi se obezbedilo to da kôd koji koristi ovu funkcionalnost radi sa ispravnim tipovima klasa, u ovom slučaju 'OutputInterface' implementacijama.
 
-The next snippet of code outlines how a calling client class might use one of these algorithms and even better set the
-behaviour required at runtime:
+Sledeći primer kôda demonstrira kako poziv klijentske klase može da koristi neki od ovih algoritama
+tako što će ga zahtevati prilikom izvršavanja:
 
 {% highlight php %}
 <?php
@@ -227,46 +225,48 @@ class SomeClient
 }
 {% endhighlight %}
 
-The calling client class above has a private property which must be set at runtime and be of type 'OutputInterface'
-once this property is set a call to loadOutput() will call the load() method in the concrete class of the output type
-that has been set.
+Ova klijentska klasa  ima privatno svojstvo koje mora da bude prosleđeno prilikom instanciranja,
+pri čemu to mora da bude 'OutputInterface' implementacija. Nakon što je ovo svojstvo postavljeno,
+poziv loadOutput() metoda će pozvati load() metod neke konkretne Output klase.
 
 {% highlight php %}
 <?php
 $client = new SomeClient();
 
-// Want an array?
+// Želite niz?
 $client->setOutput(new ArrayOutput());
 $data = $client->loadOutput();
 
-// Want some JSON?
+// Želite JSON?
 $client->setOutput(new JsonStringOutput());
 $data = $client->loadOutput();
 
 {% endhighlight %}
 
-* [Strategy pattern on Wikipedia](http://en.wikipedia.org/wiki/Strategy_pattern)
+* [Strategy pattern (Wikipedia)](http://en.wikipedia.org/wiki/Strategy_pattern)
 
 ## Front Controller
 
-The front controller pattern is where you have a single entrance point for you web application (e.g. index.php) that
-handles all of the requests. This code is responsible for loading all of the dependencies, processing the request and
-sending the response to the browser. The front controller pattern can be beneficial because it encourages modular code
-and gives you a central place to hook in code that should be run for every request (such as input sanitization).
+U slučaju Front Controller pattern postoji jedinstvena ulazna tačka u vašoj aplikaciji (npr. index.php)
+koja prihvata sve zahteve. Taj deo kôda je odgovoran za učitavanje svih zavisnosti, procesiranje samog zahteva
+i slanja odgovora browser-u. Ovaj pattern može biti veoma koristan iz razloga što pospešuje modularan kôd
+i obezbeđuje cetralno mesto za ubacivanje nekog kôda koji treba da se izvršava na svaki zahtev (kao na primer
+saniranje ulaznih podataka).
 
-* [Front Controller pattern on Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
+* [Front Controller pattern (Wikipedia)](https://en.wikipedia.org/wiki/Front_Controller_pattern)
 
 ## Model-View-Controller
 
-The model-view-controller (MVC) pattern and its relatives HMVC and MVVM lets you break up code into logical objects
-that serve very specific purposes. Models serve as a data access layer where data is fetched and returned in formats
-usable throughout your application. Controllers handle the request, process the data returned from models and load
-views to send in the response. And views are display templates (markup, xml, etc) that are sent in the response to the
-web browser.
+Model-View-Controller (MVC) pattern i srodni pattern-i kao što su HMVC i MVVM vam omogućavaju da podelite kôd
+na logičke objekte pri čemu svaki ima posebnu namenu. Model predstavlja sloj business logike, i najčeće obavlja
+manipulaciju podacima (dohvatanje, čuvanje) koji se koriste u okviru aplikacije. Kontroleri (Controllers)
+prihvataju request, uzimaju i obrađuju podatke od modela, a zatim učitavaju View-ove kako bi poslali response.
+View-ovi su templejti (markup, xml i slično) za prikaz podataka čiji se rezultujući output šalje browser-u
+u okviru samog response-a.
 
-MVC is the most common architectural pattern used in the popular [PHP frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
+MVC je najčešće korišćeni arhitekturalni pattern u popularnim [PHP framework-ovima](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
 
-Learn more about MVC and its relatives:
+Naučite više o MVC-u i srodnim pattern-ima:
 
 * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93View%E2%80%93Controller)
 * [HMVC](https://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller)

@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Example Stand-Alone Page
+title: Primer stranice
 ---
 
-# Page Title
+# Naslov
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

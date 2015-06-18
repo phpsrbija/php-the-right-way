@@ -1,50 +1,50 @@
 ---
 layout: page
-title:  The Basics
+title:  Osnove
 sitemap: true
 ---
 
-# The Basics
+# Osnove
 
-## Comparison operators
+## Operatori za poređenje
 
-Comparison operators are an often overlooked aspect of PHP, which can lead to many unexpected outcomes. One such
-problem stems from strict comparisons (the comparison of booleans as integers).
+Operatori za poređenje su aspekt PHP-a koji je često zanemaren, što može dovesti do nekih neočekivanih rezultata.
+Jedan takav problem proističe iz striktnog poređenja (poređenje bool vrednosti u vidu integer-a).
 
 {% highlight php %}
 <?php
-$a = 5;   // 5 as an integer
+$a = 5;   // 5 kao integer
 
-var_dump($a == 5);       // compare value; return true
-var_dump($a == '5');     // compare value (ignore type); return true
-var_dump($a === 5);      // compare type/value (integer vs. integer); return true
-var_dump($a === '5');    // compare type/value (integer vs. string); return false
+var_dump($a == 5);       // poređenje vrednosti; vraća true
+var_dump($a == '5');     // poređenje vrednosti (bez tipa); vraća true
+var_dump($a === 5);      // poređenja tipa/vrednosti (integer sa integer-om); vraća true
+var_dump($a === '5');    // compare tipa/vrednosti (integer sa string-om); vraća false
 
 /**
- * Strict comparisons
+ * Striktno poređenje
  */
-if (strpos('testing', 'test')) {    // 'test' is found at position 0, which is interpreted as the boolean 'false'
-    // code...
+if (strpos('testing', 'test')) {    // 'test' je pronađen na poziciji 0, a to se u ovom slučaju interpretira kao 'false'
+    // ...
 }
 
-// vs
+// nasuprot
 
-if (strpos('testing', 'test') !== false) {    // true, as strict comparison was made (0 !== false)
-    // code...
+if (strpos('testing', 'test') !== false) {    // true, zahvaljujući striktnom poređenju (0 !== false)
+    // ...
 }
 {% endhighlight %}
 
-* [Comparison operators](http://php.net/language.operators.comparison)
-* [Comparison table](http://php.net/types.comparisons)
-* [Comparison cheatsheet](http://phpcheatsheets.com/index.php?page=compare)
+* [Operatori za poređenje](http://php.net/language.operators.comparison)
+* [Tabela tipova i operatora za poređenje](http://php.net/types.comparisons)
+* [Cheat-sheet o poređenju](http://phpcheatsheets.com/index.php?page=compare)
 
-## Conditional statements
+## Uslovni izrazi
 
-### If statements
+### If izrazi
 
-While using 'if/else' statements within a function or class, there is a common misconception that 'else' must be used
-in conjunction to declare potential outcomes. However if the outcome is to define the return value, 'else' is not
-necessary as 'return' will end the function, causing 'else' to become moot.
+Prilikom korišćenja 'if/else' izraza u nekoj funkciji ili klasa, postoji zabluda da 'else' uvek mora biti
+napisan kako bi se pokrili svi potencijalni slučajevi. Ako je ishod zapravo definisanje povratne vrednosti,
+'else' nije neophodan, jer će 'return' izaći iz funkcije, što bi 'else' učinilo suvišnim.
 
 {% highlight php %}
 <?php
@@ -57,57 +57,57 @@ function test($a)
     }
 }
 
-// vs
+// nasuprot
 
 function test($a)
 {
     if ($a) {
         return true;
     }
-    return false;    // else is not necessary
+    return false;    // else je nepotreban
 }
 {% endhighlight %}
 
-* [If statements](http://php.net/control-structures.if)
+* [If izrazi](http://php.net/control-structures.if)
 
-### Switch statements
+### Switch izrazi
 
-Switch statements are a great way to avoid typing endless if's and elseif's, but there are a few things to be aware of:
+Switch izrazi predstavljaju odličnu alternativu za beskonačne if-ove i elseif-ove, ali treba biti svestan nekoliko stvari:
 
-- Switch statements only compare values, and not the type (equivalent to '==')
-- They Iterate case by case until a match is found. If no match is found, then the default is used (if defined)
-- Without a 'break', they will continue to implement each case until reaching a break/return
-- Within a function, using 'return' alleviates the need for 'break' as it ends the function
+- Switch izrazi porede samo vrednosti, ne i tipove (ekvivalentno '==' poređenju)
+- Prolaze svaki 'case' sve dok ne pronađu poklapanje. Ako ga nema, koristi se 'default' slučaj (ako je definisan)
+- Bez 'break'-a, nastaviće da izvršavaju svaki 'case' sve dok se ne stigne do nekog break-a ili return-a
+- U sklopu funkcije, korišćenjem 'return'-a se gubi potreba za 'break'-ovima, pošto on prekida funkciju
 
 {% highlight php %}
 <?php
-$answer = test(2);    // the code from both 'case 2' and 'case 3' will be implemented
+$answer = test(2);    // i 'case 2' i 'case 3' će biti izvršeni
 
 function test($a)
 {
     switch ($a) {
         case 1:
-            // code...
-            break;             // break is used to end the switch statement
+            // ...
+            break;             // break prekida switch izraz
         case 2:
-            // code...         // with no break, comparison will continue to 'case 3'
+            // ...             // bez break-a, poređenje se nastavlja na 'case 3'
         case 3:
-            // code...
-            return $result;    // within a function, 'return' will end the function
+            // ...
+            return $result;    // u sklopu funkcije, 'return' će završiti (prekinuti) tu funkciju
         default:
-            // code...
+            // ...
             return $error;
     }
 }
 {% endhighlight %}
 
-* [Switch statements](http://php.net/control-structures.switch)
+* [Switch izrazi](http://php.net/control-structures.switch)
 * [PHP switch](http://phpswitch.com/)
 
-## Global namespace
+## Globalni namespace
 
-When using namespaces, you may find that internal functions are hidden by functions you wrote. To fix this, refer to
-the global function by using a backslash before the function name.
+Pri korišćenju namespace-ova, možda ste naišli na situaciju da su neke interne funkcije "pregažene" funkcijama koje ste vi napisali.
+Kako biste to rešili, globalnu funkciju pozivajte sa backslash-om (\) pre njenog imena.
 
 {% highlight php %}
 <?php
@@ -115,138 +115,138 @@ namespace phptherightway;
 
 function fopen()
 {
-    $file = \fopen();    // Our function name is the same as an internal function.
-                         // Execute the function from the global space by adding '\'.
+    $file = \fopen();    // Naša funkcija nosi isti naziv kao ugrađena.
+                         // Izvršavanje funkcije iz globalnog namespace-a prefiksovanjem sa '\'.
 }
 
 function array()
 {
-    $iterator = new \ArrayIterator();    // ArrayIterator is an internal class. Using its name without a backslash
-                                         // will attempt to resolve it within your namespace.
+    $iterator = new \ArrayIterator();    // ArrayIterator je interna klasa. Njeno pozivanje bez backslash-a
+                                         // će pokušati da je resolve-uje na osnovu vašeg trenutnog namespace-a.
 }
 {% endhighlight %}
 
-* [Global space](http://php.net/language.namespaces.global)
-* [Global rules](http://php.net/userlandnaming.rules)
+* [Globalni namespace](http://php.net/language.namespaces.global)
+* [Globalna pravila](http://php.net/userlandnaming.rules)
 
-## Strings
+## Stringovi
 
-### Concatenation
+### Konkatenacija (nadovezivanje)
 
-- If your line extends beyond the recommended line length (120 characters), consider concatenating your line
-- For readability it is best to use concatenation operators over concatenating assignment operators
-- While within the original scope of the variable, indent when concatenation uses a new line
+- Ako je dužina neke vaše linije kôda veća od preporučene 120 karaktera, razmislite o konkatenaciji te linije
+- Radi bolje preglednosti, najbolje je koristiti operatore za konkatenaciju umesto konkatenacije operatora za dodelu vrednosti
+- Unutar originalnog scope-a neke promenljive, koristite indentaciju (uvlačenje teksta) kada konkatenacija prelazi u sledeći red
 
 
 {% highlight php %}
 <?php
-$a  = 'Multi-line example';    // concatenating assignment operator (.=)
+$a  = 'Multi-line example';    // operator konkatenacije dodele vrednosti (.=)
 $a .= "\n";
 $a .= 'of what not to do';
 
-// vs
+// nasuprot
 
-$a = 'Multi-line example'      // concatenation operator (.)
-    . "\n"                     // indenting new lines
+$a = 'Multi-line example'      // operator za konkatenaciju (.)
+    . "\n"                     // uvlačenje linije
     . 'of what to do';
 {% endhighlight %}
 
-* [String Operators](http://php.net/language.operators.string)
+* [String operatori](http://php.net/language.operators.string)
 
-### String types
+### Tipovi stringova
 
-Strings are a series of characters, which should sound fairly simple. That said, there are a few different types of
-strings and they offer slightly different syntax, with slightly different behaviors.
+Stringovi su zapravo serija karaktera, što zvuči dosta jednostavno. Pritom, postoji nekolicina različitih tipova
+stringova, koji imaju vrlo male razlike u sintaksi, ali i male razlike u ponašanju.
 
-#### Single quotes
+#### Jednostruki navodnici
 
-Single quotes are used to denote a "literal string". Literal strings do not attempt to parse special characters or
-variables.
+Jednostruki navodnici se koriste za "bukvalne/literalne stringove". Ovi stringovi ne rade parsiranje specijalnih
+znakova i promenljivih.
 
-If using single quotes, you could enter a variable name into a string like so: `'some $thing'`, and you would see the
-exact output of `some $thing`. If using double quotes, that would try to evaluate the `$thing` variable name and show
-errors if no variable was found.
+Ako prilikom korišćenja jednostrukih navodnika unesete ime promenljive u sâm string, na primer: `'neka $stvar'`,
+dobili biste isti takav output: `neka $stvar`. U slučaju dvostrukih navodnika, parser bi pokušao da evaluira
+promenljivu `$stvar` i prikazao greške ako ona ne postoji.
 
 
 {% highlight php %}
 <?php
-echo 'This is my string, look at how pretty it is.';    // no need to parse a simple string
+echo 'This is my string, look at how pretty it is.';    // nema potrebe za parsiranjem ovog jednostavnog stringa
 
 /**
- * Output:
+ * Ispis:
  *
  * This is my string, look at how pretty it is.
  */
 {% endhighlight %}
 
-* [Single quote](http://php.net/language.types.string#language.types.string.syntax.single)
+* [Jednostruki navodnici](http://php.net/language.types.string#language.types.string.syntax.single)
 
-#### Double quotes
+#### Dvostruki navodnici
 
-Double quotes are the Swiss Army Knife of strings. They will not only parse variables as mentioned above, but all sorts
-of special characters, like `\n` for newline, `\t` for a tab, etc.
+Dvostruki navodnici predstavljaju pravi "švajcarski vojnički nož" u kontekstu stringova. Oni ne samo da će da parsiraju
+promenljive pomenute u prethodnom delu, ali i mnoge druge specijalne znakove, kao što su `\n` za novi red, `\t` za tab, itd.
 
 {% highlight php %}
 <?php
-echo 'phptherightway is ' . $adjective . '.'     // a single quotes example that uses multiple concatenating for
-    . "\n"                                       // variables and escaped string
+echo 'phptherightway is ' . $adjective . '.'     // primer sa jednostrukim navodnicima koji koristi konkatenaciju
+    . "\n"                                       // za umetanje promenljivih
     . 'I love learning' . $code . '!';
 
 // vs
 
-echo "phptherightway is $adjective.\n I love learning $code!"  // Instead of multiple concatenating, double quotes
-                                                               // enables us to use a parsable string
+echo "phptherightway is $adjective.\n I love learning $code!"  // Umesto konkatenacije, dvostruki navodnici nam omogućavaju
+                                                               // korišćenje stringova koji se mogu parsirati
 {% endhighlight %}
 
-Double quotes can contain variables; this is called "interpolation".
+Dvostruki navodnici mogu da sadrže promenljive, a to se naziva "interpolacija".
 
 {% highlight php %}
 <?php
 $juice = 'plum';
-echo "I like $juice juice";    // Output: I like plum juice
+echo "I like $juice juice";    // Ispis: I like plum juice
 {% endhighlight %}
 
-When using interpolation, it is often the case that the variable will be touching another character. This will result
-in some confusion as to what is the name of the variable, and what is a literal character.
+Pri korišćenju interpolacije, često se dešava da promenljiva "dodiruje" neki drugi karakter u stringu. Ovo će
+za rezultat imati konflikt u smislu razlikovanja imena promenljive od samog karaktera.
 
-To fix this problem, wrap the variable within a pair of curly brackets.
+U cilju prevazilaženja ovog problema, potrebno je uokviriti promenljivu sa vitičastim zagradama.
 
 {% highlight php %}
 <?php
 $juice = 'plum';
-echo "I drank some juice made of $juices";    // $juice cannot be parsed
+echo "I drank some juice made of $juices";    // $juice ne može biti parsirano
 
-// vs
+// nasuprot
 
 $juice = 'plum';
-echo "I drank some juice made of {$juice}s";    // $juice will be parsed
+echo "I drank some juice made of {$juice}s";    // $juice će biti parsirano
 
 /**
- * Complex variables will also be parsed within curly brackets
+ * Složenije promenljive takođe mogu biti parsirane unutar vitičastih zagrada.
  */
 
 $juice = array('apple', 'orange', 'plum');
-echo "I drank some juice made of {$juice[1]}s";   // $juice[1] will be parsed
+echo "I drank some juice made of {$juice[1]}s";   // $juice[1] će biti parsirano
 {% endhighlight %}
 
-* [Double quotes](http://php.net/language.types.string#language.types.string.syntax.double)
+* [Dvostruki navodnici](http://php.net/language.types.string#language.types.string.syntax.double)
 
-#### Nowdoc syntax
+#### Nowdoc sintaksa
 
-Nowdoc syntax was introduced in 5.3 and internally behaves the same way as single quotes except it is suited toward the
-use of multi-line strings without the need for concatenating.
+Nowdoc sintaksa je predstavljena u verziji 5.3 i interno radi na isti način kao jednostruki navodnici, pri čemu je
+prevashodno namenjena za pisanje stringova u više redova bez potrebe za konkatenacijom.
 
 {% highlight php %}
 <?php
-$str = <<<'EOD'             // initialized by <<<
+$str = <<<'EOD'             // počinje sa <<<
 Example of string
 spanning multiple lines
 using nowdoc syntax.
 $a does not parse.
-EOD;                        // closing 'EOD' must be on it's own line, and to the left most point
+EOD;                        // završni 'EOD' mora biti u novom redu i kranje ulevo
 
 /**
- * Output:
+ * Ispis:
  *
  * Example of string
  * spanning multiple lines
@@ -255,26 +255,26 @@ EOD;                        // closing 'EOD' must be on it's own line, and to th
  */
 {% endhighlight %}
 
-* [Nowdoc syntax](http://php.net/language.types.string#language.types.string.syntax.nowdoc)
+* [Nowdoc sintaksa](http://php.net/language.types.string#language.types.string.syntax.nowdoc)
 
-#### Heredoc syntax
+#### Heredoc sintaksa
 
-Heredoc syntax internally behaves the same way as double quotes except it is suited toward the use of multi-line
-strings without the need for concatenating.
+Heredoc sintaksa interno radi na isti način kao dvostruki navodnici, pri čemu je prevashodno namenjena
+za pisanje stringova u više redova bez potrebe za konkatenacijom.
 
 {% highlight php %}
 <?php
 $a = 'Variables';
 
-$str = <<<EOD               // initialized by <<<
+$str = <<<EOD               // počinje sa <<<
 Example of string
 spanning multiple lines
 using heredoc syntax.
 $a are parsed.
-EOD;                        // closing 'EOD' must be on it's own line, and to the left most point
+EOD;                        // završni 'EOD' mora biti u novom redu i kranje ulevo
 
 /**
- * Output:
+ * Ispis:
  *
  * Example of string
  * spanning multiple lines
@@ -283,31 +283,30 @@ EOD;                        // closing 'EOD' must be on it's own line, and to th
  */
 {% endhighlight %}
 
-* [Heredoc syntax](http://php.net/language.types.string#language.types.string.syntax.heredoc)
+* [Heredoc sintaksa](http://php.net/language.types.string#language.types.string.syntax.heredoc)
 
-### Which is quicker?
+### Šta je brže?
 
-There is a myth floating around that single quote strings are fractionally quicker than double quote strings. This is
-fundamentally not true.
+Postoji mit o tome da su jednostruki navodnici nešto brži od dvostrukih, a to u osnovi nije tačno.
 
-If you are defining a single string and not trying to concatenate values or anything complicated, then either a single
-or double quoted string will be entirely identical. Neither are quicker.
+Ako definišete string i pritom nemate konkatenaciju vrednosti, onda će stringovi sa jednostrukim i dvostrukim
+navodnicima biti u potpunosti ista. Oba rešenja će biti podjednako brza.
 
-If you are concatenating multiple strings of any type, or interpolate values into a double quoted string, then the
-results can vary. If you are working with a small number of values, concatenation is minutely faster. With a lot of
-values, interpolating is minutely faster.
+Ako vršite konkatenaciju više stringova ili vršite interpolaciju promenljivih u string sa dvostrukim navodnicima,
+onda se rezultati mogu razlikovati. Ako radite sa malim brojem promenljivih, konkatenacija će biti neznatno brža.
+A u slučaju dosta promenljivih, interpolacija će biti nešto brža.
 
-Regardless of what you are doing with strings, none of the types will ever have any noticable impact on your
-application. Trying to rewrite code to use one or the other is always an exercise in futility, so avoid this micro-
-optimization unless you really understand the meaning and impact of the differences.
+Nezavisno od toga šta radite sa stringovima, nijedan od ova dva tipa neće imati značajan uticaj na vašu aplikaciju.
+Pokušaj prepravke kôda sa ciljem korišćenja jednog ili drugog tipa je uzaludan posao, tako da izbegavajte te
+mikro-optimizacije osim ako zaista razumete značenje i uticaj njihov razlika.
 
-* [Disproving the Single Quotes Performance Myth](http://nikic.github.io/2012/01/09/Disproving-the-Single-Quotes-Performance-Myth.html)
+* [Razbijanje mita o performansama jednostrukih navodnika](http://nikic.github.io/2012/01/09/Disproving-the-Single-Quotes-Performance-Myth.html)
 
 
-## Ternary operators
+## Ternarni operatori
 
-Ternary operators are a great way to condense code, but are often used in excess. While ternary operators can be
-stacked/nested, it is advised to use one per line for readability.
+Ternarni operatori predstavljaju odličan način za uštedu kôda, ali programeri često preteruju u njihovom korišćenju.
+Iako ternarni operatori mogu biti ugnježdeni, preporuka je da se pišu u istoj liniji zbog preglednosti.
 
 {% highlight php %}
 <?php
@@ -315,92 +314,92 @@ $a = 5;
 echo ($a == 5) ? 'yay' : 'nay';
 {% endhighlight %}
 
-In comparison, here is an example that sacrifices all forms of readability for the sake of reducing the line count.
+Nasuprot ovome, sledi primer koji kompromituje sve vidove preglednosti u cilju smanjenja broja linija kôda:
 
 {% highlight php %}
 <?php
-echo ($a) ? ($a == 5) ? 'yay' : 'nay' : ($b == 10) ? 'excessive' : ':(';    // excess nesting, sacrificing readability
+echo ($a) ? ($a == 5) ? 'yay' : 'nay' : ($b == 10) ? 'excessive' : ':(';
 {% endhighlight %}
 
-To 'return' a value with ternary operators use the correct syntax.
+Za povratnu vrednost u slučaju ternarnih operatora koristite ispravnu sintaksu:
 
 {% highlight php %}
 <?php
 $a = 5;
-echo ($a == 5) ? return true : return false;    // this example will output an error
+echo ($a == 5) ? return true : return false;    // ovo će prouzrokovati grešku
 
-// vs
+// nasuprot
 
 $a = 5;
-return ($a == 5) ? 'yay' : 'nope';    // this example will return 'yay'
+return ($a == 5) ? 'yay' : 'nope';    // ovaj primer će vratiti 'yay'
 
 {% endhighlight %}
 
-It should be noted that you do not need to use a ternary operator for returning a boolean value. An example of this
-would be.
+Treba pomenuti i to da nema potrebe da koristite ternarni operator u slučaju vraćanja bool vrednosti.
+Na primer:
 
 {% highlight php %}
 <?php
 $a = 3;
-return ($a == 3) ? true : false; // Will return true or false if $a == 3
+return ($a == 3) ? true : false; // vraća true ili false ako je $a == 3
 
-// vs
+// nasuprot
 
 $a = 3;
-return $a == 3; // Will return true or false if $a == 3
+return $a == 3; // vraća true ili false ako je $a == 3
 
 {% endhighlight %}
 
-This can also be said for all operations(===, !==, !=, == etc).
+Ovo važi i za sve druge operacije (===, !==, !=, ==, itd.).
 
-#### Utilising brackets with ternary operators for form and function
+#### Korišćenje zagrada sa ternarnim operatorima za formatiranje i funkcionalnost
 
-When utilising a ternary operator, brackets can play their part to improve code readability and also to include unions
-within blocks of statements. An example of when there is no requirement to use bracketing is:
+Pri korišćenju ternarnog operatora, zagrade mogu biti značajnte u cilju poboljšanja preglednosti, ali i
+stvaranja unija u okviru blokova izraza. Primer u kojem zagrade nisu neophodne:
 
 {% highlight php %}
 <?php
 $a = 3;
-return ($a == 3) ? "yay" : "nope"; // return yay or nope if $a == 3
+return ($a == 3) ? "yay" : "nope"; // vraća 'yay' ili 'nope' ako je $a == 3
 
-// vs
+// nasuprot
 
 $a = 3;
-return $a == 3 ? "yay" : "nope"; // return yay or nope if $a == 3
+return $a == 3 ? "yay" : "nope"; // vraća 'yay' ili 'nope' ako je $a == 3
 {% endhighlight %}
 
-Bracketing also affords us the capability of creating unions within a statement block where the block will be checked
-as a whole. Such as this example below which will return true if both ($a == 3 and $b == 4) are true and $c == 5 is
-also true.
+Zagrade takođe nude mogućnost stvaranja unija u okviru blokova izraza, pri čemu se blok proverava u celosti.
+To možemo videti u sledećem primeru koji će vratit true ako su oba uslova ($a == 3 i $b == 4) ispunjena i
+ako je $c == 5 takođe tačno.
 
 {% highlight php %}
 <?php
 return ($a == 3 && $b == 4) && $c == 5;
 {% endhighlight %}
 
-Another example is the snippet below which will return true if ($a != 3 AND $b != 4) OR $c == 5.
+Još jedan primer je sledeći kôd koji vraća true ako je ($a != 3 i $b != 4) ili je $c == 5:
 
 {% highlight php %}
 <?php
 return ($a != 3 && $b != 4) || $c == 5;
 {% endhighlight %}
 
-* [Ternary operators](http://php.net/language.operators.comparison)
+* [Ternarni operatori](http://php.net/language.operators.comparison)
 
-## Variable declarations
+## Definisanje/deklarisanje promenljivih
 
-At times, coders attempt to make their code "cleaner" by declaring predefined variables with a different name. What
-this does in reality is to double the memory consumption of said script. For the example below, let us say an example
-string of text contains 1MB worth of data, by copying the variable you've increased the scripts execution to 2MB.
+Programeri ponekad pokušavaju da učine kôd "čistijim" tako što će deklarisati neke promenljive određenim imenima.
+To rezultuje povećanjem memorije koje će potrošiti neka skripta. Primera radi, ako imamo neki string veličine
+1MB, upisivanjem istog u neku promenljivu biste povećali korišćenje memorije na 2MB:
 
 {% highlight php %}
 <?php
-$about = 'A very long string of text';    // uses 2MB memory
+$about = 'A very long string of text';    // koristi 2MB memorije
 echo $about;
 
-// vs
+// nasuprot
 
-echo 'A very long string of text';        // uses 1MB memory
+echo 'A very long string of text';        // koristi 1MB memorije
 {% endhighlight %}
 
-* [Performance tips](http://web.archive.org/web/20140625191431/https://developers.google.com/speed/articles/optimizing-php)
+* [Saveti po pitanju performansi](http://web.archive.org/web/20140625191431/https://developers.google.com/speed/articles/optimizing-php)
