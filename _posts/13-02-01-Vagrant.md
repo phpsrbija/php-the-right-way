@@ -11,7 +11,7 @@ a ta okruženja konfiguriše na osnovu jednog konfiguracionog fajla.
 Virtuelne kutije možete podesiti ručno ili koristeći "provisioning" softvere kao što su [Puppet] ili [Chef] koji će 
 obaviti manuelni posao za vas.
 
-Kreiranje osnovne virtuelne kutije je dobar način da se uverite da su sve ostale kutije podešene na isti način 
+Kreiranje **osnovne virtuelne kutije** je dobar način da se uverite da su sve ostale kutije podešene na isti način 
 i otklanja potrebu da ručno izvršavate komplikovane inicijalne komande. Takođe, možete "uništiti" vašu osnovnu 
 virtuelnu kutiju i ponovo je kreirati bez dodatnih koraka. Na taj način je omogućeno da na lak način kreirate svežu 
 instalaciju. 
