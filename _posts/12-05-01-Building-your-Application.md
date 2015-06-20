@@ -26,8 +26,8 @@ Među zadacima koje biste možda želeli da automatizujete su:
 Alati za izgradnju (build) mogu biti shvaćeni kao skup skripti koje se bave određnim učestalim zadacima isporuke (deploy-a) softvera. 
 Alat za izgradnju nije deo vašeg softvera, on deluje na vaš softver 'izvana'.
 
-Postoji mnogo dostupnih alata otvorenog koda da vam pomogne sa automatizacijom, neki su napisani u PHP-u, drugi nisu.
-To ne treba da vas sputava da ih koristite, ako više odgovaraju za određeni posao. Evo nekoliko primera:
+Postoji puno alata otvorenog koda koji vam mogu pomoći pri automatizovanoj izgradnji (build), neki su napisani u PHP-u ali 
+postoje oni koji nisu. To ne treba da vas sputava da ih koristite, ako više odgovaraju za određeni posao. Evo nekoliko primera:
 
 [Phing](http://www.phing.info/) je najlakši način da počnete sa primenom automatizacije isporučivanja koda u svetu PHP-a. Pomoću Phing-a
 možete da kontrolišete pakovanje, isporuku ili testiranje procesa unutar jednostavne XML build datoteke. Phing (koji se zasniva na [Apache Ant](http://ant.apache.org/)) obezbeđuje bogat set zadataka, obično potrebnih za instalaciju ili ažuriranje web aplikacija i može se proširiti dodatnim prilagođenim zadacima, pisanim u PHP-u.
