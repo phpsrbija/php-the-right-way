@@ -58,7 +58,10 @@ je dobra polazna tačka za PHP developere zainteresovane za Capistrano.
 
 *-- Martin Fowler*
 
-Postoje različiti načini za implementaciju kontinuirane integracije za PHP. Nedavno je [Travis CI](https://travis-ci.org/) uradio veliki posao čineći od kontinuirane integracije stvarnost čak i za male projekte. Travis CI je hosted servis kontinuirane integracije za open source zajednicu. Integrisan je sa GitHub-om i nudi prvoklasnu podršku za mnoge jezike, uključujući i PHP.
+Postoje različiti načini za implementaciju kontinuirane integracije za PHP. [Travis CI](https://travis-ci.org/) je odradio 
+odličan posao i učinio kontinuiranu integraciju olakšanom čak i u slučaju manjih projekata. Travis CI je hosted servis 
+kontinuirane integracije namenjen open source zajednici. Integrisan je sa GitHub-om i nudi prvoklasnu podršku za mnoge jezike, 
+uključujući i PHP.
 
 #### Za dalje čitanje:
 
