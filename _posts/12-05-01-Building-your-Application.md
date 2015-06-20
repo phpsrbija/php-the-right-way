@@ -7,8 +7,8 @@ anchor: building_and_deploying_your_application
 ## Izgradnja i isporučivanje vaše aplikacije {#building_and_deploying_your_application}
 
 Ako zateknete sebe da ručno radite promene šeme baze podataka ili ručno pokrećete testove pre nego što ažurirate svoje
-fajlove (ručno), razmislite još jednom! Uz svaki dodatni zadatak koji se izvodi ručno potreban da razvijete novu verziju
-aplikacije, šanse za potencijalno fatalne greške se povećavaju. Bez obzira da li se bavite jednostavnim ažuriranjem,
+fajlove (ručno), razmislite još jednom! Svaki dodatni ručni zadatak tokom deploy-a nove verzije vaše aplikacije povećava 
+šanse za fatalne greške. Bez obzira da li se bavite jednostavnim ažuriranjem,
 sveobuhvatnom izgradnjom procesa ili čak strategijom kontinuirane integracije, [build automation](http://en.wikipedia.org/wiki/Build_automation) je Vaš prijatelj.
 
 Među zadacima koje biste možda želeli da automatizujete su:
