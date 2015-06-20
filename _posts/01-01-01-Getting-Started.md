@@ -1,6 +1,4 @@
 ---
-isChild: false
-title: Početak
 anchor: getting_started
 ---
 
