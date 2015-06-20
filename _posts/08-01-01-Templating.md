@@ -1,5 +1,4 @@
 ---
-isChild: false
 title: Rad sa template-ima
 anchor: templating
 ---

@@ -1,5 +1,4 @@
 ---
-isChild: false
 title: Dependency Injection
 anchor: dependency_injection
 ---

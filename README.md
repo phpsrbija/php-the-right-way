@@ -2,31 +2,31 @@
 
 ## Pregled
 
-Ovo je GitHub Pages repozitorijum projekta _PHP: The Right Way_ .
+Ovo je GitHub Pages repozitorijum projekta _PHP: The Right Way_ na srpskom jeziku.
 
-* Ovaj sajt je Jekyll projekat.
+* Ovaj sajt koristi Jekyll.
 * Svaka sekcija i podsekcija su Markdown fajlovi u `_posts/` folderu.
-* Podsekcije u zaglavlju imaju `isChild: true`.
+* Podsekcije u zaglavlju imaju atribut `isChild: true`.
 * Navigacija i struktura stranica se generišu automatski.
 
-## Proširite vest!
+## Raširite vest!
 
-_PHP: The Right Way_ sadrži slike za web banere koje možete da koristite na vašem sajtu. Pružite nam podršku, i omogućite novim PHP programerima da saznaju gde mogu da pronađu kvalitetne informacije!
+_PHP: The Right Way_ sadrži web banere koje možete da koristite na vašem sajtu. Pružite nam podršku
+tako što ćete ukazati PHP programerima gde mogu da pronađu kvalitetne informacije!
 
-[Pogledaj slike za banere](http://www.phptherightway.com/banners.html)
+[Web baneri](http://www.phptherightway.com/banners.html)
 
-## Kako možete da doprinesete
+## Kako da doprinesete
 
-1. Forkujte i izmenite
-2. Opciono instalirajte [Ruby](https://rvm.io/rvm/install/) sa [Jekyll](https://github.com/mojombo/jekyll/) gem-om da pregledate u lokalu
+1. _Forkujte_s i izmenite
+2. Opciono instalirajte [Ruby](https://rvm.io/rvm/install/) sa [Jekyll-om](https://github.com/mojombo/jekyll/) kako biste videli sajt u lokalu
 3. Pošaljite pull request na razmatranje
 
-### Uputstvo o stilovima za saradnike
+### Uputstvo za saradnike
 
-1. Koristite američki engleski pravopis (*primarno samo za engleski repozitorijum*)
-2. Koristite četiri (4) razmaka za uvlačenje teksta; nemojte da koristite tabove.
-3. Uokvirite tekst do 120 karaktera.
-4. Primeri kôda bi trebalo da se pridržavaju PSR-1 standarda ili višeg.
+1. Koristite četiri (4) razmaka za uvlačenje teksta; nemojte koristiti tabove.
+2. 120 karaktera po liniji.
+3. Primeri kôda treba da budu u skladu sa PSR-1 standardom.
 
 ## Gde
 
@@ -55,24 +55,28 @@ _PHP: The Right Way_ sadrži slike za web banere koje možete da koristite na va
 
 ### Prevodi
 
-Ako ste zainteresovani da prevedete _PHP: The Right Way_, forkujte ovaj repozitorijum na GitHub-u i objavite svoj lokalizovan fork na svom GitHub Pages nalogu. Mi ćemo postaviti link ka vašem prevodu sa osnovnog dokumenta.
+Ako ste zainteresovani da prevedete _PHP: The Right Way_, forkujte originalni repozitorijum na GitHub-u
+i objavite vašu lokalizovanu verziju na svom GitHub Pages nalogu. Mi ćemo postaviti link ka vašem prevodu
+iz glavnog dokumenta.
 
-Da bi se izbegla fragmentacija i zabuna kod čitalaca, molimo vas izaberite jednu od ovih opcija:
+Da bismo izbegli fragmentaciju i da ne bismo zbunjivali čitaoce, molimo vas izaberite jednu od sledećih opcija:
 
-1. Da postavimo link ka vašem GitHub Pages fork-u sa `[username].github.com/php-the-right-way`
-2. Da postavimo link ka vašem GitHub Pages fork-u sa poddomenom (npr "ru.phptherightway.com")
+1. Link do vašeg GitHub Pages fork-a u formi `[username].github.com/php-the-right-way`
+2. Link do vašeg GitHub Pages fork-a sa poddomenom (npr "sr.phptherightway.com")
 
-Ako koristite poddomen, unesite njegov naziv u `CNAME` dokument, i tražite od nas da podesimo DNS za vas. Ako ne koristite poddomen, izbrišite `CNAME` dokument kompletno, inače se vaš fork neće build-ovati kada push-ujete.
+Ako koristite poddomen, unesite njegov naziv u `CNAME` dokument i zatražite od nas da podesimo DNS za vas.
+Ako ne koristite poddomen, uklonite `CNAME` dokument iz vašeg repo-a.
 
-Kada vaš prevod bude spreman, kreirajte nam tiket da biste nas obavestili.
+Kada vaš prevod bude spreman, otvorite tiket na Issue Tracker-u i obavestite nas.
 
 ## Zašto
 
-U poslednje vreme u toku je puno rasprava o tome kako PHP zajednici nedostaju verodostojne i validne informacije za programere koji su početnici u PHP-u. Cilj ovog repozitorijuma je da reši taj problem.
+U poslednje vreme bilo je dosta reči o tome kako PHP zajednici nedostaje zadovoljavajući i pouzdan izvor informacija
+za nove PHP programere. Ovaj projekat za cilj ima rešavanje tog problema.
 
 ## Ko
 
-Moje ime je [Josh Lockhart](http://twitter.com/codeguy). Autor sam [Slim Framework](http://www.slimframework.com/), i radim za [New Media Campaigns](http://www.newmediacampaigns.com/).
+Moje ime je [Josh Lockhart](http://twitter.com/codeguy). Autor sam [Slim Framework-a](http://www.slimframework.com/) i radim za [New Media Campaigns](http://www.newmediacampaigns.com/).
 
 ### Saradnici
 

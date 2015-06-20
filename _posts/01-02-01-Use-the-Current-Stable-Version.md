@@ -4,7 +4,7 @@ title: Koristite aktuelnu stabilnu verziju (5.6)
 anchor: use_the_current_stable_version
 ---
 
-## Koristite aktuelnu stabilnu verziju (5.5) {#use_the_current_stable_version_title}
+## Koristite aktuelnu stabilnu verziju (5.6) {#use_the_current_stable_version_title}
 
 Ako počinjete da učite PHP, krenite sa aktuelnom stabilnom verzijom [PHP 5.6][php-release].
 PHP je znatno napredovao dodavanjem moćnih [novih funkcionalnosti](#language_highlights) poslednjih par godina.
