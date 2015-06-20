@@ -29,7 +29,7 @@ Obezbeđuje se preko Chef alata.
 Pored lokalnih VMa, može se koristiti za deploy servisa u oblaku. Obezbeđuje se preko Puppet alata. 
 - [Protobox][Protobox]: je sloj na vrhu vagranta i sadrži veb GUI za podešavanje virtuelnih mašina za veb razvoj. 
 Jedan YAML fajl kontroliše sve što je instalirano na virtuelnoj mašini.
-- [Phansible][Phansible]: Obezbeđuje jednostavan interfejs koji pomaže u generisanju Ansible Playbooks za PHP baziranu aplikaciju.
+- [Phansible][Phansible]: Obezbeđuje jednostavan interfejs koji pomaže u generisanju Ansible Playbooks za PHP aplikaciju.
 
 
 
