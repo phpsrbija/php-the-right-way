@@ -11,10 +11,10 @@ Ovo je GitHub Pages repozitorijum projekta _PHP: The Right Way_ na srpskom jezik
 
 ## Raširite vest!
 
-_PHP: The Right Way_ sadrži banere slike koje možete da koristite na vašem sajtu. Pružite nam podršku
+_PHP: The Right Way_ sadrži web banere koje možete da koristite na vašem sajtu. Pružite nam podršku
 tako što ćete ukazati PHP programerima gde mogu da pronađu kvalitetne informacije!
 
-[Baner slike](http://www.phptherightway.com/banners.html)
+[Web baneri](http://www.phptherightway.com/banners.html)
 
 ## Kako da doprinesete
 

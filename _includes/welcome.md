@@ -41,14 +41,14 @@ _PHP: Pravi način_ je preveden na nekoliko jezika:
 
 ## Kako da doprinesete
 
-Pomozite da ovaj sajt postane najbolji izvor za nove PHP programere! [Kontributujte na GitHub-u][1]
+Pomozite da ovaj sajt postane najbolji resurs za nove PHP programere! [Doprinesite na GitHub-u][1]
 
 ## Proširite vest!
 
-_PHP: Pravi način_ poseduje web banere koje možete da koristite na vašem sajtu. Podržite nas i
-omogućite novim PHP programerima da saznaju gde mogu da pronađu kvalitetne informacije!
+_PHP: Pravi način_ poseduje web banere koje možete da koristite na vašem sajtu. Pružite nam podršku
+tako što ćete ukazati PHP programerima gde mogu da pronađu kvalitetne informacije!
 
-[Pogledaj banere][2]
+[Web baneri][2]
 
 [1]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
 [2]: /banners.html
