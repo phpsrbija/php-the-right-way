@@ -1,5 +1,4 @@
 ---
-isChild: false
 title: Baze podataka
 anchor: databases
 ---

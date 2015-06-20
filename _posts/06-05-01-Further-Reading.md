@@ -1,7 +1,6 @@
 ---
 isChild: true
-title: Za dalje čitanje
-anchor: further_reading
+anchor:  further_reading
 ---
 
 ## Za dalje čitanje {#further_reading_title}
