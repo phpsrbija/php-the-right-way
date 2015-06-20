@@ -6,10 +6,9 @@ anchor:  vagrant
 ## Vagrant {#vagrant_title}
 
 
-[Vagrant] pomaže u kreiranju virtuelnih kutija, oslanjaju ći se na poznata virtuelna okruženja, 
-a ta okruženja konfiguriše na osnovu jednog konfiguracionog fajla.
-Virtuelne kutije možete podesiti ručno ili koristeći "provisioning" softvere kao što su [Puppet] ili [Chef] koji će 
-obaviti manuelni posao za vas.
+[Vagrant] pomaže u kreiranju virtuelnih kutija, oslanjaju ći se na poznato virtuelno okruženje koga konfiguriše na 
+osnovu jednog konfiguracionog fajla. Virtuelne kutije možete podesiti ručno ili koristeći "provisioning" softvere 
+kao što su [Puppet] ili [Chef] koji će obaviti manuelni posao za vas.
 
 Kreiranje **osnovne virtuelne kutije** je dobar način da se uverite da su sve ostale kutije podešene na isti način 
 i otklanja potrebu da ručno izvršavate komplikovane inicijalne komande. Takođe, možete "uništiti" vašu osnovnu 
@@ -21,7 +20,7 @@ kreirati i menjati fajlove na host mašini i potom ih pokretati unutar virtuelne
 
 ### Mala pomoć
 
-Ako vam treba pomoć za prve korake u korišćenju Vagrant alata, ispod su servisi koji vam mogu pomoći:
+Ako vam treba pomoć za prve korake u korišćenju Vagrant alata, pogledajte ispod servise:
 
 - [Rove][Rove]: Servis omogućava generisanje osnovnog Vagrant "builds", a PHP je medju opcijama. 
 Obezbeđuje se preko Chef alata.
