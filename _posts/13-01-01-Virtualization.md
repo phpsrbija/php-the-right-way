@@ -2,7 +2,7 @@
 anchor: virtualization
 ---
 
-# Virtualizacija {#virtualization_title}
+# Virtuelizacija {#virtualization_title}
 
 Pokretanje vaših aplikacija na različitim okruženjima, razvojno i produkcisko okruženje, može dovesti do različitih 
 bagova prilikom prebacivanja aplikacije na živ mod. Takođe, kad radite u timu programera, postaje teško vaše 
