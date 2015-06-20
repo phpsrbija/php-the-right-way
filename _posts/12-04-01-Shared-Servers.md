@@ -6,8 +6,8 @@ anchor: shared_servers
 
 ## Deljeni serveri {#shared_servers_title}
 
-PHP na svojoj popularnosti treba da zahvali deljenim serverima. Teško da možete pronaći host bez instaliranog PHP-a, ali
-budite sigurni da je to poslednja verzija. Deljeni serveri dopuštaju vama i drugim programerima da isporučite sajtove na
-jednoj mašini. Dobra strana ovoga je da je to postalo jeftino rešenje. Loša strana je da nikad ne znate kakvu vrstu loma
-će vaši sustanari napraviti; preopterećenje servera ili otvaranje bezbednosnih rupa su glavni problemi. Ako budžet
-namenjen za projekat to može da obezbedi, treba da izbegnete deljene servere.
+PHP na svojoj popularnosti treba da zahvali deljenim serverima. Teško da možete pronaći host(server) bez instaliranog PHP-a, ali
+proverite da li je instalirana najnovija vezija PHP-a. Deljeni serveri dopuštaju vama i drugim programerima da isporučite sajtove na
+jednoj zajedničkoj mašini. Dobra strana ovoga je da je to postalo jeftino rešenje. Loša strana je da nikad ne znate kakvu vrstu loma
+mogu vaši susedi napraviti; preopterećenje servera ili stvaranje bezbednosnih rupa su glavni problemi. Treba da izbeći deljene servere, 
+ako budžet namenjen za projekat to može da obezbedi.
