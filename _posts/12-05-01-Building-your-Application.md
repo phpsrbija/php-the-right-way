@@ -46,7 +46,7 @@ je dobra polazna tačka za PHP developere zainteresovane za Capistrano.
 * [Chef Kuvar koji instalira i konfiguriše PHP 5.3 i PEAR sistem za upravljane paketima](https://github.com/opscode-cookbooks/php)
 * [Chef video serije][Chef_tutorial] od Opscode tvorca Chef alata
 
-#### Dalje čitanje:
+#### Za dalje čitanje:
 
 * [Automatizujte Vaš projekat sa Apache Ant](http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/)
 
@@ -60,7 +60,7 @@ je dobra polazna tačka za PHP developere zainteresovane za Capistrano.
 
 Postoje različiti načini za implementaciju kontinuirane integracije za PHP. Nedavno je [Travis CI](https://travis-ci.org/) uradio veliki posao čineći od kontinuirane integracije stvarnost čak i za male projekte. Travis CI je hosted servis kontinuirane integracije za open source zajednicu. Integrisan je sa GitHub-om i nudi prvoklasnu podršku za mnoge jezike, uključujući i PHP.
 
-#### Further reading:
+#### Za dalje čitanje:
 
 * [Continuous Integration with Jenkins][Jenkins]
 * [Continuous Integration with PHPCI][PHPCI]
