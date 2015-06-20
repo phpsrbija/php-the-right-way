@@ -23,8 +23,8 @@ Među zadacima koje biste možda želeli da automatizujete su:
 
 ### Alati za automatizaciju izgradnje
 
-Alati za izgradnju mogu biti opisani kao skup skripti koje rukuju zajedničkim zadacima razvoja softvera. Alat za
-izgradnju nije deo vašeg softvera, on deluje na vaš softver 'izvana'.
+Alati za izgradnju (build) mogu biti shvaćeni kao skup skripti koje se bave određnim učestalim zadacima isporuke (deploy-a) softvera. 
+Alat za izgradnju nije deo vašeg softvera, on deluje na vaš softver 'izvana'.
 
 Postoji mnogo dostupnih alata otvorenog koda da vam pomogne sa automatizacijom, neki su napisani u PHP-u, drugi nisu.
 To ne treba da vas sputava da ih koristite, ako više odgovaraju za određeni posao. Evo nekoliko primera:
