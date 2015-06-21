@@ -34,6 +34,7 @@ _PHP: Pravi način_ je preveden na nekoliko jezika:
 * [Rumunski](https://bgui.github.io/php-the-right-way/)
 * [Ruski](http://getjump.github.io/ru-php-the-right-way)
 * [Slovenski](http://sl.phptherightway.com)
+* [Srpski](http://phpsrbija.github.io/php-the-right-way)
 * [Španski](http://phpdevenezuela.github.io/php-the-right-way/)
 * [Tai](https://apzentral.github.io/php-the-right-way/)
 * [Turski](http://hkulekci.github.io/php-the-right-way/)
