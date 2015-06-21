@@ -5,7 +5,7 @@ anchor: dependency_management
 
 # Upravljanje zavisnostima (dependencies) {#dependency_management_title}
 
-Na raspolaganju imate ogroman broj PHP biblioteka, framework-ova i komponenti. Vaš projekat će verovatno koristiti
+Na raspolaganju imate ogroman broj PHP biblioteka, frejmvorka i komponenti. Vaš projekat će verovatno koristiti
 njih nekoliko, što su zapravo zavisnosti projekta. Do nedavno, PHP nije imao adekvatan način za upravljanje ovim
 zavisnostima. Čak i ako ste njima upravljali ručno, i dalje ste morali da brinete o autoloading-u. Ali to više nije slučaj.
 

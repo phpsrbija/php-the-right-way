@@ -6,7 +6,7 @@ anchor: databases_abstraction_layers
 
 ## Slojevi za apstrakciju (Database Abstraction Layers - DAL) {#databases_abstraction_layers_title}
 
-Mnogi framework-ovi imaju sopstveni DAL koji može, a ne mora da bude "nad" [PDO-om][1].
+Mnogi frejmvorci imaju sopstveni DAL koji može, a ne mora da bude "nad" [PDO-om][1].
 Oni najčešće emuliraju mogućnosti jednog sistema baze podataka koje nedostaju u drugom, tako što
 pretvaraju upite u PHP metode, dajući nam apstrakciju same baze, a ne samo konekcije na bazu kao
 što je to slučaj sa PDO-om. Ovo će naravno uneti i malo overhead-a, ali ako pravite portabilnu aplikaciju

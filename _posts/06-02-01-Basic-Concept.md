@@ -49,4 +49,4 @@ class MysqlAdapter {}
 {% endhighlight %}
 
 Sada klasi `Database` ubacujemo njen dependency umesto da ga ona sama kreira. Mogli smo čak da napravimo i
-metod za njegovo set-ovanje, ili u slučaju da je polje `$adapter` javno, mogli smo da ga postavimo direktno.
+metod za njegovo postavljanje, ili u slučaju da je polje `$adapter` javno, mogli smo da ga postavimo direktno.

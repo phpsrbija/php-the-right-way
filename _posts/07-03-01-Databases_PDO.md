@@ -29,7 +29,7 @@ PDO neće prevoditi vaše SQL upite ili emulirati nedostajuće opcije; on služi
 sa različitim tipovima baza podataka pomoću istog API-ja.
 
 Ono što je još bitnije, `PDO` omogućava da bezbedno ubacite podatke koji potiču iz nekog stranog izvora (npr. ID-eve)
-u vaš SQL upit bez bojazni od SQL Injection napada. Ovo je moguće korišćenjem PDO naredbi (statements) i bound parametara.
+u vaš SQL upit bez bojazni od SQL Injection napada. Ovo je moguće korišćenjem PDO naredbi (statements) i _bound_ parametara.
 
 Pretpostavimo da PHP skripta prima numerički ID kao parametar upita. Ovaj ID se koristi da vrati korisnički podatak iz
 baze. Ovo je `pogrešan` način da se to uradi:
@@ -54,7 +54,7 @@ $stmt->bindParam(':id', $id, PDO::PARAM_INT); // <-- automatski sanirano
 $stmt->execute();
 {% endhighlight %}
 
-Ovo je ispravan kôd koji radi bind-ovanje parametra u PDO naredbu. Na taj način se sanira strani ID podatak pre nego što se
+Ovo je ispravan kôd koji radi _bind-ovanje_ parametra u PDO naredbu. Na taj način se sanira strani ID podatak pre nego što se
 uopšte pošalje bazi, čime se sprečava potencijalni SQL injection napad.
 
 U slučaju upita kao što su INSERT ili UPDATE, svejedno morate sami [filtrirati podatke](#data_filtering)

@@ -21,7 +21,7 @@ klase, interfejse, nasleđivanje, konstruktore, kloniranje, izuzetke i drugo.
 ### Funkcionalno programiranje {#functional_programming}
 
 PHP podržava funkcije prve klase (first-class funkcije), što znači da funkcija može biti dodeljena promenljivoj. I korisnički definisane i
-ugrađene funkcije mogu biti referencirane promenljivom i pozvane dinamički. Funkcije se mogu prosleđivati kao argumenti
+ugrađene funkcije mogu biti referencirane promenljivom i pozivane dinamički. Funkcije se mogu prosleđivati kao argumenti
 drugim funkcijama (odlika nazvana _Funkcije višeg reda_) i funkcija može vratiti druge funkcije.
 
 Rekurzija, osobina koja omogućava funkciji da poziva samu sebe, je podržana u samom jeziku, ali se
@@ -29,7 +29,7 @@ većina PHP kôda fokusira na iteriranje.
 
 Nove anonimne funkcije (sa podrškom za closures) su prisutne od verzije PHP 5.3 (2009).
 
-PHP 5.4 je dodao mogućnost da se closure poveže sa scope-om objekta, a takođe i poboljšao podršku za callable tipove,
+PHP 5.4 je dodao mogućnost da se closure poveže sa _scope-om_ objekta, a takođe i poboljšao podršku za callable tipove,
 tako da se oni praktično u skoro svim slučajevima mogu koristiti na isti način kao anonimne funkcije.
 
 * Nastavite sa čitanjem o [Funkcionalnom programiranju u PHP-u](pages/Functional-Programming.html)

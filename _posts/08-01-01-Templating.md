@@ -1,9 +1,9 @@
 ---
-title: Rad sa template-ima
+title: Rad sa templejtima
 anchor: templating
 ---
 
-# Rad sa template-ima {#templating_title}
+# Rad sa templejtima {#templating_title}
 
 Templejti nude način za razdvajanje kontrolerske i domen logike od prezentacione. Obično sadrže HTML
 vaše aplikacije, ali i druge formate podataka, kao što je XML. Templejti se često definišu kao "view-ovi (views)",

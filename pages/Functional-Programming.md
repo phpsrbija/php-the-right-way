@@ -15,10 +15,10 @@ većina PHP kôda fokusira na iteriranje.
 
 Anonimne (anonymous) funkcije (sa podrškom za closures) su prisutne od verzije PHP 5.3 (2009).
 
-PHP 5.4 je dodao mogućnost da se closure poveže sa scope-om objekta, a takođe i poboljšao podršku za callable tipove,
+PHP 5.4 je dodao mogućnost da se closure poveže sa _scope-om_ objekta, a takođe i poboljšao podršku za _callable_ tipove,
 tako da se oni praktično u skoro svim slučajevima mogu koristiti na isti način kao anonimne funkcije.
 
-Najčešći slučaj korišćenja funkcija višeg reda pri implementaciji Strategy pattern-a. Ugrađena `array_filter()`
+Najčešći slučaj korišćenja funkcija višeg reda pri implementaciji Strategy paterna. Ugrađena `array_filter()`
 funkcija od parametara zahteva niz (data) i funkciju (strategiju ili callback) koja će biti korišćena kao filter nad
 svakim elementom prosleđenog niza.
 
@@ -71,7 +71,7 @@ $output = array_filter($input, criteria_greater_than(3));
 print_r($output); // items > 3
 {% endhighlight %}
 
-Svaka filter funkcija iz grupe prihvata samo elemente koji su veći od oređene minimalne vrednosti. Filter kojeg vraća
+Svaka filter funkcija iz grupe prihvata samo elemente koji su veći od određene minimalne vrednosti. Filter kojeg vraća
 `criteria_greater_than` je closure sa `$min` argumentom čija je vrednost zatvorena u scope-u (prosleđuje se kao argument pri
 pozivu `criteria_greater_than` funkcije).
 

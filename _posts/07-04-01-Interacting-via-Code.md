@@ -43,7 +43,7 @@ Ovo je dobar početak. Ako stavite ova dva segmenta u dva zasebna fajla imaćete
 
 Napravite klasu sa ovim metodama i imate "Model". Napravite jednostavan `.php` fajl sa
 prezentacionom logikom i imate "View", što je dosta blizu [MVC-a] &mdash; najčešćeg koncepta u
-većini [framework-ova](#frameworks_title).
+većini [frejmvorka](#frameworks_title).
 
 **foo.php**
 
@@ -91,7 +91,7 @@ class FooModel
 <?php endforeach ?>
 {% endhighlight %}
 
-Ovo u suštini radi i većina modernih framework-ova. Možda nećete imati stalnu potrebu za ovim, ali
+Ovo u suštini radi i većina modernih frejmvorka. Možda nećete imati stalnu potrebu za ovim, ali
 mešanje logike interakcije sa bazom i prezentacione logike može biti ozbiljan problem ako ikada
 budete želeli da pišete [unit testove](#unit-testing) za vašu aplikaciju.
 

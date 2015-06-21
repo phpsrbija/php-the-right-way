@@ -35,7 +35,7 @@ Ali nemaju sve string funkcije svog `mb_*` dvojnika. Ako ne postoji odgovarajuć
 onda jednostavno nemate sreće.
 
 Funkciju `mb_internal_encoding()` bi trebalo koristiti na početku svake PHP skripte koju pišete
-(ili na početku nekog globalnog skripta kojeg posle include-ujete), a `mb_http_output()` odmah nakon
+(ili na početku nekog globalnog skripta kojeg posle učitavate), a `mb_http_output()` odmah nakon
 nje u slučaju da vaša skripta ispisuje neki output. Eksplicitno definisanje enkodinga će vas lišiti dosta problema.
 
 Takođe, dosta PHP funkcija za rad sa stringovima ima opcioni parametar putem kojeg je moguće podesiti enkoding.
@@ -68,7 +68,7 @@ Ako vas zanimaju razlozi, pogledajte sekciju "Za dalje čitanje".
 Koristite `mb_http_output()` funkciju kako biste bili sigurni da vaša PHP skripta ispisuje UTF-8
 stringove u browser-u.
 
-Browser bi na osnovu HTTP response-a trebalo da zna da li je neka stranica UTF-8 enkodovana. Prevaziđen
+Browser bi na osnovu HTTP odgovora trebalo da zna da li je neka stranica UTF-8 enkodovana. Prevaziđen
 način za postizanje ovoga je bio putem odgovarajućeg [charset `<meta>` taga](http://htmlpurifier.org/docs/enduser-utf8.html)
 u `<head>` sekciji stranice. Ovaj pristup je u potpunosti validan, ali podešavanje charset-a u
 `Content-Type` header-u je zapravo [mnogo brže] (https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly).

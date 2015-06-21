@@ -29,7 +29,7 @@ code online first to confirm it is safe.
 
 #### Instalacija na Windows-u
 
-U slučaju Windows korisnika, najjednostavniji način za instalaciju je putem [ComposerSetup] installer-a,
+U slučaju Windows korisnika, najjednostavniji način za instalaciju je putem [ComposerSetup] instalera,
 koji radi globalnu instalaciju i podešava vaš `$PATH`, tako da možete pozivati `composer` komandu iz
 bilo kog foldera.
 

@@ -19,5 +19,5 @@ footer sekije vašeg sajta mogu biti definisane kao templejti, koji se onda uči
 templejta za svaku pojedinačnu stranicu.
 
 Konačno, u zavisnosti od biblioteke koju koristite, templejti obično brinu o bezbednosti, tako što automatski
-escape-uju sadržaj koji potiče od korisnika. Neke biblioteke čak omogućavaju sandbox-ovanje, pri čemu
+_escape-uju_ sadržaj koji potiče od korisnika. Neke biblioteke čak omogućavaju sandbox-ovanje, pri čemu
 je dizajnerima omogućen pristup isključivo određenim, proverenim promenljivama i funkcijama.

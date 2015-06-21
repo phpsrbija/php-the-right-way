@@ -5,7 +5,7 @@ anchor: code_style_guide
 
 # Vodič za stil kodiranja {#code_style_guide_title}
 
-PHP zajednica je velika i raznolika, sastavljena od bezbroj biblioteka, framework-ova i komponenti.
+PHP zajednica je velika i raznolika, sastavljena od bezbroj biblioteka, frejmvorka i komponenti.
 PHP programeri se često odluče za njih nekoliko i kombinuju ih u okviru jednog projekta. Bitno je da
 PHP kôd bude u skladu sa (što je više moguće) opštim stilom kodiranja kako bi se programerima
 olakšalo kombinovanje i integrisanje različitih biblioteka u svoje projekte.
@@ -18,7 +18,7 @@ ili nastaviti sa korišćenjem nekog vašeg ličnog stila.
 
 Bilo bi idealno da pišete PHP kôd koji je u skladu sa poznatim standardima. Ovo može biti bilo koja kombinacija PSR-ova
 ili jedan od standarda kodiranja koje je definisao PEAR ili Zend. Ovo znači da će drugi programeri moći lako da čitaju
-i rade sa vašim kodom, a da će aplikacije koje koriste komponente biti konzistentne čak i pri radu sa dosta 3rd party kôda.
+i rade sa vašim kôdom, a da će aplikacije koje koriste komponente biti konzistentne čak i pri radu sa dosta 3rd party kôda.
 
 * [Pročitajte o PSR-0][psr0]
 * [Pročitajte o PSR-1][psr1]

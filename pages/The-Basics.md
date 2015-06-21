@@ -107,7 +107,7 @@ function test($a)
 ## Globalni namespace
 
 Pri korišćenju namespace-ova, možda ste naišli na situaciju da su neke interne funkcije "pregažene" funkcijama koje ste vi napisali.
-Kako biste to rešili, globalnu funkciju pozivajte sa backslash-om (\) pre njenog imena.
+Kako biste to rešili, globalnu funkciju pozivajte sa backslash karakterom (\) pre njenog imena.
 
 {% highlight php %}
 <?php
@@ -164,7 +164,7 @@ Jednostruki navodnici se koriste za "bukvalne/literalne stringove". Ovi stringov
 znakova i promenljivih.
 
 Ako prilikom korišćenja jednostrukih navodnika unesete ime promenljive u sâm string, na primer: `'neka $stvar'`,
-dobili biste isti takav output: `neka $stvar`. U slučaju dvostrukih navodnika, parser bi pokušao da evaluira
+dobili biste isti takav ispis: `neka $stvar`. U slučaju dvostrukih navodnika, parser bi pokušao da evaluira
 promenljivu `$stvar` i prikazao greške ako ona ne postoji.
 
 
@@ -369,7 +369,7 @@ return $a == 3 ? "yay" : "nope"; // vraća 'yay' ili 'nope' ako je $a == 3
 {% endhighlight %}
 
 Zagrade takođe nude mogućnost stvaranja unija u okviru blokova izraza, pri čemu se blok proverava u celosti.
-To možemo videti u sledećem primeru koji će vratit true ako su oba uslova ($a == 3 i $b == 4) ispunjena i
+To možemo videti u sledećem primeru koji će vratiti true ako su oba uslova ($a == 3 i $b == 4) ispunjena i
 ako je $c == 5 takođe tačno.
 
 {% highlight php %}
