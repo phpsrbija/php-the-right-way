@@ -6,31 +6,31 @@ anchor:  vagrant
 ## Vagrant {#vagrant_title}
 
 
-[Vagrant] pomaže u kreiranju virtuelnih kutija, oslanjaju ći se na poznato virtuelno okruženje koga konfiguriše na 
+[Vagrant] vam pomaže u kreiranju virtuelnih kutija, oslanjaju ći se na poznato virtuelno okruženje koga konfiguriše na 
 osnovu jednog konfiguracionog fajla. Virtuelne kutije možete podesiti ručno ili koristeći "provisioning" softvere 
 kao što su [Puppet] ili [Chef] koji će obaviti manuelni posao za vas.
 
 Kreiranje **osnovne virtuelne kutije** je dobar način da se uverite da su sve ostale kutije podešene na isti način 
-i otklanja potrebu da ručno izvršavate komplikovane inicijalne komande. Takođe, možete "uništiti" vašu osnovnu 
+i otklanja potrebu za ručnim izvršavanjem komplikovanih inicijalnih komandi. Takođe, možete "uništiti" vašu osnovnu 
 virtuelnu kutiju i ponovo je kreirati bez dodatnih koraka. Na taj način omogućeno je da lako kreirate svežu instalaciju. 
 
 Vagrant kreira folder za deljenje vašeg koda izmedju host-a i vaše virtuene mašine, tako da možete 
-kreirati i menjati fajlove na host mašini i potom ih pokretati unutar virtuelne mašine.
+kreirati i menjati fajlove na host mašini i potom ih pokrenuti unutar virtuelne mašine.
 
 ### Mala pomoć
 
-Ako vam treba pomoć za prve korake u korišćenju Vagrant alata, pogledajte sledeće servise:
+Ako vam treba pomoć za prve korake u korišćenju Vagrant alata, pogledajte sledeće linkove/servise:
 
-- [Rove][Rove]: Servis omogućava generisanje osnovnog Vagrant "builds", a PHP je medju opcijama. 
+- [Vagrant za početnike][Vagrant_za_pocetnike]: Članak koji detaljno opisuje upotrebu Vagranta u realnim situacijama.
+- [Rove][Rove]: Servis omogućava generisanje osnovnog Vagrant okruženja, a PHP je medju opcijama. 
 Obezbeđuje se preko Chef alata.
 - [Puphpet][Puphpet]: Jednostavan GUI koji podešava virtuelne mašine za PHP razvoj. **Jako orientisan ka PHP-u**. 
 Pored lokalnih VMa, može se koristiti za deploy servisa u oblaku. Obezbeđuje se preko Puppet alata. 
 - [Protobox][Protobox]: Je sloj na vrhu Vagranta i sadrži veb GUI za podešavanje virtuelnih mašina za veb razvoj. 
 Jedan YAML fajl kontroliše sve što je instalirano na virtuelnoj mašini.
-- [Phansible][Phansible]: Obezbeđuje jednostavan interfejs koji pomaže u generisanju Ansible Playbooks za PHP aplikaciju.
+- [Phansible][Phansible]: Obezbeđuje jednostavan interfejs koji pomaže u generisanju Ansible Playbooks za PHP aplikacije.
 
-
-
+[Vagrant_za_pocetnike]: http://viewsource.rs/uvod-u-vagrant-alat-za-jednostavno-podesavanje-razvojnog-okruzenja/
 [Vagrant]: http://vagrantup.com/
 [Puppet]: http://www.puppetlabs.com/
 [Chef]: http://www.opscode.com/
