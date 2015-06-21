@@ -1,8 +1,9 @@
 ---
+title: Upravljanje zavisnostima (dependencies)
 anchor: dependency_management
 ---
 
-# Upravljanje zavisnostima (Dependency) {#dependency_management_title}
+# Upravljanje zavisnostima (dependencies) {#dependency_management_title}
 
 Na raspolaganju imate ogroman broj PHP biblioteka, framework-ova i komponenti. Vaš projekat će verovatno koristiti
 njih nekoliko, što su zapravo zavisnosti projekta. Do nedavno, PHP nije imao adekvatan način za upravljanje ovim
@@ -12,5 +13,5 @@ Trenutno postoje dva glavna sistema za upravljanja paketima (package managers) z
 Composer je trenutno izbor broj jedan, ali treba pomenuti da je PEAR dosta dugo bio na toj poziciji.
 Poznavanje PEAR-a može biti korisno, jer i dalje možete naći reference za njega, čak iako ga ne koristite.
 
-[Composer]: /#composer_and_packagist
-[PEAR]: /#pear
+[Composer]: {{site.baseurl}}/#composer_and_packagist
+[PEAR]: {{site.baseurl}}/#pear

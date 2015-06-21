@@ -1,5 +1,6 @@
 ---
 isChild: true
+title: Interfejs sa komandne linije (Command Line Interface - CLI)
 anchor:  command_line_interface
 ---
 
