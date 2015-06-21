@@ -15,13 +15,13 @@ Inversion of Control je kao što i sam naziv kaže, "zamena kontrole" sistema ta
 odvojeno od naših objekata. U kontekstu Dependency Injection-a, ovo se odnosi na "popuštanje" zavisnosti tako što ih
 kontrolišemo i instanciramo na drugom mestu u sistemu.
 
-PHP framework-ovi su godinama implementirali Inverziju kontrole, međutim, postavlja se pitanje koji deo kontrole vi zamenjujete
-i gde? Na primer, MVC framework-ovi obično na raspolaganje stavljaju super objekat ili osnovnu kontroler klasu koju ostali
+PHP frejmvorci su godinama implementirali Inverziju kontrole, međutim, postavlja se pitanje koji deo kontrole vi zamenjujete
+i gde? Na primer, MVC frejmvorci obično na raspolaganje stavljaju super objekat ili osnovnu kontroler klasu koju ostali
 kontroleri moraju da naslede da bi dobili pristup njenim zavisnostima. Ovo **jeste** Inverzija kontrole, međutim, umesto
 da olabavi zavisnosti, ovaj metod ih jednostavno izmešta.
 
 Dependency Injection nam omogućava da na elegantniji način rešimo ovaj problem tako što ćemo **ubacujemo**
-dependency-e koji su nam potrebni i kada su nam potrebni, umesto da ih hardkodujemo i direktno instanciramo.
+zavisnosti koje su nam potrebne i kada su nam potrebne, umesto da ih hardkodujemo i direktno instanciramo.
 
 ### Dependency Inversion princip
 
