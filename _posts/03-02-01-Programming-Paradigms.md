@@ -32,7 +32,7 @@ Nove anonimne funkcije (sa podrškom za closures) su prisutne od verzije PHP 5.3
 PHP 5.4 je dodao mogućnost da se closure poveže sa scope-om objekta, a takođe i poboljšao podršku za callable tipove,
 tako da se oni praktično u skoro svim slučajevima mogu koristiti na isti način kao anonimne funkcije.
 
-* Nastavite sa čitanjem o [Funkcionalnom programiranju u PHP-u](/pages/Functional-Programming.html)
+* Nastavite sa čitanjem o [Funkcionalnom programiranju u PHP-u](pages/Functional-Programming.html)
 * [Pročitajte o anonimnim funkcijama][anonymous-functions]
 * [Pročitajte o Closure klasi][closure-class]
 * [Više detalja o Closures RFC-u][closures-rfc]
