@@ -1,5 +1,6 @@
 ---
 isChild: true
+title: Izuzeci (exceptions)
 anchor:  exceptions
 ---
 

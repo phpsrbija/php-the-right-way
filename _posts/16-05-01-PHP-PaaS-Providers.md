@@ -1,6 +1,7 @@
 ---
 isChild: true
-anchor:  php_paas_providers
+title: PHP PaaS provajderi
+anchor: php_paas_providers
 ---
 
 ## PHP PaaS provajderi {#php_paas_providers_title}

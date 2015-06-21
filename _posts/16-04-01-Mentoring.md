@@ -1,6 +1,7 @@
 ---
 isChild: true
-anchor:  mentoring
+title: Mentorisanje
+anchor: mentoring
 ---
 
 ## Mentorisanje {#mentoring_title}

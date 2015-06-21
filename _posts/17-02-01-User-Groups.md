@@ -1,9 +1,10 @@
 ---
 isChild: true
+title: Korisničke grupe
 anchor:  user_groups
 ---
 
-## PHP korisničke grupe {#user_groups_title}
+## Korisničke grupe {#user_groups_title}
 
 Ako živite u većem gradu, velike su šanse da se u vašoj blizini nalazi neka PHP korisnička grupa.
 Možete vrlo lako pronaći lokalnu grupu na [php.net listi korisničkih grupa][php-uglist], koja je

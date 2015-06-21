@@ -1,5 +1,6 @@
 ---
 isChild: true
+title: Alati za komplementarno testiranje
 anchor:  complementary_testing_tools
 ---
 
