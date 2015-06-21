@@ -13,5 +13,5 @@ Trenutno postoje dva glavna sistema za upravljanja paketima (package managers) z
 Composer je trenutno izbor broj jedan, ali treba pomenuti da je PEAR dosta dugo bio na toj poziciji.
 Poznavanje PEAR-a može biti korisno, jer i dalje možete naći reference za njega, čak iako ga ne koristite.
 
-[Composer]: {{site.baseurl}}/#composer_and_packagist
-[PEAR]: {{site.baseurl}}/#pear
+[Composer]: #composer_and_packagist
+[PEAR]: #pear

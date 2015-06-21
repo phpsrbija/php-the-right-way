@@ -37,9 +37,9 @@ _Laravel-ove [Illuminate komponente] će biti još bolje izdvojene iz samog Lara
 samo one koju su najbolje izdvojene su na prethodnom spisku._
 
 
-[Packagist]: {{site.baseurl}}/#composer_and_packagist
-[PEAR]: {{site.baseurl}}/#pear
-[Dependency Management]: {{site.baseurl}}/#dependency_management
+[Packagist]: #composer_and_packagist
+[PEAR]: #pear
+[Dependency Management]: #dependency_management
 [FuelPHP Validation package]: https://github.com/fuelphp/validation
 [Aura]: http://auraphp.com/packages/v2
 [FuelPHP]: https://github.com/fuelphp

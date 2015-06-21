@@ -23,7 +23,7 @@ Ovo je loša praksa iz više razloga, a ponajviše zbog toga što je ovakav kôd
 testirati i uopšte čitati i prikazaće previše polja ukoliko ne postavite limit.
 
 Iako postoji dosta načina da se interakcija ostvari, u zavisnosti da li preferirate
-[OOP]({{site.baseurl}}/#object_oriented_programming) ili [proceduralno programiranje]({{site.baseurl}}/#functional_programming),
+[OOP](#object_oriented_programming) ili [proceduralno programiranje](#functional_programming),
 mora postojati taj aspekt razdvajanja logike.
 
 Razmotrimo ovaj osnovni korak:
@@ -43,7 +43,7 @@ Ovo je dobar početak. Ako stavite ova dva segmenta u dva zasebna fajla imaćete
 
 Napravite klasu sa ovim metodama i imate "Model". Napravite jednostavan `.php` fajl sa
 prezentacionom logikom i imate "View", što je dosta blizu [MVC-a] &mdash; najčešćeg koncepta u
-većini [framework-ova]({{site.baseurl}}/#frameworks_title).
+većini [framework-ova](#frameworks_title).
 
 **foo.php**
 
@@ -93,7 +93,7 @@ class FooModel
 
 Ovo u suštini radi i većina modernih framework-ova. Možda nećete imati stalnu potrebu za ovim, ali
 mešanje logike interakcije sa bazom i prezentacione logike može biti ozbiljan problem ako ikada
-budete želeli da pišete [unit testove]({{site.baseurl}}/#unit-testing) za vašu aplikaciju.
+budete želeli da pišete [unit testove](#unit-testing) za vašu aplikaciju.
 
 [PHPBridge] ima sjajan članak na sličnu temu nazvan [Kreiranje Data klase], koji je odličan za
 programere koji se tek uhodavaju sa konceptom interakcije sa bazom podataka.
