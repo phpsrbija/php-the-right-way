@@ -2,13 +2,13 @@
 anchor: virtualization
 ---
 
-# Virtualization {#virtualization_title}
+# Virtuelizacija {#virtualization_title}
 
-Running your application on different environments in development and production can lead to strange bugs popping up
-when you go live. It's also tricky to keep different development environments up to date with the same version for all
-libraries used when working with a team of developers.
+Pokretanje vaših aplikacija na različitim okruženjima, razvojno i produkcisko okruženje, može dovesti do različitih 
+bagova prilikom prebacivanja aplikacije na živ mod. Takođe, kad radite u timu programera, postaje teško vaše 
+okruženje održavati sa najnovijim verzijama svih biblioteka. 
 
-If you are developing on Windows and deploying to Linux (or anything non-Windows) or are developing in a team, you
-should consider using a virtual machine. This sounds tricky, but besides the widely known virtualization environments
-like VMware or VirtualBox, there are additional tools that may help you setting up a virtual environment in a few easy
-steps.
+Ako razvijate aplikaciju na Windows OS, a deploy radite na Linux OS ili radite u timu, trebalo bi uzeti u obzir 
+korišćenje virtuelnih mašina. Ovo možda izgleda teško, ali pored dobro poznatih virtuelnih okruženja kao što su 
+VMware ili VirtualBox, postoje i dodatni alati koji vam pomažu da podesite virtuelno okruženje iz nekoliko 
+jednostavnih koraka.
