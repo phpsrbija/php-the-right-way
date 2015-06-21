@@ -15,4 +15,4 @@ da će dosta posla biti urađeno umesto vas. Ali na vama je i dalje da primenjuj
 nad tim framework-om. S druge strane, ako ne koristite framework, onda je neophodno da se odlučite za pattern-e
 koji najviše odgovaraju tipu i veličini aplikacije koju pravite.
 
-* Nastavite da čitate o [Dizajn pattern-ima](/pages/Design-Patterns.html)
+* Nastavite da čitate o [Dizajn pattern-ima](pages/Design-Patterns.html)
