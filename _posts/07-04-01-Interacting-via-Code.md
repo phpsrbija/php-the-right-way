@@ -23,7 +23,7 @@ Ovo je loša praksa iz više razloga, a ponajviše zbog toga što je ovakav kôd
 testirati i uopšte čitati i prikazaće previše polja ukoliko ne postavite limit.
 
 Iako postoji dosta načina da se interakcija ostvari, u zavisnosti da li preferirate
-[OOP]({{site.baseurl}}/#object-oriented-programming) ili [proceduralno programiranje]({{site.baseurl}}/#functional-programming),
+[OOP]({{site.baseurl}}/#object_oriented_programming) ili [proceduralno programiranje]({{site.baseurl}}/#functional_programming),
 mora postojati taj aspekt razdvajanja logike.
 
 Razmotrimo ovaj osnovni korak:

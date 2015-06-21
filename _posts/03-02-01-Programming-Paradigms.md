@@ -10,7 +10,7 @@ PHP je fleksibilan, dinamičan jezik koji podržava raznovrsne tehnike programir
 se značajno razvio, naročito nakon uvođenja solidnog objektno-orijentisanog modela u verziji PHP 5.0 (2004),
 anonimnih (lambda) funkcija i namespace-ova u verziji PHP 5.3 (2009), kao i trait-ova u PHP 5.4 (2012).
 
-### Objektno-orijentisano programiranje
+### Objektno-orijentisano programiranje {#object_oriented_programming}
 
 PHP ima vrlo upotpunjen set odlika objektno-orijentisanog programiranje, uključujući podršku za klase, apstraktne
 klase, interfejse, nasleđivanje, konstruktore, kloniranje, izuzetke i drugo.
@@ -18,7 +18,7 @@ klase, interfejse, nasleđivanje, konstruktore, kloniranje, izuzetke i drugo.
 * [Pročitajte o Objektno-orijentisanom PHP-u][oop]
 * [Pročitajte o Trait-ovima][traits]
 
-### Funkcionalno programiranje
+### Funkcionalno programiranje {#functional_programming}
 
 PHP podržava funkcije prve klase (first-class funkcije), što znači da funkcija može biti dodeljena promenljivoj. I korisnički definisane i
 ugrađene funkcije mogu biti referencirane promenljivom i pozvane dinamički. Funkcije se mogu prosleđivati kao argumenti
