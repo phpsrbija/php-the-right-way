@@ -1,6 +1,7 @@
 ---
 isChild: true
-anchor:  frameworks
+title: Framework-ovi
+anchor: frameworks
 ---
 
 ## Framework-ovi {#frameworks_title}

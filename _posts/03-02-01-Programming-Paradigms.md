@@ -1,5 +1,6 @@
 ---
 isChild: true
+title: Programerske paradigme
 anchor:  programming_paradigms
 ---
 

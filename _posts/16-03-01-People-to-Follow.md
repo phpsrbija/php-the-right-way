@@ -1,6 +1,7 @@
 ---
 isChild: true
-anchor:  people_to_follow
+title: Preporuke za praćenje
+anchor: people_to_follow
 ---
 
 ## Preporuke za praćenje {#people_to_follow_title}

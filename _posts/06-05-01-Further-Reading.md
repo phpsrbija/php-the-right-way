@@ -1,5 +1,6 @@
 ---
 isChild: true
+title: Za dalje čitanje
 anchor:  further_reading
 ---
 

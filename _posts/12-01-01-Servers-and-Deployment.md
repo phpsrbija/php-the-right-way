@@ -1,4 +1,5 @@
 ---
+title: Serveri i isporuka (deployment)
 anchor: servers_and_deployment
 ---
 

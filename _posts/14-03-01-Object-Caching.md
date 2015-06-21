@@ -1,6 +1,7 @@
 ---
 isChild: true
-anchor:  object_caching
+title: Keširanje podataka/objekata
+anchor: object_caching
 ---
 
 ## Keširanje podataka/objekata {#object_caching_title}

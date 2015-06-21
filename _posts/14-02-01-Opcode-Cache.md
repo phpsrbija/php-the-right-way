@@ -1,6 +1,7 @@
 ---
 isChild: true
-anchor:  opcode_cache
+title: Opcode keš
+anchor: opcode_cache
 ---
 
 ## Opcode keš {#opcode_cache_title}

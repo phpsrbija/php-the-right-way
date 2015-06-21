@@ -1,5 +1,6 @@
 ---
 isChild: true
+title: Instalacija za Windows
 anchor:  windows_setup
 ---
 
