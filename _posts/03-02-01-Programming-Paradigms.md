@@ -13,7 +13,7 @@ anonimnih (lambda) funkcija i namespace-ova u verziji PHP 5.3 (2009), kao i trai
 ### Objektno-orijentisano programiranje {#object_oriented_programming}
 
 PHP ima vrlo upotpunjen set odlika objektno-orijentisanog programiranje, uključujući podršku za klase, apstraktne
-klase, interfejse, nasleđivanje, konstruktore, kloniranje, izuzetke i drugo.
+klase, interfejse, nasleđivanje, konstruktore, kloniranje, izuzetke, itd.
 
 * [Pročitajte o Objektno-orijentisanom PHP-u][oop]
 * [Pročitajte o Trait-ovima][traits]
@@ -29,7 +29,7 @@ većina PHP kôda fokusira na iteriranje.
 
 Nove anonimne funkcije (sa podrškom za closures) su prisutne od verzije PHP 5.3 (2009).
 
-PHP 5.4 je dodao mogućnost da se closure poveže sa _scope-om_ objekta, a takođe i poboljšao podršku za callable tipove,
+PHP 5.4 je dodao mogućnost da se closure poveže sa _scope-om_ objekta, a takođe i poboljšao podršku za _callable_ tipove,
 tako da se oni praktično u skoro svim slučajevima mogu koristiti na isti način kao anonimne funkcije.
 
 * Nastavite sa čitanjem o [Funkcionalnom programiranju u PHP-u](pages/Functional-Programming.html)
@@ -41,7 +41,7 @@ tako da se oni praktično u skoro svim slučajevima mogu koristiti na isti nači
 
 ### Meta programiranje
 
-PHP podržava razne vidove meta programiranja preko mehanizama kao što su Reflection API i magičnih metoda (Magic
+PHP podržava razne vidove meta programiranja preko mehanizama kao što su Reflection API i "magičnih" metoda (Magic
 Methods). Postoji dosta magičnih metoda, kao što su `__get()`, `__set()`, `__clone()`, `__toString()`, `__invoke()`, itd.
 koje omogućavaju programerima da se uključe u ponašanje klase. Ruby programeri često izjavljuju da PHP-u nedostaje
 `method_missing`, ali on postoji kao `__call()` i `__callStatic()`.

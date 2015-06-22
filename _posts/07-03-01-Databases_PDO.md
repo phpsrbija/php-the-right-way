@@ -6,7 +6,7 @@ anchor: pdo_extension
 
 # PDO ekstenzija {#pdo_extension_title}
 
-[PDO] je biblioteka za apstrakciju povezivanja sa bazom podataka &mdash; dostupna od verzije PHP
+[PDO] je biblioteka za apstrakciju rada sa bazom podataka &mdash; dostupna od verzije PHP
 5.1.0 &mdash; koja obezbeđuje zajednički interfejs za komunikaciju sa više različitih tipova baza podataka.
 Tako na primer možete imati praktično identičan kôd koji radi sa MySQL i SQLite bazom:
 
@@ -31,8 +31,8 @@ sa različitim tipovima baza podataka pomoću istog API-ja.
 Ono što je još bitnije, `PDO` omogućava da bezbedno ubacite podatke koji potiču iz nekog stranog izvora (npr. ID-eve)
 u vaš SQL upit bez bojazni od SQL Injection napada. Ovo je moguće korišćenjem PDO naredbi (statements) i _bound_ parametara.
 
-Pretpostavimo da PHP skripta prima numerički ID kao parametar upita. Ovaj ID se koristi da vrati korisnički podatak iz
-baze. Ovo je `pogrešan` način da se to uradi:
+Pretpostavimo da PHP skripta prima numerički ID kao parametar upita. Ovaj ID se potom koristi da vrati podatak o korisniku iz
+baze. Ovo je `pogrešan` način:
 
 {% highlight php %}
 <?php
@@ -40,10 +40,10 @@ $pdo = new PDO('sqlite:/path/db/users.db');
 $pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- NE!
 {% endhighlight %}
 
-Ovo je katastrofalan kôd. Ubacujete "sirov" parametar u SQL upit. Bićete hakovani u trenutku putem [SQL Injection] napada. Zamislite da haker
+Ovo je katastrofalan kôd. Ubacujete "sirov" parametar u SQL upit. Bićete veoma lako hakovani putem [SQL Injection] napada. Zamislite da haker
 prosledi maliciozan `id` parametar putem URL-a kao što je `http://domain.com/?id=1%3BDELETE+FROM+users`. Ovo će postaviti
-promenljivu `$_GET['id']` na `1;DELETE FROM users` što će obrisati sve vaše korisnike! Umesto toga, trebalo bi da sanirate ID
-input korišćenjem PDO bound parametara:
+promenljivu `$_GET['id']` na `1;DELETE FROM users`, što će obrisati sve vaše korisnike! Umesto toga, trebalo bi da sanirate ID
+input korišćenjem PDO _bound_ parametara:
 
 {% highlight php %}
 <?php

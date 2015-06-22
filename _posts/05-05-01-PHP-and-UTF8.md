@@ -12,7 +12,7 @@ za naše savete na temu UTF-8.
 
 ### Nema jednostavnog rešenja. Budite pažljivi, temeljni i konzistenti.
 
-Trenutno, PHP u osnovi ne podržava Unicode. Postoje načini da se omogući da se UTF-8 ispravno
+Trenutno, PHP u osnovi ne podržava Unicode. Postoje načini da se omogući da se UTF-8 stringovi ispravno
 procesiraju, ali nisu nimalo jednostavni i zahtevaju zadiranje u praktično sve nivoe web aplikacije,
 počevši od HTML-a, pa do SQL-a i PHP-a. Pokušaćemo da na sažet i praktičan način predstavimo ovu problematiku.
 
@@ -36,7 +36,7 @@ onda jednostavno nemate sreće.
 
 Funkciju `mb_internal_encoding()` bi trebalo koristiti na početku svake PHP skripte koju pišete
 (ili na početku nekog globalnog skripta kojeg posle učitavate), a `mb_http_output()` odmah nakon
-nje u slučaju da vaša skripta ispisuje neki output. Eksplicitno definisanje enkodinga će vas lišiti dosta problema.
+nje u slučaju da vaša skripta radi neki ispis. Eksplicitno definisanje enkodinga će vas lišiti dosta problema.
 
 Takođe, dosta PHP funkcija za rad sa stringovima ima opcioni parametar putem kojeg je moguće podesiti enkoding.
 Preporuka je da uvek eksplicitno prosleđujete UTF-8 kao argument. Tako na primer `htmlentities()` funkcija
@@ -45,7 +45,7 @@ ima opciju za enkoding i uvek bi trebalo da kao vrednost tog parametra prosleđu
 
 Konačno, ako razvijate distribuiranu aplikaciju i ne možete biti sigurni da ćete imati omogućenu `mbstring` ekstenziju,
 onda razmislite o korišćenju [patchwork/utf8] Composer biblioteke. Ona će koristiti `mbstring` ako je dostupan,
-a u suprotnom, radiće fallback na odgovarajuće ne-UTF-8 funkcije.
+a u suprotnom, koristiće odgovarajuće ne-UTF-8 funkcije.
 
 [Multibyte String]: http://php.net/book.mbstring
 [patchwork/utf8]: https://packagist.org/packages/patchwork/utf8
@@ -69,7 +69,7 @@ Koristite `mb_http_output()` funkciju kako biste bili sigurni da vaša PHP skrip
 stringove u browser-u.
 
 Browser bi na osnovu HTTP odgovora trebalo da zna da li je neka stranica UTF-8 enkodovana. Prevaziđen
-način za postizanje ovoga je bio putem odgovarajućeg [charset `<meta>` taga](http://htmlpurifier.org/docs/enduser-utf8.html)
+način je bio putem odgovarajućeg [charset `<meta>` taga](http://htmlpurifier.org/docs/enduser-utf8.html)
 u `<head>` sekciji stranice. Ovaj pristup je u potpunosti validan, ali podešavanje charset-a u
 `Content-Type` header-u je zapravo [mnogo brže] (https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly).
 

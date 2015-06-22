@@ -9,8 +9,8 @@ anchor: databases_abstraction_layers
 Mnogi frejmvorci imaju sopstveni DAL koji može, a ne mora da bude "nad" [PDO-om][1].
 Oni najčešće emuliraju mogućnosti jednog sistema baze podataka koje nedostaju u drugom, tako što
 pretvaraju upite u PHP metode, dajući nam apstrakciju same baze, a ne samo konekcije na bazu kao
-što je to slučaj sa PDO-om. Ovo će naravno uneti i malo overhead-a, ali ako pravite portabilnu aplikaciju
-koja treba da radi sa MySQL, PostgreSQL i SQLite bazama, onda se malo overhead-a isplati u korist čistote kôda.
+što je to slučaj sa PDO-om. Ovo će naravno uneti i malo dodatnih "troškova", ali ako pravite portabilnu aplikaciju
+koja treba da radi sa MySQL, PostgreSQL i SQLite bazama, onda se dodatni troškovi isplate u korist čistote kôda.
 
 Neki slojevi za apstrakciju su napravljeni u skladu sa [PSR-0][psr0] i [PSR-4][psr4] namespace
 standardima, tako da mogu da se integrišu u bilo koju aplikaciju:

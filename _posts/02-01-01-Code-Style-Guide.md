@@ -27,12 +27,12 @@ i rade sa vašim kôdom, a da će aplikacije koje koriste komponente biti konzis
 * [Pročitajte o Symfony standardima kodiranja][symfony-cs]
 
 Možete da koristite [PHP_CodeSniffer][phpcs] kako biste proverili da li je vaš kôd u skladu sa nekom od ovih preporuka,
-ali i dodatke za tekst editore kao što je [Sublime Text 2][st-cs] u cilju dobijanja feedback-a u realnom vremenu.
+ali i dodatke za tekst editore kao što je [Sublime Text 2][st-cs] u cilju dobijanja rezultata provera u realnom vremenu.
 
 Automatksu korekciju izgleda kôda možete obaviti korišćenjem jednog od sledeća dva alata. Prvi je [PHP Coding Standards Fixer][phpcsfixer]
-kojeg je napravio Fabien Potencier, a koji ima veoma dobro testiran codebase. Veći je i sporiji, ali isto tako
+kojeg je napravio Fabien Potencier, a koji je veoma dobro testiran. Veći je i sporiji, ali isto tako
 veoma stabilan i koriste ga veliki projekti kao što su Magento i Symfony. Druga opcija je [php.tools][phptools],
-koji je postao popularan zahvaljujući [sublime-phpfmt][sublime-phpfmt] plugin-u. Iako je noviji, postiže značajne
+koji je postao popularan zahvaljujući [sublime-phpfmt][sublime-phpfmt] dodatku. Iako je noviji, postiže značajne
 rezultate po pitanju performansi, pa je samim tim korekcija kôda u realnom vremenu dosta tečnija.
 
 Korišćenje engleskog jezika se preporučuje u slučaju svih imenovanja u kôdu i njegovoj infrastrukturi.

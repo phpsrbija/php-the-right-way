@@ -8,7 +8,7 @@ sitemap: true
 
 PHP podržava funkcije prve klase (first-class funkcije), što znači da funkcija može biti dodeljena promenljivoj. I korisnički definisane i
 ugrađene funkcije mogu biti referencirane promenljivom i pozvane dinamički. Funkcije se mogu prosleđivati kao argumenti
-drugim funkcijama (odlika nazvana _Funkcije višeg reda_) i funkcija može vratiti druge funkcije.
+drugim funkcijama (odlika nazvana _Funkcije višeg reda_) i funkcija može vraćati druge funkcije.
 
 Rekurzija, osobina koja omogućava funkciji da poziva samu sebe, je podržana u samom jeziku, ali se
 većina PHP kôda fokusira na iteriranje.
@@ -19,7 +19,7 @@ PHP 5.4 je dodao mogućnost da se closure poveže sa _scope-om_ objekta, a tako�
 tako da se oni praktično u skoro svim slučajevima mogu koristiti na isti način kao anonimne funkcije.
 
 Najčešći slučaj korišćenja funkcija višeg reda pri implementaciji Strategy paterna. Ugrađena `array_filter()`
-funkcija od parametara zahteva niz (data) i funkciju (strategiju ili callback) koja će biti korišćena kao filter nad
+funkcija od parametara zahteva niz (podatke) i funkciju (strategiju ili callback) koja će biti korišćena kao filter nad
 svakim elementom prosleđenog niza.
 
 {% highlight php %}
@@ -34,7 +34,7 @@ $filter_even = function($item) {
 // Ugrađena array_filter funkcija prihvata niz i callback funkciju
 $output = array_filter($input, $filter_even);
 
-// Callback funkcija ne mora da bude assign-ovana nekoj promenljivoj. Ovo je takođe ispravno:
+// Callback funkcija ne mora da bude dodeljena nekoj promenljivoj. Ovo je takođe ispravno:
 $output = array_filter($input, function($item) {
     return ($item % 2) == 0;
 });
@@ -75,9 +75,9 @@ Svaka filter funkcija iz grupe prihvata samo elemente koji su veći od određene
 `criteria_greater_than` je closure sa `$min` argumentom čija je vrednost zatvorena u scope-u (prosleđuje se kao argument pri
 pozivu `criteria_greater_than` funkcije).
 
-Rano bind-ovanje se podrazumevano koristi za import `$min` promenljive u kreiranu funkciju. Za prave closure-e sa kasnim
-bind-ovanje je potrebno koristiti referencu prilikom import-a. Zamislite neku template biblioteku ili biblioteku za validaciju
-input-a, gde se definiše closure koji zatvara promenljive u scope, a pristupa im se kasnije pri izvršavanju anonimne funkcije.
+Rano bind-ovanje se podrazumevano koristi za uvoz `$min` promenljive u kreiranu funkciju. Za prave closure-e sa kasnim
+bind-ovanje je potrebno koristiti referencu prilikom uvoza promenljive. Zamislite neku templejt biblioteku ili biblioteku za validaciju
+ulaznih podataka, gde se definiše closure koji zatvara promenljive u scope, a pristupa im se kasnije pri izvršavanju anonimne funkcije.
 
 * [Pročitajte o anonimnim funkcijama][anonymous-functions]
 * [Više detalja o Closures RFC-u][closures-rfc]

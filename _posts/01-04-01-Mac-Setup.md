@@ -6,7 +6,7 @@ anchor: mac_setup
 
 ## Instalacija za Mac {#mac_setup_title}
 
-OS X dolazi za preinstaliranom PHP verzijom koja je obično malo starija u odnosu na poslednju stabilnu verziju.
+OS X dolazi sa preinstaliranom PHP verzijom koja je obično malo starija u odnosu na poslednju stabilnu verziju.
 Mountain Lion dolazi sa verzijom 5.3.10, Mavericks sa 5.4.17, Yosemite sa 5.5.9, ali to nije dovoljno dobro
 pošto je dostupna novija verzija PHP 5.6.
 

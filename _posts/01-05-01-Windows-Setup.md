@@ -7,7 +7,7 @@ anchor:  windows_setup
 ## Instalacija za Windows {#windows_setup_title}
 
 Binarnu verziju možete preuzeti na [windows.php.net/download][php-downloads]. Nakon što raspakujete PHP,
-preporučuje se da podesite [PATH][windows-path] na root vašeg PHP foldera (lokacija php.exe fajla) kako
+preporučuje se da podesite [PATH][windows-path] na vaš PHP folder (lokacija php.exe fajla) kako
 biste mogli da izvršavate PHP sa bilo kog mesta.
 
 Za učenje i razvoj u lokalu, možete koristiti ugrađeni web server sa PHP 5.4+ tako da se ne morate
@@ -19,7 +19,7 @@ tako da morate obratiti pažnju na te razlike ako razvijate na Windows-u, a prod
 
 Ako je potrebno da vam produkcijsko okruženje bude na Windows-u, onda će IIS7 pružiti najveću stabilnost i najbolje performanse.
 Možete koristiti [phpmanager][phpmanager] (GUI dodatak za IIS7) za pojednostavljenje konfiguracije i upravljanja PHP-om.
-IIS7 dolazi sa ugrađenim FastCGI-om, spremnim za upotrebu, i sve što je potrebno je konfigurisati PHP kao handler.
+IIS7 dolazi sa ugrađenim FastCGI-om, spremnim za upotrebu, i sve što je potrebno je konfigurisati PHP kao _handler_.
 Za podršku i dodatne informacije pogledajte [deo posvećen PHP-u na iis.net][php-iis].
 
 

@@ -6,7 +6,7 @@ sitemap: true
 
 # Design Patterns
 
-Postoje brojni načini i pristupi u izgradnji kôda za vašu web aplikaciju, samo je pitanje koliko ćete vremena posvetiti arhitekturi vašeg sistema.
+Postoje brojni pristupi i različiti načini za izgradnju kôda vaše web aplikacije, samo je pitanje koliko ćete vremena posvetiti arhitekturi vašeg sistema.
 Obično je dobra ideja da se vodite nekim uobičajenim šablonima i praksama, zato što će na taj način vaš kôd biti jednostavniji za održavanje i
 lakši za razumevanje.
 
@@ -16,8 +16,8 @@ lakši za razumevanje.
 
 ## Factory
 
-Jedan od najčešće korišćenih dizajn pattern-a je Factory. U njegovom slučaju, neka klasa jednostavno treba da kreira
-objekat koji nameravate da koristite. Pogledajmo sledeći primer Factory pattern-a:
+Jedan od najčešće korišćenih dizajn pattern-a je Factory. U njegovom slučaju, sve što neka klasa radi jeste kreiranje
+objekta kojeg nameravate da koristite. Pogledajmo sledeći primer Factory pattern-a:
 
 {% highlight php %}
 <?php
@@ -55,11 +55,11 @@ print_r($veyron->getMakeAndModel()); //ispisuje "Bugatti Veyron"
 Ovaj kôd koristi Factory za kreiranje instance Automobile klase. Postoje dva moguća benefita pisanja kôda
 na ovaj način. Prvi je to što ćete u slučaju izmene, preimenovanja ili zamene Automobile klase, morati da
 menjate jedino kôd u njenom factory-u, umesto na svakom mestu gde se koristi klasa Automobile. Druga prednost
-je ta što u slučaju da je samo kreiranje objekta kompleksna operacija, sav taj posao možete obaviti u factory
+je ta što u slučaju da je sâmo kreiranje objekta kompleksna operacija, sav taj posao možete obaviti u factory
 klasi, umesto da ga ponavljate svaki put kada vam treba nova instanca.
 
 Korišćenje Factory pattern-a nije uvek neophodno (ispravno). Prethodni primer je toliko prost da bi korišćenje
-factory-a bio samo nepotrebna komplikacija. Ipak, ako radite na velikom i kompleksnom projektu korišćenje
+factory-a bio samo nepotrebna komplikacija. Ipak, ako radite na velikom i kompleksnom projektu, korišćenje
 factory-a vas možete lišiti dosta problema.
 
 * [Factory pattern (Wikipedia)](https://en.wikipedia.org/wiki/Factory_pattern)
@@ -145,24 +145,24 @@ kako bi bila onemogućena deserijalizacija instance preko globalne funkcije [`un
 u statičkom metodu `getInstance()` putem ključne reči `static`. Upravo ovo omogućava nasleđivanje klase `Singleton` u primeru.
 
 Signleton pattern je koristan u situacijama kada treba da obezbedimo da imamo samo jednu instancu neke klase
-u toku jednog kompletnog request ciklusa u aplikaciji. Tipičan primer su globalni objekti (kao što je neka Configuration klasa)
+u toku jednog kompletnog ciklusa u aplikaciji. Tipičan primer su globalni objekti (kao što je neka Configuration klasa)
 ili deljeni resursi (kao što je event queue).
 
 Treba da budete oprezni pri korišćenju Singleton pattern-a, jer sama njegova priroda uvodi globalno stanje
 u vašu aplikaciju, čime se smanjuje njena testabilnost. U većini slučajeva, dependency injection princip može (i treba)
 da se koristi umesto Singleton klasa. Korišćenjem dependency injection-a ne uvodimo nepotrebne direktne zavisnosti u
-dizajn naše aplikacije, jer objekat koji bude koristio taj neki deljen ili globalan resurs neće imati znanja o
+dizajn naše aplikacije, jer objekat koji bude koristio taj neki deljeni ili globalni resurs neće imati znanja o
 tome o kojoj se tačno klasi radi.
 
 * [Singleton pattern (Wikipedia)](https://en.wikipedia.org/wiki/Singleton_pattern)
 
 ## Strategy
 
-Primenom Strategy pattern-a enkapsulirate grupu određenih algoritama, pri je klijentska klasa odgovorna za
+Primenom Strategy pattern-a enkapsulirate grupu određenih algoritama, pri čemu je klijentska klasa odgovorna za
 instanciranje konkretnog algoritma, bez znanja o načinu na koji je on implementiran. Postoji nekoliko varijacija
 ovog pattern-a, a najjednostavniji od njih će biti demonstriran u nastavku.
 
-Prvi snippet prikazuje grupu algoritama za ispis nekog niza podataka: jedan vrši nativnu, drugi radi JSON
+Prvi deo prikazuje grupu algoritama za ispis nekog niza podataka: jedan vrši nativnu, drugi radi JSON
 serijalizaciju, a treći ga ostavlja netaknutim:
 
 {% highlight php %}
@@ -227,7 +227,7 @@ class SomeClient
 }
 {% endhighlight %}
 
-Ova klijentska klasa  ima privatno svojstvo koje mora da bude prosleđeno prilikom instanciranja,
+Ova klijentska klasa ima privatno svojstvo koje mora da bude prosleđeno prilikom instanciranja,
 pri čemu to mora da bude 'OutputInterface' implementacija. Nakon što je ovo svojstvo postavljeno,
 poziv loadOutput() metoda će pozvati load() metod neke konkretne Output klase.
 
@@ -249,7 +249,7 @@ $data = $client->loadOutput();
 
 ## Front Controller
 
-U slučaju Front Controller pattern postoji jedinstvena ulazna tačka u vašoj aplikaciji (npr. index.php)
+U slučaju Front Controller pattern-a postoji jedinstvena ulazna tačka u vašoj aplikaciji (npr. index.php)
 koja prihvata sve zahteve. Taj deo kôda je odgovoran za učitavanje svih zavisnosti, procesiranje samog zahteva
 i slanja odgovora browser-u. Ovaj pattern može biti veoma koristan iz razloga što pospešuje modularan kôd
 i obezbeđuje cetralno mesto za ubacivanje nekog kôda koji treba da se izvršava na svaki zahtev (kao na primer
@@ -260,13 +260,13 @@ saniranje ulaznih podataka).
 ## Model-View-Controller
 
 Model-View-Controller (MVC) pattern i srodni pattern-i kao što su HMVC i MVVM vam omogućavaju da podelite kôd
-na logičke objekte pri čemu svaki ima posebnu namenu. Model predstavlja sloj business logike, i najčeće obavlja
+na logičke objekte pri čemu svaki ima posebnu namenu. Model predstavlja sloj business logike i najčeće obavlja
 manipulaciju podacima (dohvatanje, čuvanje) koji se koriste u okviru aplikacije. Kontroleri (Controllers)
-prihvataju request, uzimaju i obrađuju podatke od modela, a zatim učitavaju View-ove kako bi poslali response.
+prihvataju zahtev (request), uzimaju i obrađuju podatke od modela, a zatim učitavaju View-ove kako bi poslali odgovor (response).
 View-ovi su templejti (markup, xml i slično) za prikaz podataka čiji se rezultujući output šalje browser-u
-u okviru samog response-a.
+u okviru samog odgovora.
 
-MVC je najčešće korišćeni arhitekturalni pattern u popularnim [PHP framework-ovima](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
+MVC je najčešće korišćeni arhitekturalni pattern u popularnim [PHP frejmvorcima](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
 
 Naučite više o MVC-u i srodnim pattern-ima:
 

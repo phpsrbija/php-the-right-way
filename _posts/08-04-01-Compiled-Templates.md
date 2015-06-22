@@ -14,7 +14,7 @@ preko nasleđivanja i pojednostavljenih kontrolnih struktura, kompajlirani templ
 programskih jezika, za šta je dobar primer [Mustache]. Pošto se templejti moraju kompajlirati,
 neizbežan je određeni negativan uticaj na performanse, koji je ipak zanemarljiv ako se koristi keširanje.
 
-**Smarty omogućava automatsko escape-ovanje, ali ova funkcionalnost NIJE podrazumevano uključena.*
+**Smarty omogućava automatsko _escape-ovanje_, ali ova funkcionalnost NIJE podrazumevano uključena.*
 
 ### Jednostavan primer kompajliranog templejta
 
