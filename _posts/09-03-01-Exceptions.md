@@ -9,12 +9,12 @@ anchor:  exceptions
 Izuzeci su sastavni deo većine popularnih programskih jezika, ali ih PHP programeri često previđaju.
 Jezici kao što je Ruby su izuzetno "exception-intenzivnim", tako da kad god nešto pođe po zlu, kao
 na primer neuspeo HTTP request ili upit ka bazi podataka, ili čak u slučaju nepostojeće slike, Ruby
-(odnosno gem-ovi koji se koriste) će ispisati izuzetak na ekranu tako da odmah znate u čemu je problem.
+(odnosno gem-ovi koji se koriste) će ispisati izuzetak na ekranu tako da odmah znate da je došlo do greške.
 
-PHP je sam po sebi tolerantan što se ovoga tiče, tako da će poziv `file_get_contents()` funkcije
-može rezultovati samo sa vraćenim `FALSE` i warning-om.
-Mnogi stariji PHP framework-ovi kao što je CodeIgniter će samo vratiti false, logovati poruku u
-njihove logove i eventualno će vam omogućiti da koristite metod kao što je `$this->upload->get_error()`
+PHP je sam po sebi tolerantan što se ovoga tiče, tako da poziv `file_get_contents()` funkcije
+može rezultovati samo sa vraćenim `FALSE` i upozorenjem (warning).
+Mnogi stariji PHP frejmvorci kao što je CodeIgniter će samo vratiti false, logovati poruku u
+njegov odgovarajući log i eventualno će vam omogućiti da koristite metod kao što je `$this->upload->get_error()`
 kako biste videli šta se zapravo desilo. Problem s tim je što mora da tražite grešku i čitate dokumentaciju
 kako biste našli odgovarajući error metod, umesto da to bude veoma očigledno.
 
