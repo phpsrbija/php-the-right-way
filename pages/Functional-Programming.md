@@ -15,7 +15,7 @@ većina PHP kôda fokusira na iteriranje.
 
 Anonimne (anonymous) funkcije (sa podrškom za closures) su prisutne od verzije PHP 5.3 (2009).
 
-PHP 5.4 je dodao mogućnost da se closure poveže sa _scope-om_ objekta, a takođe i poboljšao podršku za _callable_ tipove,
+PHP 5.4 je dodao mogućnost da se closure poveže sa obimom (scope) objekta, a takođe i poboljšao podršku za _callable_ tipove,
 tako da se oni praktično u skoro svim slučajevima mogu koristiti na isti način kao anonimne funkcije.
 
 Najčešći slučaj korišćenja funkcija višeg reda pri implementaciji Strategy paterna. Ugrađena `array_filter()`
@@ -42,9 +42,9 @@ $output = array_filter($input, function($item) {
 print_r($output);
 {% endhighlight %}
 
-Closure je anonimna funkcija koja može da pristupi promenljivama izvan svog scope-a bez korišćenja globalnih
+Closure je anonimna funkcija koja može da pristupi promenljivama izvan svog opsega (scope) bez korišćenja globalnih
 promenljivih. U teoriji, closure je funkcija sa određenim argumentima koji su zatvoreni njenom definicijom.
-Closure funkcije mogu da prevaziđu ograničenja po pitanju scope-a na dosta čist način.
+Closure funkcije mogu da prevaziđu ograničenja po pitanju opsega na dosta čist način.
 
 U sledećem primeru je closure u vidu funkcije koja vraća jednu filter funkciju za potrebe `array_filter()` iz
 grupe filter funkcija.
@@ -72,12 +72,12 @@ print_r($output); // items > 3
 {% endhighlight %}
 
 Svaka filter funkcija iz grupe prihvata samo elemente koji su veći od određene minimalne vrednosti. Filter kojeg vraća
-`criteria_greater_than` je closure sa `$min` argumentom čija je vrednost zatvorena u scope-u (prosleđuje se kao argument pri
+`criteria_greater_than` je closure sa `$min` argumentom čija je vrednost zatvorena u opsegu funkcije (prosleđuje se kao argument pri
 pozivu `criteria_greater_than` funkcije).
 
 Rano bind-ovanje se podrazumevano koristi za uvoz `$min` promenljive u kreiranu funkciju. Za prave closure-e sa kasnim
 bind-ovanje je potrebno koristiti referencu prilikom uvoza promenljive. Zamislite neku templejt biblioteku ili biblioteku za validaciju
-ulaznih podataka, gde se definiše closure koji zatvara promenljive u scope, a pristupa im se kasnije pri izvršavanju anonimne funkcije.
+ulaznih podataka, gde se definiše closure koji zahvata promenljive u opsegu, a pristupa im se kasnije pri izvršavanju anonimne funkcije.
 
 * [Pročitajte o anonimnim funkcijama][anonymous-functions]
 * [Više detalja o Closures RFC-u][closures-rfc]

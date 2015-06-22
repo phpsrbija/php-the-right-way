@@ -135,8 +135,7 @@ function array()
 
 - Ako je dužina neke vaše linije kôda veća od preporučenih 120 karaktera, razmislite o konkatenaciji te linije
 - Radi bolje preglednosti, najbolje je koristiti operatore za konkatenaciju umesto konkatenacije operatora za dodelu vrednosti
-- Unutar originalnog scope-a neke promenljive, koristite indentaciju (uvlačenje teksta) kada konkatenacija prelazi u sledeći red
-
+- Unutar originalnog opsega (scope) neke promenljive, koristite indentaciju (uvlačenje teksta) kada konkatenacija prelazi u sledeći red
 
 {% highlight php %}
 <?php
