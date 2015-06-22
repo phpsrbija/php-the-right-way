@@ -1,23 +1,23 @@
 ---
 layout: page
-title:  Design Patterns
+title: Dizajn paterni (Design patterns)
 sitemap: true
 ---
 
-# Design Patterns
+# Dizajn paterni (Design patterns)
 
 Postoje brojni pristupi i različiti načini za izgradnju kôda vaše web aplikacije, samo je pitanje koliko ćete vremena posvetiti arhitekturi vašeg sistema.
 Obično je dobra ideja da se vodite nekim uobičajenim šablonima i praksama, zato što će na taj način vaš kôd biti jednostavniji za održavanje i
 lakši za razumevanje.
 
-* [Arhitekturalni pattern (Wikipedia)](https://en.wikipedia.org/wiki/Architectural_pattern)
-* [Design pattern (Wikipedia)](https://en.wikipedia.org/wiki/Software_design_pattern)
-* [Primeri implementacija design pattern-a](https://github.com/domnikl/DesignPatternsPHP)
+* [Arhitekturalni patern (Wikipedia)](https://en.wikipedia.org/wiki/Architectural_pattern)
+* [Dizajn patern (Wikipedia)](https://en.wikipedia.org/wiki/Software_design_pattern)
+* [Primeri implementacija dizajn paterna](https://github.com/domnikl/DesignPatternsPHP)
 
 ## Factory
 
-Jedan od najčešće korišćenih dizajn pattern-a je Factory. U njegovom slučaju, sve što neka klasa radi jeste kreiranje
-objekta kojeg nameravate da koristite. Pogledajmo sledeći primer Factory pattern-a:
+Jedan od najčešće korišćenih dizajn paterna je Factory. U njegovom slučaju, sve što neka klasa radi jeste kreiranje
+objekta kojeg nameravate da koristite. Pogledajmo sledeći primer Factory paterna:
 
 {% highlight php %}
 <?php
@@ -58,16 +58,16 @@ menjate jedino kôd u njenom factory-u, umesto na svakom mestu gde se koristi kl
 je ta što u slučaju da je sâmo kreiranje objekta kompleksna operacija, sav taj posao možete obaviti u factory
 klasi, umesto da ga ponavljate svaki put kada vam treba nova instanca.
 
-Korišćenje Factory pattern-a nije uvek neophodno (ispravno). Prethodni primer je toliko prost da bi korišćenje
+Korišćenje Factory paterna nije uvek neophodno (ispravno). Prethodni primer je toliko prost da bi korišćenje
 factory-a bio samo nepotrebna komplikacija. Ipak, ako radite na velikom i kompleksnom projektu, korišćenje
 factory-a vas možete lišiti dosta problema.
 
-* [Factory pattern (Wikipedia)](https://en.wikipedia.org/wiki/Factory_pattern)
+* [Factory patern (Wikipedia)](https://en.wikipedia.org/wiki/Factory_pattern)
 
 ## Singleton
 
 Pri razvoju web aplikacija, često ima smisla konceptualno i arhitekturalno omogućiti korišćenje samo jedne
-instance određene klase. Singleton pattern omogućava upravo tako nešto.
+instance određene klase. Singleton patern omogućava upravo tako nešto.
 
 {% highlight php %}
 <?php
@@ -132,7 +132,7 @@ var_dump($anotherObj === Singleton::getInstance());      // bool(false)
 var_dump($anotherObj === SingletonChild::getInstance()); // bool(true)
 {% endhighlight %}
 
-Ovaj kôd implementira singleton pattern koristeći [*statičku* promenljivu](http://php.net/language.variables.scope#language.variables.scope.static)
+Ovaj kôd implementira singleton patern koristeći [*statičku* promenljivu](http://php.net/language.variables.scope#language.variables.scope.static)
 i statički `getInstance()` metod. Obratite pažnju i na sledeće:
 
 * Konstruktor [`__construct()`](http://php.net/language.oop5.decon#object.construct) je deklarisan kao protected
@@ -144,23 +144,23 @@ kako bi bila onemogućena deserijalizacija instance preko globalne funkcije [`un
 * Nova instanca se kreira prek [late static binding](http://php.net/language.oop5.late-static-bindings) mehanizma
 u statičkom metodu `getInstance()` putem ključne reči `static`. Upravo ovo omogućava nasleđivanje klase `Singleton` u primeru.
 
-Signleton pattern je koristan u situacijama kada treba da obezbedimo da imamo samo jednu instancu neke klase
+Signleton patern je koristan u situacijama kada treba da obezbedimo da imamo samo jednu instancu neke klase
 u toku jednog kompletnog ciklusa u aplikaciji. Tipičan primer su globalni objekti (kao što je neka Configuration klasa)
 ili deljeni resursi (kao što je event queue).
 
-Treba da budete oprezni pri korišćenju Singleton pattern-a, jer sama njegova priroda uvodi globalno stanje
+Treba da budete oprezni pri korišćenju Singleton paterna, jer sama njegova priroda uvodi globalno stanje
 u vašu aplikaciju, čime se smanjuje njena testabilnost. U većini slučajeva, dependency injection princip može (i treba)
 da se koristi umesto Singleton klasa. Korišćenjem dependency injection-a ne uvodimo nepotrebne direktne zavisnosti u
 dizajn naše aplikacije, jer objekat koji bude koristio taj neki deljeni ili globalni resurs neće imati znanja o
 tome o kojoj se tačno klasi radi.
 
-* [Singleton pattern (Wikipedia)](https://en.wikipedia.org/wiki/Singleton_pattern)
+* [Singleton patern (Wikipedia)](https://en.wikipedia.org/wiki/Singleton_pattern)
 
 ## Strategy
 
-Primenom Strategy pattern-a enkapsulirate grupu određenih algoritama, pri čemu je klijentska klasa odgovorna za
+Primenom Strategy paterna enkapsulirate grupu određenih algoritama, pri čemu je klijentska klasa odgovorna za
 instanciranje konkretnog algoritma, bez znanja o načinu na koji je on implementiran. Postoji nekoliko varijacija
-ovog pattern-a, a najjednostavniji od njih će biti demonstriran u nastavku.
+ovog paterna, a najjednostavniji od njih će biti demonstriran u nastavku.
 
 Prvi deo prikazuje grupu algoritama za ispis nekog niza podataka: jedan vrši nativnu, drugi radi JSON
 serijalizaciju, a treći ga ostavlja netaknutim:
@@ -245,30 +245,30 @@ $data = $client->loadOutput();
 
 {% endhighlight %}
 
-* [Strategy pattern (Wikipedia)](http://en.wikipedia.org/wiki/Strategy_pattern)
+* [Strategy patern (Wikipedia)](http://en.wikipedia.org/wiki/Strategy_pattern)
 
 ## Front Controller
 
-U slučaju Front Controller pattern-a postoji jedinstvena ulazna tačka u vašoj aplikaciji (npr. index.php)
+U slučaju Front Controller paterna postoji jedinstvena ulazna tačka u vašoj aplikaciji (npr. index.php)
 koja prihvata sve zahteve. Taj deo kôda je odgovoran za učitavanje svih zavisnosti, procesiranje samog zahteva
-i slanja odgovora browser-u. Ovaj pattern može biti veoma koristan iz razloga što pospešuje modularan kôd
+i slanja odgovora browser-u. Ovaj patern može biti veoma koristan iz razloga što pospešuje modularan kôd
 i obezbeđuje cetralno mesto za ubacivanje nekog kôda koji treba da se izvršava na svaki zahtev (kao na primer
 saniranje ulaznih podataka).
 
-* [Front Controller pattern (Wikipedia)](https://en.wikipedia.org/wiki/Front_Controller_pattern)
+* [Front Controller patern (Wikipedia)](https://en.wikipedia.org/wiki/Front_Controller_pattern)
 
 ## Model-View-Controller
 
-Model-View-Controller (MVC) pattern i srodni pattern-i kao što su HMVC i MVVM vam omogućavaju da podelite kôd
+Model-View-Controller (MVC) patern i srodni paterni kao što su HMVC i MVVM vam omogućavaju da podelite kôd
 na logičke objekte pri čemu svaki ima posebnu namenu. Model predstavlja sloj business logike i najčeće obavlja
 manipulaciju podacima (dohvatanje, čuvanje) koji se koriste u okviru aplikacije. Kontroleri (Controllers)
 prihvataju zahtev (request), uzimaju i obrađuju podatke od modela, a zatim učitavaju View-ove kako bi poslali odgovor (response).
 View-ovi su templejti (markup, xml i slično) za prikaz podataka čiji se rezultujući output šalje browser-u
 u okviru samog odgovora.
 
-MVC je najčešće korišćeni arhitekturalni pattern u popularnim [PHP frejmvorcima](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
+MVC je najčešće korišćeni arhitekturalni patern u popularnim [PHP frejmvorcima](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
 
-Naučite više o MVC-u i srodnim pattern-ima:
+Naučite više o MVC-u i srodnim paternima:
 
 * [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93View%E2%80%93Controller)
 * [HMVC](https://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller)
