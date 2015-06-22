@@ -70,8 +70,8 @@ stringove u browser-u.
 
 Browser bi na osnovu HTTP odgovora trebalo da zna da li je neka stranica UTF-8 enkodovana. Prevaziđen
 način je bio putem odgovarajućeg [charset `<meta>` taga](http://htmlpurifier.org/docs/enduser-utf8.html)
-u `<head>` sekciji stranice. Ovaj pristup je u potpunosti validan, ali podešavanje charset-a u
-`Content-Type` header-u je zapravo [mnogo brže] (https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly).
+u `<head>` sekciji stranice. Ovaj pristup je u potpunosti validan, ali podešavanje seta karaktera (charset) kroz
+`Content-Type` _HTTP header_ je zapravo [mnogo brže] (https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly).
 
 {% highlight php %}
 <?php
