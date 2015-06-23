@@ -6,7 +6,7 @@ anchor: data_filtering
 
 ## Filtriranje podataka {#data_filtering_title}
 
-Apsolutno nikada ne verujte "stranom" (korisnikovom) input-u koji se šalje u vaš PHP kôd. Uvek filtrirajte i validirajte
+Apsolutno nikada ne verujte "stranom" (korisnikovom) ulaznom podatku (input) koji se šalje u vaš PHP kôd. Uvek filtrirajte i validirajte
 strani input pre nego što ga upotrebite u kôdu. Funkcije `filter_var()` i `filter_input()` se koriste za filtriranje
 nekog teksta, kao i za njegovu validiciju (npr. email adrese).
 
