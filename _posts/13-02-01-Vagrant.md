@@ -5,29 +5,32 @@ anchor:  vagrant
 
 ## Vagrant {#vagrant_title}
 
-[Vagrant] helps you build your virtual boxes on top of the known virtual environments and will configure these
-environments based on a single configuration file. These boxes can be set up manually, or you can use "provisioning"
-software such as [Puppet] or [Chef] to do this for you. Provisioning the base box is a great way to ensure that
-multiple boxes are set up in an identical fashion and removes the need for you to maintain complicated "set up"
-command lists. You can also "destroy" your base box and recreate it without many manual steps, making it easy to create
-a "fresh" installation.
 
-Vagrant creates folders for sharing your code between your host and your virtual machine, which means that you can
-create and edit your files on your host machine and then run the code inside your virtual machine.
+[Vagrant] vam pomaže u kreiranju virtuelnih kutija, oslanjaju ći se na poznato virtuelno okruženje koga konfiguriše na 
+osnovu jednog konfiguracionog fajla. Virtuelne kutije možete podesiti ručno ili koristeći "provisioning" softvere 
+kao što su [Puppet] ili [Chef] koji će obaviti manuelni posao za vas.
 
-### A little help
+Kreiranje **osnovne virtuelne kutije** je dobar način da se uverite da su sve ostale kutije podešene na isti način 
+i otklanja potrebu za ručnim izvršavanjem komplikovanih inicijalnih komandi. Takođe, možete "uništiti" vašu osnovnu 
+virtuelnu kutiju i ponovo je kreirati bez dodatnih koraka. Na taj način omogućeno je da lako kreirate svežu instalaciju. 
 
-If you need a little help to start using Vagrant there are some services that might be useful:
+Vagrant kreira folder za deljenje vašeg koda između host-a i vaše virtuene mašine, tako da možete 
+kreirati i menjati fajlove na host mašini i potom ih pokrenuti unutar virtuelne mašine.
 
-- [Rove][Rove]: service that allows you to pre-generate typical Vagrant builds, PHP among the options. The provisioning is
-made with Chef.
-- [Puphpet][Puphpet]: simple GUI to set up virtual machines for PHP development. **Heavily focused in PHP**. Besides local VMs,
-it can be used to deploy to cloud services as well. The provisioning is made with Puppet.
-- [Protobox][Protobox]: is a layer on top of vagrant and a web GUI to setup virtual machines for web development. A single YAML
-document controls everything that is installed on the virtual machine.
-- [Phansible][Phansible]: provides an easy to use interface that helps you generate Ansible Playbooks for PHP based projects.
+### Mala pomoć
 
+Ako vam treba pomoć za prve korake u korišćenju Vagrant alata, pogledajte sledeće linkove/servise:
 
+- [Vagrant za početnike][Vagrant_za_pocetnike]: Članak koji detaljno opisuje upotrebu Vagranta u realnim situacijama.
+- [Rove][Rove]: Servis koji omogućava generisanje osnovnog Vagrant okruženja, a PHP je među opcijama. 
+Obezbeđuje se preko Chef alata.
+- [Puphpet][Puphpet]: Jednostavan GUI koji podešava virtuelne mašine za PHP razvoj. **Izrazito orijentisan ka PHP-u**. 
+Pored lokalnih VMa, može se koristiti za deploy servisa u oblaku. Obezbeđuje se preko Puppet alata. 
+- [Protobox][Protobox]: Predstavlja sloj na vrhu Vagranta koji sadrži veb GUI za podešavanje virtuelnih mašina za veb razvoj. 
+Jedan YAML fajl kontroliše sve što je instalirano na virtuelnoj mašini.
+- [Phansible][Phansible]: Obezbeđuje jednostavan interfejs koji pomaže u generisanju Ansible Playbooks za PHP aplikacije.
+
+[Vagrant_za_pocetnike]: http://viewsource.rs/uvod-u-vagrant-alat-za-jednostavno-podesavanje-razvojnog-okruzenja/
 [Vagrant]: http://vagrantup.com/
 [Puppet]: http://www.puppetlabs.com/
 [Chef]: http://www.opscode.com/

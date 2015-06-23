@@ -9,7 +9,7 @@ anchor: basic_concept
 Ovaj koncept se može demonstrirati jednim jednostavnim primerom.
 
 Imamo klasu `Database` koja zahteva adapter kako bi komunicirala sa bazom podataka. Instanciranjem adaptera
-direktno u konstruktoru kreiramo čvrstu zavisnost. Ovo znatno otežava testiranje i čini klasu `Database`
+direktno u konstruktoru kreiramo "čvrstu" zavisnost. Ovo znatno otežava testiranje i čini klasu `Database`
 usko vezanom za konkretnu adapter implementaciju.
 
 {% highlight php %}
@@ -49,4 +49,4 @@ class MysqlAdapter {}
 {% endhighlight %}
 
 Sada klasi `Database` ubacujemo njen dependency umesto da ga ona sama kreira. Mogli smo čak da napravimo i
-metod za njegovo set-ovanje, ili u slučaju da je polje `$adapter` javno, mogli smo da ga postavimo direktno.
+metod za njegovo postavljanje, ili u slučaju da je polje `$adapter` javno, mogli smo da ga postavimo direktno.

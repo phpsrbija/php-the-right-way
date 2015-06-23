@@ -12,4 +12,4 @@ Sa [Wikipedia](http://en.wikipedia.org/wiki/Dependency_injection)-je:
 
 Ovaj citat predstavlja koncept mnogo komplikovanijim nego što on to zaista jeste. Dependency Injection
 nekoj komponenti dostavlja neophodne zavisnosti (dependencies) bilo putem konstruktora, poziva
-odgovarajućih setter metoda ili direktnim setovanjem polja. Jako jednostavno.
+odgovarajućih setter metoda ili direktnim postavljanjem polja. Jako jednostavno.

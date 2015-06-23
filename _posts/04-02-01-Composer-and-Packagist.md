@@ -9,27 +9,25 @@ anchor:  composer_and_packagist
 Composer je **sjajan** menadžer zavisnosti za PHP. Navedite zavisnosti vašeg projekta u `composer.json` fajlu i sa par
 jednostavnih komandi, Composer će automatski preuzeti zavisnosti i podesiti autoloading umesto vas.
 
-Postoji dosta PHP biblioteka koje su kompatibilne sa Composer-om, spremne da se koriste u vašem projektu. Ovi
+Postoji dosta PHP biblioteka koje su kompatibilne sa Composer-om, spremne za korišćenje u vašem projektu. Ovi
 "paketi" su dostupni na [Packagist]-u, zvaničnom repozitorijumu za PHP biblioteke kompatibilne sa Composer-om.
 
 ### Instalacija Composer-a
 
 Composer možete da instalirate lokalno (u vašem radnom direktorijumu; mada se to više ne preporučuje) ili
-globalno (npr. u /usr/local/bin). Ako pretpostavimo da želite da instalirate Composer lokalno, iz root
-direktorijuma vašeg projekta izvršite:
+globalno (npr. u /usr/local/bin). Ako želite da instalirate Composer lokalno, iz root direktorijuma vašeg projekta izvršite:
 
 {% highlight console %}
 curl -s https://getcomposer.org/installer | php
 {% endhighlight %}
 
-This will download `composer.phar` (a PHP binary archive). You can run this with `php` to manage your project
-dependencies.
-<strong>Please Note:</strong> If you pipe downloaded code directly into an interpreter, please read the
-code online first to confirm it is safe.
+Ovo će preuzeti `composer.phar` (PHP arhivu). Ovaj fajl možete pokretati putem `php` komande, kako biste
+upravljali zavisnostima projekta. <strong>Napomena:</strong> Ako nadovezujete (pipe) neki kôd kojeg preuzimate direktno
+u interpreter, obavezno prethodno proverite sadržaj kako biste se uverili da je bezbedan.
 
 #### Instalacija na Windows-u
 
-U slučaju Windows korisnika, najjednostavniji način za instalaciju je putem [ComposerSetup] installer-a,
+U slučaju Windows korisnika, najjednostavniji način za instalaciju je putem [ComposerSetup] instalera,
 koji radi globalnu instalaciju i podešava vaš `$PATH`, tako da možete pozivati `composer` komandu iz
 bilo kog foldera.
 
@@ -37,11 +35,11 @@ bilo kog foldera.
 
 Ručna instalacija Composer-a je napredna tehnika. Međutim, postoje razlozi zbog kojih bi se programer radije
 odlučio za ovu opciju nego za interaktivnu proceduru instalacije. Interaktivna instalacija proverava vašu PHP
-instalaciju kako bi obezbedila da:
+instalaciju kako bi se obezbedilo sledeće:
 
-- se koristi dovoljno visoka verzija PHP-a
+- dovoljno visoka verzija PHP-a
 - `.phar` fajlovi mogu da se ispravno izvrše
-- postoje dovoljna ovlašćenja nad određenim direktorijumima
+- dovoljna ovlašćenja nad određenim direktorijumima
 - određene problematične ekstenzije nisu učitane
 - određene `php.ini` opcije su podešene
 
@@ -98,13 +96,13 @@ Sada možete koristiti zavisnosti i one će se po zahtevu automatski učitavati.
 
 Composer kreira fajl `composer.lock` koji čuva tačnu verziju svakog paketa kojeg je preuzeo kada ste prvi put izvršili
 `composer install` komandu. Ako na vašem projektu radite sa drugim programerima, a fajl `composer.lock` je distribuiran (verzionisan),
-kada i oni pokrenu `composer install` dobiće iste verzije kao i vi. Da biste ažurirali vaše zavisnosti, koristite `composer update` komandu.
+nakon što oni pokrenu `composer install`, dobiće iste verzije kao i vi. Da biste ažurirali vaše zavisnosti, koristite `composer update` komandu.
 
 Ovo je korisno u situacijama kada fleksibilno definišete zahteve za verzije. Tako na primer zahtev verzije `~1.8` znači "sve što je novije
 od verzije `1.8.0`, ali manje od `2.0.x-dev`". Takođe možete koristiti i `*` wildcard kao u slučaju `1.8.*`. Sada će
 `composer update` komanda ažurirati sve vaše zavisnosti na najnoviju verziju koja odgovara ograničenjima koja ste definisali.
 
-### Obaveštenja o update-ima
+### Obaveštenja o novim verzijama
 
 Da biste dobijali obaveštenja o novim verzijama paketa možete se prijaviti na [VersionEye] web servisu
 koji može da prati `composer.json` fajlove na vašim GitHub ili BitBucket nalozima i da vam šalje mejlove sa

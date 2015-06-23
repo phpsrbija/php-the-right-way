@@ -42,9 +42,9 @@ if (strpos('testing', 'test') !== false) {    // true, zahvaljujući striktnom p
 
 ### If izrazi
 
-Prilikom korišćenja 'if/else' izraza u nekoj funkciji ili klasa, postoji zabluda da 'else' uvek mora biti
+Prilikom korišćenja 'if/else' izraza u nekoj funkciji ili klasi, postoji zabluda da 'else' uvek mora biti
 napisan kako bi se pokrili svi potencijalni slučajevi. Ako je ishod zapravo definisanje povratne vrednosti,
-'else' nije neophodan, jer će 'return' izaći iz funkcije, što bi 'else' učinilo suvišnim.
+'else' nije neophodan, jer će 'return' izaći iz funkcije, što 'else' čini suvišnim.
 
 {% highlight php %}
 <?php
@@ -72,7 +72,7 @@ function test($a)
 
 ### Switch izrazi
 
-Switch izrazi predstavljaju odličnu alternativu za beskonačne if-ove i elseif-ove, ali treba biti svestan nekoliko stvari:
+Switch izrazi predstavljaju odličnu alternativu za previše if i elseif izraza, ali treba biti svestan nekoliko stvari:
 
 - Switch izrazi porede samo vrednosti, ne i tipove (ekvivalentno '==' poređenju)
 - Prolaze svaki 'case' sve dok ne pronađu poklapanje. Ako ga nema, koristi se 'default' slučaj (ako je definisan)
@@ -107,7 +107,7 @@ function test($a)
 ## Globalni namespace
 
 Pri korišćenju namespace-ova, možda ste naišli na situaciju da su neke interne funkcije "pregažene" funkcijama koje ste vi napisali.
-Kako biste to rešili, globalnu funkciju pozivajte sa backslash-om (\) pre njenog imena.
+Kako biste to rešili, globalnu funkciju pozivajte sa backslash karakterom (\) pre njenog imena.
 
 {% highlight php %}
 <?php
@@ -133,10 +133,9 @@ function array()
 
 ### Konkatenacija (nadovezivanje)
 
-- Ako je dužina neke vaše linije kôda veća od preporučene 120 karaktera, razmislite o konkatenaciji te linije
+- Ako je dužina neke vaše linije kôda veća od preporučenih 120 karaktera, razmislite o konkatenaciji te linije
 - Radi bolje preglednosti, najbolje je koristiti operatore za konkatenaciju umesto konkatenacije operatora za dodelu vrednosti
-- Unutar originalnog scope-a neke promenljive, koristite indentaciju (uvlačenje teksta) kada konkatenacija prelazi u sledeći red
-
+- Unutar originalnog opsega (scope) neke promenljive, koristite indentaciju (uvlačenje teksta) kada konkatenacija prelazi u sledeći red
 
 {% highlight php %}
 <?php
@@ -164,7 +163,7 @@ Jednostruki navodnici se koriste za "bukvalne/literalne stringove". Ovi stringov
 znakova i promenljivih.
 
 Ako prilikom korišćenja jednostrukih navodnika unesete ime promenljive u sâm string, na primer: `'neka $stvar'`,
-dobili biste isti takav output: `neka $stvar`. U slučaju dvostrukih navodnika, parser bi pokušao da evaluira
+dobili biste isti takav ispis: `neka $stvar`. U slučaju dvostrukih navodnika, parser bi pokušao da evaluira
 promenljivu `$stvar` i prikazao greške ako ona ne postoji.
 
 
@@ -306,7 +305,7 @@ mikro-optimizacije osim ako zaista razumete značenje i uticaj njihov razlika.
 ## Ternarni operatori
 
 Ternarni operatori predstavljaju odličan način za uštedu kôda, ali programeri često preteruju u njihovom korišćenju.
-Iako ternarni operatori mogu biti ugnježdeni, preporuka je da se pišu u istoj liniji zbog preglednosti.
+Iako ternarni operatori mogu biti ugnježdeni, preporuka je da se pišu u istoj liniji radi preglednosti.
 
 {% highlight php %}
 <?php
@@ -354,7 +353,7 @@ Ovo važi i za sve druge operacije (===, !==, !=, ==, itd.).
 
 #### Korišćenje zagrada sa ternarnim operatorima za formatiranje i funkcionalnost
 
-Pri korišćenju ternarnog operatora, zagrade mogu biti značajnte u cilju poboljšanja preglednosti, ali i
+Pri korišćenju ternarnog operatora, zagrade mogu biti značajne u cilju poboljšanja preglednosti, ali i
 stvaranja unija u okviru blokova izraza. Primer u kojem zagrade nisu neophodne:
 
 {% highlight php %}
@@ -369,7 +368,7 @@ return $a == 3 ? "yay" : "nope"; // vraća 'yay' ili 'nope' ako je $a == 3
 {% endhighlight %}
 
 Zagrade takođe nude mogućnost stvaranja unija u okviru blokova izraza, pri čemu se blok proverava u celosti.
-To možemo videti u sledećem primeru koji će vratit true ako su oba uslova ($a == 3 i $b == 4) ispunjena i
+To možemo videti u sledećem primeru koji će vratiti true ako su oba uslova ($a == 3 i $b == 4) ispunjena i
 ako je $c == 5 takođe tačno.
 
 {% highlight php %}
