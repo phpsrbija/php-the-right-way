@@ -6,12 +6,12 @@ anchor: data_filtering
 
 ## Filtriranje podataka {#data_filtering_title}
 
-Apsolutno nikada ne verujte "stranom" (korisnikovom) inputu koji se šalje u vaš PHP kôd. Uvek filtrirajte i validirajte
+Apsolutno nikada ne verujte "stranom" (korisnikovom) input-u koji se šalje u vaš PHP kôd. Uvek filtrirajte i validirajte
 strani input pre nego što ga upotrebite u kôdu. Funkcije `filter_var()` i `filter_input()` se koriste za filtriranje
 nekog teksta, kao i za njegovu validiciju (npr. email adrese).
 
 Strani input može biti bilo šta: `$_GET` i `$_POST` podaci iz forme, neke vrednosti u superglobalnoj promenljivoj
-`$_SERVER`, i body HTTP zahteva dobijen putem `fopen('php://input', 'r')`. Zapamtite, strani input nije ograničen
+`$_SERVER` ili body HTTP zahteva dobijen putem `fopen('php://input', 'r')`. Zapamtite, strani input nije ograničen
 samo na podatke iz forme koje je poslao korisnik. Uploadovani i preuzeti fajlovi, vrednosti iz sesije, podaci iz cookie-a
 i podaci iz 3rd party web servisa su takođe strani input.
 
@@ -28,23 +28,23 @@ specijalno značenje u odgovarajuće HTML entitete pomoću `htmlentities()` ili 
 Još jedan primer je prosleđivanje opcija putem komandne linije. Ovo može biti vrlo opasno (i najčešće je
 loša ideja), ali možete da upotrebite ugrađenu `escapeshellarg()` funkciju da prečistite argumente komande.
 
-Poslednji primer je prihvatanje stranog inputa sa ciljem učitavanja određenog fajla. Ovo se može
+Poslednji primer je prihvatanje stranog input-a sa ciljem učitavanja određenog fajla. Ovo se može
 zloupotrebiti promenom imena fajla u putanju fajla. Na vama je da uklonite `"/"`, `"../"`, [null bajtove][6]
 i druge karaktere iz putanje fajla kako biste sprečili učitavanje skrivenih, privatnih i sistemskih fajlova.
 
-* [Naučite o filtriranju podataka][1]
-* [Naučite o `filter_var`][4]
-* [Naučite o `filter_input`][5]
-* [Naučite o rukovanju sa null bajtovima][6]
+* [Naučite više o filtriranju podataka][1]
+* [Naučite više o `filter_var`][4]
+* [Naučite više o `filter_input`][5]
+* [Naučite više o rukovanju sa null bajtovima][6]
 
 ### Filtriranje / sanacija (sanitization)
 
-Filtriranje uklanja (ili escape-uje) ilegalne ili nebezbedne karaktere iz stranog inputa.
+Filtriranje uklanja (ili escape-uje) ilegalne ili nebezbedne karaktere iz stranog input-a.
 
 Na primer, trebalo bi da filtrirate strane podatake pre njihovog uključivanja u HTML ili ubacivanja u SQL
 upit. Ako koristite [PDO](#databases) bound parametre, oni će biti automatski sanirani.
 
-Ponekad je neophodno da namerno dozvolite unos određenih HTML tagova u inputu prilikom ispisa. Ovo je donekle
+Ponekad je neophodno da namerno dozvolite unos određenih HTML tagova u input-u prilikom ispisa. Ovo je donekle
 teško za implementirati i mnogi pribegavaju korišćenju striktnijeg formatiranja kao što je Markdown ili BBCode,
 iako biblioteke kao što je [HTML Purifier][html-purifier] postoje baš iz ovog razloga.
 

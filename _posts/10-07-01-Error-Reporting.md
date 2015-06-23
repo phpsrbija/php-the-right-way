@@ -30,13 +30,13 @@ Apropo prikazivanja svih grešaka u verziji 5.3, to znači da morate da koristit
 
 **Prijavljivanje svih grešaka po verzijama PHP-a**
 
-* &lt; 5.3 `-1` or `E_ALL`
-* &nbsp; 5.3 `-1` or `E_ALL | E_STRICT`
-* &gt; 5.3 `-1` or `E_ALL`
+* &lt; 5.3 `-1` ili `E_ALL`
+* &nbsp; 5.3 `-1` ili `E_ALL | E_STRICT`
+* &gt; 5.3 `-1` ili `E_ALL`
 
 ### Produkciono (live) okruženje
 
-Da biste sakrili greške u vašem produkcionom okruženju, podesite `php.ini` na sledeći način:
+Da biste sakrili greške u vašem **produkcionom** okruženju, podesite `php.ini` na sledeći način:
 
 {% highlight ini %}
 display_errors = Off
@@ -45,7 +45,7 @@ error_reporting = E_ALL
 log_errors = On
 {% endhighlight %}
 
-Sa ovim podešavanjima, greške će se i dalje upisivati u error log, ali se neće prikazivati korisniku.
+Sa ovim podešavanjima, greške će se i dalje upisivati u log za greške (error log), ali se neće prikazivati korisniku.
 Za više informacija o ovim podešavanjima, proučite PHP manual:
 
 * [error_reporting](http://php.net/errorfunc.configuration#ini.error-reporting)
