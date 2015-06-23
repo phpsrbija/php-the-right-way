@@ -11,7 +11,7 @@ izvršavaju sa komandne linije. PHP programi sa komandne linije mogu vam pomoći
 kao što su testiranje, razvoj i administracija aplikacije.
 
 CLI PHP programi su moćni jer možete da koristite kôd vaše aplikacije direktno, bez potrebe da napravite i obezbedite
-web GUI (grafički interfejs) za nju. Samo nikako **nemojte** smeštati vaše CLI PHP skripte u javni root direktorijum!
+web GUI (grafički interfejs) za nju. Samo nikako **nemojte** smeštati vaše CLI PHP skripte u javni direktorijum vašeg sajta!
 
 Pokušajte da pokrenete PHP sa komandne linije:
 
@@ -19,7 +19,7 @@ Pokušajte da pokrenete PHP sa komandne linije:
 > php -i
 {% endhighlight %}
 
-Opcija `-i` će ispisati vašu PHP konfiguraciju isto kao i [`phpinfo`][phpinfo] funkcija.
+Opcija `-i` će ispisati vašu PHP konfiguraciju na isti način kao i [`phpinfo`][phpinfo] funkcija.
 
 Opcija `-a` omogućava interaktivni shell, sličan Ruby-jevom IRB ili Python-ovom interaktivnom shell-u. Postoji još dosta
 korisnih [CLI opcija][cli-options].
@@ -39,7 +39,7 @@ echo "Hello, $name\n";
 
 PHP postavlja dve specijalne promenljive na osnovu argumenata koje se prosleđuju pri pokretanju vaše skripte. [`$argc`][argc] je
 integer koji sadrži *broj* argumenata, a [`$argv`][argv] je niz koji sadrži *vrednost* svakog argumenta.
-Prvi argument je uvek naziv fajla vaše PHP skripte, u ovom slučaju to je `hello.php`.
+Prvi argument je uvek naziv fajla vaše PHP skripte, a u ovom slučaju to je `hello.php`.
 
 Komandi `exit()` se prosleđuje broj različit od nule kako bi se shell-u skrenula pažnja da komanda nije uspela. Najčešće
 korišćeni izlazni kodovi su dostupni [ovde][exit-codes].

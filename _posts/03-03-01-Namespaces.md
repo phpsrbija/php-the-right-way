@@ -20,9 +20,9 @@ bez straha od kolizije sa drugim bibliotekama.
 Jedan od preporučenih načina za korišćenje namespace-ove opisan je u okviru [PSR-4][psr4], koji ima za cilj da pruži
 standardizovanu konvenciju za fajlove, klase i namespace-ove, kako bi se omogućilo jednostavnije uključivanje kôda.
 
-U okrobru 2014. godine, PHP-FIG je prethodni autoloading standard: [PSR-0][psr0], označio kao prevaziđen (deprecated),
+U oktobru 2014. godine, PHP-FIG je prethodni autoloading standard: [PSR-0][psr0], označio kao zastareo/prevaziđen (deprecated),
 i zamenio ga je upravo [PSR-4][psr4]. Trenutno su oba standarda u upotrebi, pri čemu PSR-4 zahteva PHP 5.3,
-dok mnogi projekti na PHP 5.2 koriste PSR-0. Ako nameravate da koristite autoloading standard za neku novu aplikaciju
+dok mnogi PHP 5.2 projekti  koriste PSR-0. Ako nameravate da koristite autoloading standard za neku novu aplikaciju
 ili paket, onda definitivno treba da uzmete u obzir PSR-4.
 
 * [Pročitajte više o Namespace-ovima][namespaces]
