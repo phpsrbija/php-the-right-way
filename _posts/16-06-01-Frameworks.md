@@ -1,30 +1,30 @@
 ---
 isChild: true
-title: Framework-ovi
+title: Frejmvorci
 anchor: frameworks
 ---
 
-## Framework-ovi {#frameworks_title}
+## Frejmvorci {#frameworks_title}
 
-Umesto da "izmišljaju toplu vodu", dosta PHP programera koristi framework-ove za razvoj web aplikacija.
-Framework apstrahuje većinu low-level pitanja i pruža koristan, jednostavan interejs za rešavanje nekih
+Umesto da "izmišljaju toplu vodu", dosta PHP programera koristi frejmvorke (frameworks) za razvoj web aplikacija.
+Frejmvork apstrahuje većinu low-level pitanja i pruža koristan, jednostavan interejs za rešavanje nekih
 uobičajenih zadataka.
 
-Ne morate da koristite framework za svaki projekat. Nekada je "čist" PHP bolji izbor, ali ako vam je potreban
-framework postoje tri glavne kategorije:
+Ne morate da koristite frejmvork za svaki projekat. Nekada je "čist" PHP bolji izbor, ali ako vam je potreban
+frejmvork postoje tri glavne kategorije:
 
-* Micro framework-ovi
-* Full-Stack framework-ovi
-* Framework-ovi bazirani na komponentama (glue framework-ovi)
+* Mikro frejmvorci (micro frameworks)
+* Full-Stack frejmvorci
+* Frejmvorci bazirani na komponentama (glue frameworks)
 
-Micro framework-ovi su u suštini maksimalno optimizovani wrapper-i za rutiranje HTTP request-a na callback,
+Mikro frejmvorci su u suštini maksimalno optimizovani wrapper-i za rutiranje HTTP request-a na callback,
 kontroler, metod, itd. Ponekad dolaze sa dodatnim bibliotekama koje potpomažu razvoj, kao što su komponente
 za komunikaciju sa bazom i slično. Najčešće se koriste za razvoj web servisa.
 
-Mnogi framework-ovi dodaju priličan broj funkcionalnosti na ono što nude micro framework-ovi, i takvi su poznati
-kao Full-Stack framework-ovi. Oni često poseduju ugrađene ORM-ove, komponente za autentifikaciju, itd.
+Mnogi frejmvorci dodaju priličan broj funkcionalnosti na ono što nude mikro frejmvorci, i takvi su poznati
+kao Full-Stack frejmvorci. Oni često poseduju ugrađene ORM-ove, komponente za autentifikaciju, itd.
 
-Framework-ovi bazirani na komponentama su zapravo kolekcije usko specijalizovanih i jednonamenskih biblioteka.
-Moguće je iskombinovati komponente nekoliko framework-ova ovog tipa i tako napraviti micro ili full-stack framework.
+Frejmvorci bazirani na komponentama su zapravo kolekcije usko specijalizovanih i jednonamenskih biblioteka.
+Moguće je iskombinovati komponente nekoliko frejmvorka ovog tipa i tako napraviti mikro ili full-stack frejmvork.
 
-* [Popularni PHP framework-ovi](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
+* [Popularni PHP frejmvorci](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
