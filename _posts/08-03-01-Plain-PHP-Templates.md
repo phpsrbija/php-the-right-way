@@ -9,14 +9,14 @@ anchor: plain_php_templates
 Nativni PHP templejti u osnovi koriste standardnu PHP sintaksu. Oni predstavljaju logičan izbor
 pošto je PHP sam po sebi templejt jezik. Ovo znači da je moguće kombinovati PHP kôd u okviru nečeg
 drugog, kao što je HTML. Ovo dosta znači PHP programerima, jer nije neophodno učiti novi sintaksu,
-znaju koje su im funkcije dostupne, a njihovi editori omogućavaju highlighting sintakse, kao i
-auto-complete. Takođe, nativni PHP templejti su veoma brzi imajući u vidu da u njihovom slučaju
+znaju koje su im funkcije dostupne, a njihovi editori omogućavaju isticanje (highlighting) sintakse,
+kao i auto-complete. Takođe, nativni PHP templejti su veoma brzi imajući u vidu da u njihovom slučaju
 nije potrebno kompajliranje.
 
-Svaki moderan PHP framework poseduje neku vrstu templejt sitema, pri čemu većina podrazumevano
-koristi nativan PHP. Pored framework-ova, biblioteke kao [Plates][plates] i [Aura.View][aura]
+Svaki moderan PHP frejmvork poseduje neku vrstu templejt sitema, pri čemu većina podrazumevano
+koristi nativan PHP. Pored frejmvorka, biblioteke kao [Plates][plates] i [Aura.View][aura]
 omogućavaju jednostavniji rad sa nativnim PHP templejetima, putem funkcionalnosti kao što su
-nasleđivanje, layout-i i ekstenzije.
+nasleđivanje, _layout-i_ i ekstenzije.
 
 ### Jednostavan primer nativnog PHP templejta
 

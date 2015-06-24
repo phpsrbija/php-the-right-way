@@ -50,7 +50,7 @@ if ($start < $end) {
 {% endhighlight %}
 
 Poslednji primer demonstrira korišćenje DatePeriod klase. Ona se koristi za iteraciju nad periodičnim događajima.
-Može da primi dva DateTime objekta, početni i krajni datum, i interval po kojem treba da vraća rezultujuće datume.
+Može da primi dva DateTime objekta, početni i krajni datum, kao i interval po kojem treba da vraća rezultujuće datume.
 
 {% highlight php %}
 <?php
