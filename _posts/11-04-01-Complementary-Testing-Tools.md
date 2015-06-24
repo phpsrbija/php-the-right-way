@@ -6,14 +6,14 @@ anchor:  complementary_testing_tools
 
 ## Alati za komplementarno testiranje {#complementary_testing_tools_title}
 
-Pored pojedinačnih TDD i BDD framework-ova, postoji i niz generičkih framework-ova i biblioteka
+Pored pojedinačnih TDD i BDD frejmvorka, postoji i niz generičkih frejmvorka i biblioteka
 koje mogu biti od koristi za bilo koji od ova dva pristupa.
 
 ### Linkovi
 
 * [Selenium] je alat za automatizaciju browser-a koji može biti [integrisan u PHPUnit]
-* [Mockery] je framework za mock-ovanje koji se može integrisati u [PHPUnit] ili [PHPSpec]
-* [Prophecy] je dosta "svojeglav", ali isto tako dosta moćan i fleksibilan framework za mock-ovanje.
+* [Mockery] je frejmvork za mock-ovanje koji se može integrisati u [PHPUnit] ili [PHPSpec]
+* [Prophecy] je dosta "svojeglav", ali isto tako dosta moćan i fleksibilan frejmvork za mock-ovanje.
 Integrisan je u [PHPSpec], a može se koristiti i unutar [PHPUnit-a][PHPUnit].
 
 

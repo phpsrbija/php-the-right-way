@@ -24,19 +24,19 @@ funkcija i metoda, možete biti sigurni da je njihova interna logika ispravna. K
 injection-a i kreiranjem mock ("lažnih") klasa i stub-ova možete utvrditi da li se zavisnosti ispravno
 koriste u cilju još bolje pokrivenosti kôda testovima.
 
-Kada kreirate klasu ili funkciju, treba da kreirate i odgovarajući unit test za različite slučajeve njenog
+Kada kreirate klasu ili funkciju, treba da kreirate i odgovarajući unit test za sve različite slučajeve njenog
 korišćenja. Osnova stvar koju treba obezbediti jeste prijava grešaka u slučaju prosleđivanja loših argumenata,
 odnosno ispravan rad u slučaju dobrih argumenata koji joj se proslede. Na taj način ćete biti sigurni da ako kasnije
 napravite određene izmene u toj klasi ili funkciji, da će prethodne funkcionalnosti nastaviti da rade ispravno.
 Jedina alternativa ovome je `var_dump()` u test.php, što naravno nikako nije način za izradu aplikacije,
 bila ona mala ili velika.
 
-Još jedna primena unit testova je contribute-ovanje open source projektima. Ako umete da napišete test koji
+Još jedna primena unit testova je doprinošenje (contribute) u open source projekte. Ako umete da napišete test koji
 prikazuje neispravnu funkcionalnost, a onda je popravite tako da test prolazi, mnogo su veće šanse da će
-vaši patch-evi biti prihvaćeni. Ako imate projekat koji prihvata pull request-ove, onda bi ovo trebalo da
+vaše popravke (patch) biti prihvaćene. Ako imate projekat koji prihvata pull request-ove, onda bi ovo trebalo da
 bude uslov za njihovo slanje.
 
-[PHPUnit](http://phpunit.de) framework je de-facto standard za pisanje unit testova za PHP aplikacije, ali
+[PHPUnit](http://phpunit.de) frejmvork je de fakto standard za pisanje unit testova za PHP aplikacije, ali
 postoji i nekoliko alternativa:
 
 * [SimpleTest](http://simpletest.org)
@@ -50,7 +50,7 @@ Sa [Wikipedia-je](http://en.wikipedia.org/wiki/Integration_testing):
 
 > Integraciono testiranje (poznato i kao Integracija i testiranje, skraćeno "I&T") je faza u testiranju softvera u kojoj
 > se individualni moduli kombinuju i testiraju grupno. Obavlja se nakon unit testova, a pre validacionog testiranja.
-> Integraciono testiranje kao ulaz prima module koji su bili predmet unit testova, grupiše ih u veće celine, na njih primenjuje
+> Integraciono testiranje kao ulaz prima module koji su bili predmet unit testova, grupiše ih u veće celine, pa na njih primenjuje
 > testove definisane u planu integracionog testa i zatim kao izlaz dostavlja integrisani sistem spreman za sistemsko testiranje.
 
 Mnogi od alata koji se koriste za unit testove mogu biti korišćeni i za integraciono testiranje, jer se baziraju
@@ -67,5 +67,5 @@ aplikacije.
 
 * [Selenium](http://seleniumhq.com)
 * [Mink](http://mink.behat.org)
-* [Codeception](http://codeception.com) - full-stack framework za testiranje koji poseduje alate za acceptance testove
-* [Storyplayer](http://datasift.github.io/storyplayer) - full-stack framework za testiranje koji ima podršku za kreiranje i brisanje test okruženja po zahtevu
+* [Codeception](http://codeception.com) - full-stack frejmvork za testiranje koji poseduje alate za acceptance testove
+* [Storyplayer](http://datasift.github.io/storyplayer) - full-stack frejmvork za testiranje koji ima podršku za kreiranje i brisanje test okruženja po zahtevu

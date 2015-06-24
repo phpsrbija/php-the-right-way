@@ -16,12 +16,12 @@ od kojih su najpoznatija sledeća dva:
 Za oba repozitorijuma postoje CLI alati putem kojih se obavlja instalacija i update-ovanje komponenti,
 što je detaljnije objašnjeno u poglavlju ["Upravljanje zavisnostima"][Dependency Management].
 
-Takođe, postoje i framework-ovi bazirani na komponentama i vendori komponenti koji zapravo nisu framework.
+Takođe, postoje frejmvorci bazirani na komponentama i vendori komponenti koji zapravo nisu frejmvorci.
 Ovi projekti nude još jedan izvor paketa koji imaju malo ili u najboljem slučaju uopšte nemaju zavisnosti
-ka drugim paketima ili određenim framework-ovima.
+ka drugim paketima ili određenim frejmvorcima.
 
 Tako na primer možete koristiti [FuelPHP paket za validaciju][FuelPHP Validation package], bez potrebe da
-koristite sâm FuelPHP framework.
+koristite sam FuelPHP frejmvork.
 
 * [Aura]
 * [FuelPHP]
@@ -33,7 +33,7 @@ koristite sâm FuelPHP framework.
     * [Eloquent ORM]
     * [Queue]
 
-_Laravel-ove [Illuminate komponente] će biti još bolje izdvojene iz samog Laravel framework-a. Za sada,
+_Laravel-ove [Illuminate komponente] će biti još bolje izdvojene iz samog Laravel frejmvorka. Za sada,
 samo one koju su najbolje izdvojene su na prethodnom spisku._
 
 

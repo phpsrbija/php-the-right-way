@@ -14,7 +14,7 @@ Upravo ovde opcode keširanje stupa na scenu. Ono sprečava suvišno kompajliran
 opcode čuva u memoriji, a zatim se koristi u narednim izvršavanjima. Instalacija opcode keša je brza i
 jednostavna, a vaša aplikacija će raditi znatno brže. Zaista nema razloga da ga ne koristite.
 
-Od verzije PHP 5.5, postoji ugrađen opcode keš nazvan [OPcache][opcache-book]. On je takođe
+Od verzije PHP 5.5 postoji ugrađen opcode keš nazvan [OPcache][opcache-book]. On je takođe
 dostupan i za prethodne verzije.
 
 Saznajte više o opcode keširanju:
