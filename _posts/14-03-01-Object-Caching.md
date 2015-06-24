@@ -20,7 +20,7 @@ Najčešće korišćeni memorijski sistemi za keširanje su APCu i Memcached. AP
 objekata, koji poseduje jednostavan API za ubacivanje vaših podataka u njegov memorijski keš i veoma se
 jednostavno instalira i koristi. Jedini nedostatak APCu-a je to što je vezan za server na kojem je
 instaliran. S druge strane, Memcached se instalira kao zaseban servis i može mu se pristupati putem mreže,
-što znači da vaše podatke možete čuvati u veoma brzom sladištu na centralizovanoj lokaciji, a više
+što znači da vaše podatke možete čuvati u veoma brzom skladištu na centralizovanoj lokaciji, a više
 različitih sistema može da čita podatke iz njega.
 
 Imajte na umu da ako PHP radi kao (Fast-)CGI aplikacija na vašem web serveru, svaki PHP proces će imati svoj keš,

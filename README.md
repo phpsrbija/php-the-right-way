@@ -77,7 +77,7 @@ za nove PHP programere. Ovaj projekat za cilj ima rešavanje tog problema.
 
 ## Ko
 
-Moje ime je [Josh Lockhart](http://twitter.com/codeguy). Autor sam [Slim Framework-a](http://www.slimframework.com/) i radim za [New Media Campaigns](http://www.newmediacampaigns.com/).
+Moje ime je [Josh Lockhart](http://twitter.com/codeguy). Autor sam [Slim Frejmvorka](http://www.slimframework.com/) i radim za [New Media Campaigns](http://www.newmediacampaigns.com/).
 
 ### Saradnici
 

@@ -7,7 +7,7 @@ anchor: frameworks
 ## Frejmvorci {#frameworks_title}
 
 Umesto da "izmišljaju toplu vodu", dosta PHP programera koristi frejmvorke (frameworks) za razvoj web aplikacija.
-Frejmvork apstrahuje većinu low-level pitanja i pruža koristan, jednostavan interejs za rešavanje nekih
+Frejmvork apstrakuje većinu low-level pitanja i pruža koristan, jednostavan interejs za rešavanje nekih
 uobičajenih zadataka.
 
 Ne morate da koristite frejmvork za svaki projekat. Nekada je "čist" PHP bolji izbor, ali ako vam je potreban

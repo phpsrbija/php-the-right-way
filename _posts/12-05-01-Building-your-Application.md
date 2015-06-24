@@ -14,7 +14,7 @@ obimnim procesom izgradnje ili čak strategijom kontinuirane integracije, [autom
 Među zadacima koje biste možda želeli da automatizujete su:
 
 * Upravljanje zavisnostima
-* Kompilacija, minifikacija Vaše aktive
+* Kompilacija, minifikacija Vaših asset-a
 * Pokretanje testova
 * Pravljenje dokumentacije
 * Pakovanje
@@ -38,7 +38,7 @@ izvršavanje komandi na struktuiran, ponovljivi način na jednoj ili više udalj
 Blog članak Dejva Gardnera [PHP Deployment with Capistrano](http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/)
 je dobra polazna tačka za PHP programere zainteresovane za Capistrano.
 
-[Chef](http://www.opscode.com/chef/) je više od framework-a za deploy, to je veoma moćan Ruby baziran sistemski integracioni framework 
+[Chef](http://www.opscode.com/chef/) je više od frejmvorka za deploy, to je veoma moćan Ruby baziran sistemski integracioni frejmvork 
 koji ne samo da radi deploy Vaše aplikacije već može izgraditi i celokupno serversko okruženje ili virtuelne kutije(virtual boxes).
 
 #### Chef resursi za PHP programere:
