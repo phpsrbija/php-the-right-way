@@ -2,7 +2,8 @@
 
 ## Pregled
 
-Ovo je GitHub Pages repozitorijum projekta _PHP: The Right Way_ **na srpskom jeziku**.
+Ovo je GitHub Pages repozitorijum projekta _PHP: The Right Way_ **na srpskom jeziku**. Iza ovog prevoda stoji udruženje [PHP Srbija](http://phpsrbija.rs) 
+- najveće i najpoznatije udruženje PHP programera u Srbiji.
 
 * Ovaj sajt koristi Jekyll.
 * Svaka sekcija i podsekcija su Markdown fajlovi u `_posts/` folderu.
@@ -24,9 +25,7 @@ tako što ćete ukazati PHP programerima gde mogu da pronađu kvalitetne informa
 
 ### Uputstvo za saradnike
 
-1. Koristite četiri (4) razmaka za uvlačenje teksta; nemojte koristiti tabove.
-2. 120 karaktera po liniji.
-3. Primeri kôda treba da budu u skladu sa PSR-1 standardom.
+Detaljno uputstvo o tome kako možete doprineti ovom projektu možete naći u [CONTRIBUTING.md](CONTRIBUTING.md) fajlu.
 
 ## Gde
 

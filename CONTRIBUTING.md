@@ -1,112 +1,88 @@
-# Contributing to PHP The Right Way
+# Doprinos
 
-Enjoy [PHP The Right Way](http://phptherightway.com) and want to get 
-involved? Great! There are plenty of ways you can help out.
+Ovaj dokument sadrži opšta uputstva za doprinos ovom projektu.
 
-Please take a moment to review this document in order to make the contribution
-process easy and effective for everyone involved.
+## Pull request-ovi
 
-Following these guidelines helps to communicate that you respect the time of
-the developers managing and developing this open source project. In return,
-they should reciprocate that respect in addressing your issue or assessing
-patches and features.
+Poštujte ovu proceduru kako bi vaš rad i predlozi bili usvojeni i prihvaćeni u ovom projektu:
 
-
-## Using the issue tracker
-
-The [issue tracker](https://github.com/codeguy/php-the-right-way/issues) is
-the preferred channel for changes: spelling mistakes, wording changes, new 
-content and generally [submitting pull requests](#pull-requests), but please 
-respect the following restrictions:
-
-* Please **do not** use the issue tracker for personal support requests (use
-  [Stack Overflow](http://stackoverflow.com/questions/tagged/php) or IRC).
-
-* Please **do not** derail or troll issues. Keep the discussion on topic and
-  respect the opinions of others.
-
-
-<a name="pull-requests"></a>
-## Pull Requests
-
-Pull requests are a great way to add new content to PHP The Right Way, as well 
-as updating any browser issues or other style changes. Pretty much any sort of 
-change is accepted if seen as constructive.
-
-Adhering to the following this process is the best way to get your work
-included in the project:
-
-1. [Fork](http://help.github.com/fork-a-repo/) the project, clone your fork,
-   and configure the remotes:
+1. [Fork-ujte](http://help.github.com/fork-a-repo/) ovaj project, klonirajt vaš fork i podesite `remote` za vaš repo:
 
    ```bash
-   # Clone your fork of the repo into the current directory
-   git clone https://github.com/<your-username>/php-the-right-way.git
-   # Navigate to the newly cloned directory
+   # Kloniraj repo u trenutni folder
+   git clone https://github.com/<tvoj-username>/php-the-right-way.git
+   # Uđi u folder kreiranog klona
    cd php-the-right-way
-   # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/codeguy/php-the-right-way.git
+   # Podesi izvorni repo kao remote pod nazivom "upstream"
+   git remote add upstream https://github.com/phpsrbija/php-the-right-way
    ```
 
-2. If you cloned a while ago, get the latest changes from upstream:
+2. Sinhronizacija sa izvornim repozitorijumom:
 
    ```bash
    git checkout gh-pages
    git pull upstream gh-pages
    ```
 
-3. Create a new topic branch (off the main project development branch) to
-   contain your change or fix:
+3. Commit-ujte/push-ujte u logičnim celinama. Preporučujemo da squash-ujte commit-e pomoću
+   [interaktivnog rebase-a](https://help.github.com/articles/interactive-rebase).
 
-   ```bash
-   git checkout -b <topic-branch-name>
-   ```
-
-4. Install the [Jekyll](https://github.com/jekyll/jekyll/) gem to preview locally.
-
-5. Commit your changes in logical chunks. Please adhere to these [git commit
-   message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
-   or your content is unlikely be merged into the main project. Use Git's
-   [interactive rebase](https://help.github.com/articles/interactive-rebase)
-   feature to tidy up your commits before making them public.
-
-6. Locally merge (or rebase) the upstream development branch into your topic branch:
-
-   ```bash
-   git pull [--rebase] upstream gh-pages
-   ```
-
-7. Push your topic branch up to your fork:
-
-   ```bash
-   git push origin <topic-branch-name>
-   ```
-
-8. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/)
-    with a clear title and description.
+4. [Otvorite pull request](https://help.github.com/articles/using-pull-requests/) sa jasnim naslovom i opisom.
 
 
-## Contribution Agreement and Usage
+## Pravila za pisanje prevoda
 
-By submitting a pull request to this repository, you agree to allow the project 
-owners to license your work under the the terms of the [Creative Commons Attribution-NonCommercial-ShareAlike
-3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
+1. Koristite četiri (4) razmaka za uvlačenje teksta; nemojte koristiti tabove
+2. 120 karaktera po liniji
+3. Koristite [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) za sav sadržaj
+4. Izbegavajte _bukvalno_ ("od reči do reči") prevođenje
 
-The same content and license will be used for all PHP The Right Way publications,
-including - but not limited to:
+### Konvencija za prevod učestalih stranih reči i izraza
 
-* [phptherightway.com](http://phptherightway.com)
-* Translations of phptherightway.com
-* [LeanPub: PHP The Right Way](https://leanpub.com/phptherightway/)
-* Translations of "LeanPub: PHP The Right Way"
-
-All content is completely free now, and always will be.
-
-## Contributor Style Guide
-
-1. Use American English spelling (*primary English repo only*)
-2. Use four (4) spaces to indent text; do not use tabs
-3. Wrap all text to 120 characters
-4. Code samples should adhere to PSR-1 or higher
-5. Use [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/) for all content
-6. Use language agnostic urls when refering to external websites such as the [php.net](http://php.net/urlhowto.php) manual
+* *web* - **web**, **webu**
+* *framework/frameworks* - **frejmvork**
+* *deploy/deployed/deploying* - **deploy**, **deploy-ovan**, **deploy-ovanje**
+* *document root* - ***document root***
+* *design pattern* - **dizajn patern**
+* *development environment* - **razvojno okruženje**
+* *production environment* - **produkcijsko okruzenje**, **produkcija**
+* *download* - **preuzimanje**
+* *upload* - ***upload***
+* *code* - **kôd**
+* *run, run app* - **pokrenuti**, **pokretanje**, **izvršavanje**
+* *apache, docker i sl*. **Apache**, **Docker**
+* *host/hosts/hosting* - **host**, **hostovi**, **hosting**, **hostovanje**
+* *dedicated servers* - **namenski serveri** 
+* *shared servers*  **deljeni serveri**
+* *virtual servers* - **virtuelni serveri**
+* *remote servers* - **udaljeni serveri**
+* *open source* - ***open source***
+* *default* - **podrazumevano**, ponekad može i **default**
+* *building application* - **izgradnja (build) aplikacije**
+* *build automation* - **automatizovana izgradnja (build)** / **automatizacija izgradnje**
+* *build process* - **proces izgradnje (build)**
+* *continuous integration* - **kontinuirana integracija** (pri prvoj upotrebi bih u zagradi stavio ***continuous integration - CI***)
+* *assets* - ***asset***, ***asset-i***
+* *cloud* - **u oblaku**, **cloud rešenje**
+* *blog post* - **članak**, **blog članak**, **blog post**
+* *developer/php developer* - **programer**
+* *debug* - ***debug-ovanje***, ***debug-ovati***
+* *browser* - **browser**, **browser-u**
+* *template* - **templejt**
+* *escape* - ***escape-ovanje***, ***escape-ovati***
+* *scope* - **opseg**, **obim**, **scope** u zagradi
+* *plugin* - **dodatak (plugin)**
+* *notice* - **obaveštenje**
+* *fatal error* - **fatalna greška**
+* *warning* - **upozorenje**
+* *run-time* - **tokom izvršavanja (runtime)**
+* *request* - **zahtev (request)**
+* *response* - **odgovor (response)**
+* *header (http header)* - **HTTP header**, ***header-i***
+* *string* - **string**, **stringu**, **stringom**
+* *log in* - **prijava korisnika**, može po potrebi i **login**
+* *log out* - **odjava korisnika**, može po potrebi i **logout**
+* *input* - prvi pomen: **ulazni podaci (input)**, svaki sledeći **input**, **input-i**
+* *full-stack* - ***full-stack***, ***full-stack-u***
+* *mock* - ***mock***, ***mock-ovanje***, ***mock-uje***
+* *custom* - **prilagođen**, ***custom***
