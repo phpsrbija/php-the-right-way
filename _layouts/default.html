@@ -27,7 +27,7 @@
     </head>
     <body>
         <header class="site-header">
-            <h1><a href="/">PHP <em>Pravi način</em></a></h1>
+            <h1><a href="{{ site.baseurl }}">PHP <em>Pravi način</em></a></h1>
             <div class="build-date">Poslednji put ažurirano: {{ site.time }}</div>
             <div class="share">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.phptherightway.com/" data-size="large" data-hashtags="php">Tweet</a>
@@ -39,11 +39,11 @@
 
         <nav class="site-navigation">
             <ul>
-                <li><a href="/#site-header">Dobrodošli</a>
+                <li><a href="{{ site.baseurl }}/#site-header">Dobrodošli</a>
                     <ul>
-                        <li><a href="/#translations">Prevodi</a></li>
-                        <li><a href="/#how-to-contribute">Kako da doprinesete</a></li>
-                        <li><a href="/#spread-the-word">Raširite vest!</a></li>
+                        <li><a href="{{ site.baseurl }}/#translations">Prevodi</a></li>
+                        <li><a href="{{ site.baseurl }}/#how-to-contribute">Kako da doprinesete</a></li>
+                        <li><a href="{{ site.baseurl }}/#spread-the-word">Raširite vest!</a></li>
                     </ul>
                 </li>
                 {% assign lastIsChild = false %}
@@ -55,7 +55,7 @@
                             {% assign insideSection = false %}
                         {% endif %}
                     {% endif %}
-                    <li><a href="/#{{ post.anchor }}">{{ post.title }}</a>
+                    <li><a href="{{ site.baseurl }}/#{{ post.anchor }}">{{ post.title }}</a>
                     {% if post.isChild %}
                         </li>
                     {% else %}
@@ -66,7 +66,7 @@
                 {% endfor %}
                     </ul>
                 </li>
-                <li><a href="/#credits">Credits</a></li>
+                <li><a href="{{ site.baseurl }}/#credits">Credits</a></li>
             </ul>
         </nav>
 
