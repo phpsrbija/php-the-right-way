@@ -6,8 +6,8 @@ anchor: mysql_extension
 
 # MySQL ekstenzija {#mysql_extension_title}
 
-[mysql] ekstenzija za PHP više nije u aktivnom razvoju i [zvanično je prevaziđena od verzije PHP 5.5.0][mysql_deprecated],
-što znači da će biti uklonjena u nekoj od sledećih verzija. Ako u vašim aplikacijama koristite `mysql_*` funkcije,
+[mysql] ekstenzija za PHP više nije u aktivnom razvoju, [prevaziđena je od verzije PHP 5.5.0][mysql_deprecated] i
+[zvanično je uklonjena u verziji PHP 7.0.0][mysql_removed]. Ako u vašim aplikacijama koristite `mysql_*` funkcije,
 kao što su `mysql_connect()`, onda ćete u nekom momentu biti prinuđeni da prepravite kôd, a najbolja opcija je da
 zamenite korišćenje mysql esktenzije sa [mysqli] ili [PDO] u skladu sa sopstvenim tempom razvoja.
 
@@ -19,6 +19,7 @@ zamenite korišćenje mysql esktenzije sa [mysqli] ili [PDO] u skladu sa sopstve
 
 [mysql]: http://php.net/mysql
 [mysql_deprecated]: http://php.net/migration55.deprecated
+[mysql_removed]: http://php.net/manual/en/migration70.removed-exts-sapis.php
 [mysqli]: http://php.net/mysqli
 [pdo]: http://php.net/pdo
 [mysql_api]: http://php.net/mysqlinfo.api.choosing
