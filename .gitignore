@@ -1,3 +1,6 @@
 /_site/
 *.DS_Store
 /nbproject/private/
+/_site/
+*.DS_Store
+node_modules
