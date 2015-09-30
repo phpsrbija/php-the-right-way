@@ -2,7 +2,7 @@
 
 ## Pregled
 
-Ovo je GitHub Pages repozitorijum projekta _PHP: The Right Way_ **na srpskom jeziku**. Iza ovog prevoda stoji udruženje [PHP Srbija](http://phpsrbija.rs) 
+Ovo je GitHub Pages repozitorijum projekta _PHP: The Right Way_ **na srpskom jeziku**. Iza ovog prevoda stoji udruženje [PHP Srbija](http://phpsrbija.rs)
 - najveće i najpoznatije udruženje PHP programera u Srbiji.
 
 * Ovaj sajt koristi Jekyll.
@@ -39,7 +39,7 @@ Detaljno uputstvo o tome kako možete doprineti ovom projektu možete naći u [C
 * [Japanski](http://ja.phptherightway.com)
 * [Kineski (uprošćen)](http://wulijun.github.com/php-the-right-way)
 * [Kineski (tradicionalni)](http://laravel-taiwan.github.io/php-the-right-way)
-* [Korejski](http://wafe.github.io/php-the-right-way/)
+* [Korejski](http://modernpug.github.io/php-the-right-way)
 * [Nemački](http://rwetzlmayr.github.io/php-the-right-way/)
 * [Persijski](http://novid.github.io/php-the-right-way/)
 * [Poljski](http://pl.phptherightway.com/)
@@ -47,7 +47,7 @@ Detaljno uputstvo o tome kako možete doprineti ovom projektu možete naći u [C
 * [Rumunski](https://bgui.github.io/php-the-right-way/)
 * [Ruski](http://getjump.github.io/ru-php-the-right-way)
 * [Slovenski](http://sl.phptherightway.com)
-* [Srpski](http://phpsrbija.github.io/php-the-right-way)
+* [Srpski](http://phpsrbija.github.io/php-the-right-way/)
 * [Španski](http://phpdevenezuela.github.io/php-the-right-way/)
 * [Tai](https://apzentral.github.io/php-the-right-way/)
 * [Turski](http://hkulekci.github.io/php-the-right-way/)
