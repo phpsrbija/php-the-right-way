@@ -15,3 +15,4 @@ zaštitili od njih. Ovo je obavezno štivo za svakog programera koji je svestan 
 
 [1]: https://www.owasp.org/
 [2]: https://www.owasp.org/index.php/Guide_Table_of_Contents
+[3]: http://phpsecurity.readthedocs.org/en/latest/index.html
