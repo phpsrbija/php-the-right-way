@@ -51,5 +51,6 @@ tako što ćete ukazati PHP programerima gde mogu da pronađu kvalitetne informa
 
 [Web baneri][2]
 
-[1]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
-[2]: /banners.html
+[1]: https://leanpub.com/phptherightway
+[2]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
+[3]: /banners.html
