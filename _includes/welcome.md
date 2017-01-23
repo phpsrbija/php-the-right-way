@@ -40,9 +40,13 @@ _PHP: Pravi način_ je preveden na nekoliko jezika:
 * [Turski](http://hkulekci.github.io/php-the-right-way/)
 * [Ukrajinski](http://iflista.github.com/php-the-right-way/)
 
+## Book
+
+Najnovija verzija _PHP: Pravi način_ je dostupna i u PDF, EPUB i MOBI formatima. [Posetite Leanpub][1]
+
 ## Kako da doprinesete
 
-Pomozite da ovaj sajt postane najbolji resurs za nove PHP programere! [Doprinesite na GitHub-u][1]
+Pomozite da ovaj sajt postane najbolji resurs za nove PHP programere! [Doprinesite na GitHub-u][2]
 
 ## Proširite vest!
 

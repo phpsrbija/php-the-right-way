@@ -1,31 +1,15 @@
 ---
-title:   Use the Current Stable Version (7.1)
 isChild: true
-anchor:  use_the_current_stable_version
+title: Koristite aktuelnu stabilnu verziju (7.1)
+anchor: use_the_current_stable_version
 ---
 
-## Use the Current Stable Version (7.1) {#use_the_current_stable_version_title}
+## Koristite aktuelnu stabilnu verziju (7.1) {#use_the_current_stable_version_title}
 
-If you are getting started with PHP, start with the current stable release of [PHP 7.1][php-release]. PHP 7.1 is very
-new, and adds many amazing [new features](#language_highlights) over the older 5.x versions. The engine has been largely re-written, and PHP is now even quicker than older versions.
+Ako počinjete da učite PHP, krenite sa aktuelnom stabilnom verzijom [PHP 7.1][php-release]. PHP 7.1 je dosta nov i dolazi sa dosta sjajnih novina u odnosu na starije 5.x verzije. Sam _engine_ je u velikoj meri prepisan, pa je PHP sada drastično brži od starijih verzija.
 
-Most commonly in the near future you will find PHP 5.x being used, and the latest 5.x version is 5.6. This is not a bad option, but you should try to upgrade to the latest stable quickly - PHP 5.6 [will not receive security updates beyond 2018](http://php.net/supported-versions.php).  Upgrading is really quite easy, as there are not many [backwards compatibility breaks][php71-bc]. If you are not sure which version a function or feature is in, you can check the PHP documentation on the [php.net][php-docs] website.
+Ipak, velika je verovatnoća da ćete se u bliskoj budućnosti najčešće susretati sa PHP 5.x, a najnovija 5.x verzija je 5.6. To je sasvim u redu, ali bi trebalo da pokušate da se upgrade-ujete na najnoviju verziju, jer [bezbednosne ispravke za PHP 5.6 će se objavljivati do 2018. godine](http://php.net/supported-versions.php). Nadogradnja je poprilično jednostavna, jer nema toliko puno [nekomatibilnosti][php71-bc].
 
 [php-release]: http://php.net/downloads.php
 [php-docs]: http://php.net/manual/
 [php71-bc]: http://php.net/manual/migration71.incompatible.php
----
-isChild: true
-title: Koristite aktuelnu stabilnu verziju (5.6)
-anchor: use_the_current_stable_version
----
-
-## Koristite aktuelnu stabilnu verziju (5.6) {#use_the_current_stable_version_title}
-
-Ako počinjete da učite PHP, krenite sa aktuelnom stabilnom verzijom [PHP 5.6][php-release].
-PHP je znatno napredovao dodavanjem moćnih [novih funkcionalnosti](#language_highlights) poslednjih par godina.
-Iako je mala razlika u broju verzije izmedju 5.2 i 5.6, ona predstavlja _značajna_ poboljšanja. Ako tražite
-neku funkciju ili način na koji se ona koristi, dokumentacija na [php.net][php-docs] sajtu će imati odgovor.
-
-[php-release]: http://www.php.net/downloads.php
-[php-docs]: http://www.php.net/manual/en/
