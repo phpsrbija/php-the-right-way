@@ -1,5 +1,5 @@
 baseurl: /php-the-right-way
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 permalink: date
 maruku:
