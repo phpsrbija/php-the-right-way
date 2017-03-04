@@ -41,9 +41,13 @@ _PHP: Pravi način_ je preveden na nekoliko jezika:
 * [简体中文](http://laravel-china.github.io/php-the-right-way/)
 * [繁體中文](http://laravel-taiwan.github.io/php-the-right-way)
 
+## Book
+
+Najnovija verzija _PHP: Pravi način_ je dostupna i u PDF, EPUB i MOBI formatima. [Posetite Leanpub][1]
+
 ## Kako da doprinesete
 
-Pomozite da ovaj sajt postane najbolji resurs za nove PHP programere! [Doprinesite na GitHub-u][1]
+Pomozite da ovaj sajt postane najbolji resurs za nove PHP programere! [Doprinesite na GitHub-u][2]
 
 ## Proširite vest!
 
@@ -52,5 +56,6 @@ tako što ćete ukazati PHP programerima gde mogu da pronađu kvalitetne informa
 
 [Web baneri][2]
 
-[1]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
-[2]: /banners.html
+[1]: https://leanpub.com/phptherightway
+[2]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
+[3]: /banners.html

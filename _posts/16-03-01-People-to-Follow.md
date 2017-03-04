@@ -6,12 +6,9 @@ anchor: people_to_follow
 
 ## Preporuke za praćenje {#people_to_follow_title}
 
-* [Rasmus Lerdorf](http://twitter.com/rasmus)
-* [Fabien Potencier](http://twitter.com/fabpot)
-* [Derick Rethans](http://twitter.com/derickr)
-* [Chris Shiflett](http://twitter.com/shiflett)
-* [Sebastian Bergmann](http://twitter.com/s_bergmann)
-* [Matthew Weier O'Phinney](http://twitter.com/mwop)
-* [Pádraic Brady](http://twitter.com/padraicb)
-* [Anthony Ferrara](http://twitter.com/ircmaxell)
-* [Nikita Popov](http://twitter.com/nikita_ppv)
+U početku, teško je naći zanimljive i dobro upućene članove PHP zajednice. Iscrpna lista članova PHP zajednice i njihovih Twitter naloga je dostupna ovde:
+
+* [25 PHP Developers to Follow Online][php-developers-to-follow]
+
+
+[php-developers-to-follow]: https://blog.newrelic.com/2014/05/02/25-php-developers-follow-online/

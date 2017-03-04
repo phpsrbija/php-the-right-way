@@ -38,6 +38,7 @@ if (password_verify('bad-password', $passwordHash)) {
 }
 {% endhighlight %}
 
+`password_hash()` takes care of password salting for you. The salt is stored, along with the algorithm and "cost", as part of the hash.  `password_verify()` extracts this to determine how to check the password, so you don't need a separate database field to store your salts. 
 
 * [Naučite više o `password_hash()`] [1]
 * [`password_compat` za PHP >= 5.3.7 && < 5.5] [2]
@@ -48,3 +49,4 @@ if (password_verify('bad-password', $passwordHash)) {
 [2]: https://github.com/ircmaxell/password_compat
 [3]: http://en.wikipedia.org/wiki/Cryptographic_hash_function
 [4]: https://wiki.php.net/rfc/password_hash
+[5]: https://en.wikipedia.org/wiki/Salt_(cryptography)

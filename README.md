@@ -19,6 +19,8 @@ tako što ćete ukazati PHP programerima gde mogu da pronađu kvalitetne informa
 
 ## Kako da doprinesete
 
+Pročitajte `CONTRIBUTING.md` fajl za detaljne instrukcije i savete. Ali, ako vas zanima samo suština:
+
 1. _Forkujte_ i izmenite
 2. Opciono instalirajte [Ruby](https://rvm.io/rvm/install/) sa [Jekyll-om](https://github.com/mojombo/jekyll/) kako biste videli sajt u lokalu
 3. Pošaljite pull request na razmatranje

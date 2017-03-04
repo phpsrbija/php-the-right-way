@@ -64,3 +64,4 @@ biti potrebno da validirate email adresu, broj telefona ili godište prilikom pr
 [5]: http://php.net/function.filter-input
 [6]: http://php.net/security.filesystem.nullbytes
 [html-purifier]: http://htmlpurifier.org/
+[unserialize]: https://secure.php.net/manual/en/function.unserialize.php

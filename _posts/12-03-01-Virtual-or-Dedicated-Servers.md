@@ -1,4 +1,5 @@
 ---
+title:   Virtual or Dedicated Servers
 isChild: true
 title: Virtuelni ili namenski serveri
 anchor: virtual_or_dedicated_servers

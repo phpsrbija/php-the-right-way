@@ -1,4 +1,6 @@
+/nbproject
 /_site/
 *.DS_Store
 node_modules
-/nbproject
+vendor
+.bundle
