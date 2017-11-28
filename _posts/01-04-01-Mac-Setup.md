@@ -7,8 +7,8 @@ anchor: mac_setup
 ## Instalacija za Mac {#mac_setup_title}
 
 OS X dolazi sa preinstaliranom PHP verzijom koja je obično malo starija u odnosu na poslednju stabilnu verziju.
-Mountain Lion dolazi sa verzijom 5.3.10, Mavericks sa 5.4.17, Yosemite sa 5.5.9, ali to nije dovoljno dobro
-pošto je dostupna novija verzija PHP 5.6.
+Mavericks dolazi sa verzijom 5.4.17, Yosemite sa 5.5.9, El Capitan sa 5.5.29 i Sierra sa 5.6.24, ali to nije dovoljno dobro
+pošto je dostupna novija verzija PHP 7.1.
 
 Postoji nekoliko načina za instalaciju PHP-a na OS X-u.
 
@@ -17,7 +17,7 @@ Postoji nekoliko načina za instalaciju PHP-a na OS X-u.
 [Homebrew] je moćan menadžer paketa za OS X, pomoću kojeg vrlo lako možete da instalirate PHP i njegove ekstenzije.
 [Homebrew PHP] je repozitorijum koji sadrži različite PHP "formule" za Homebrew, putem kojeg možete instalirati sâm PHP.
 
-Trenutno, moguće je instalirati verzije `php53`, `php54`, `php55` ili `php56` pomoću `brew install` komande, a zatim ih menjati
+Trenutno, moguće je instalirati verzije `php53`, `php54`, `php55`, `php56`, `php70` ili `php71` pomoću `brew install` komande, a zatim ih menjati
 izmenom `PATH` varijable. Alternativa ovome je korišćenje [brew-php-switcher][brew-php-switcher] alata, koji omogućava automatsku promenu verzije.
 
 ### Instalacija PHP-a preko Macports-a
@@ -28,14 +28,14 @@ bilo command-line, X11 ili Aqua baziranih _open source_ programa na OS X operati
 MacPorts podržava pre-kompajlirane fajlove, tako da ne morate ponovo da kompajlirate svaki dependency
 iz izvornih tarball fajlova, i olakšava vam život ako nemate nijedan instaliran paket na vašem sistemu.
 
-Trenutno, moguće je instalirati verzije `php53`, `php54`, `php55` ili `php56` pomoću `port install` komande, na primer:
+Trenutno, moguće je instalirati verzije `php54`, `php55`, `php56`, `php70` ili `php71` pomoću `port install` komande, na primer:
 
-    sudo port install php54
-    sudo port install php55
+    sudo port install php56
+    sudo port install php71
 
 Nakon toga možete izvršavati `select` komandu za promenu aktivne verzije PHP-a:
 
-    sudo port select --set php php55
+    sudo port select --set php php71
 
 ### Instalacija PHP-a preko phpbrew-a
 
@@ -44,7 +44,7 @@ dve različite aplikacije zahtevaju različite verzije PHP-a, pritom ne koristit
 
 ### Instalacija PHP-a putem Liip's instalera
 
-Još jedna popularna opcija je [php-osx.liip.ch] koje omogućava jednostavnu instalaciju verzija 5.3 do 5.6.
+Još jedna popularna opcija je [php-osx.liip.ch] koje omogućava jednostavnu instalaciju verzija 5.3 do 7.1.
 On ne prepisuje PHP fajlove instalirane od strane Apple-a, već instalaciju vrši na zasebnoj lokaciji (/usr/local/php5).
 
 ### Ručno kompajliranje source-a
