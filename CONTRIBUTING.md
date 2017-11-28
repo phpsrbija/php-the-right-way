@@ -6,7 +6,7 @@ Ovaj dokument sadrži opšta uputstva za doprinos ovom projektu.
 
 Poštujte ovu proceduru kako bi vaš rad i predlozi bili usvojeni i prihvaćeni u ovom projektu:
 
-1. [Fork-ujte](http://help.github.com/fork-a-repo/) ovaj project, klonirajt vaš fork i podesite `remote` za vaš repo:
+1. [Fork-ujte](http://help.github.com/fork-a-repo/) ovaj project, klonirajte vaš fork i podesite `remote` za vaš repo:
 
    ```bash
    # Kloniraj repo u trenutni folder
