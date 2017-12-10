@@ -7,23 +7,25 @@ anchor:  composer_and_packagist
 ## Composer i Packagist {#composer_and_packagist_title}
 
 Composer je **sjajan** menadžer zavisnosti za PHP. Navedite zavisnosti vašeg projekta u `composer.json` fajlu i sa par
-jednostavnih komandi, Composer će automatski preuzeti zavisnosti i podesiti autoloading umesto vas.
+jednostavnih komandi, Composer će automatski preuzeti zavisnosti i podesiti autoloading umesto vas. Composer je analogan
+NPM-u u node.js svetu, ili Bundler-u u Ruby svetu.
 
 Postoji dosta PHP biblioteka koje su kompatibilne sa Composer-om, spremne za korišćenje u vašem projektu. Ovi
 "paketi" su dostupni na [Packagist]-u, zvaničnom repozitorijumu za PHP biblioteke kompatibilne sa Composer-om.
 
 ### Instalacija Composer-a
 
-Composer možete da instalirate lokalno (u vašem radnom direktorijumu; mada se to više ne preporučuje) ili
-globalno (npr. u /usr/local/bin). Ako želite da instalirate Composer lokalno, iz root direktorijuma vašeg projekta izvršite:
+Najbezbedniji način da preuzmete Composer jeste da [pratite zvanične instrukcije](https://getcomposer.org/download/).
+Ovo će proveriti ispravnost instalacione datoteke tako da ona nije oštećena ili kompromitovana.
+Instalaciona datoteka instalira Composer *lokalno* u vaš trenutni radni direktorijum.
+
+Mi preporučujemo da ga instalirate globalno (npr. jedina kopija u /usr/local/bin) - da biste to uradili izvšite sledeću komandu:
 
 {% highlight console %}
-curl -s https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
 {% endhighlight %}
 
-Ovo će preuzeti `composer.phar` (PHP arhivu). Ovaj fajl možete pokretati putem `php` komande, kako biste
-upravljali zavisnostima projekta. <strong>Napomena:</strong> Ako nadovezujete (pipe) neki kôd kojeg preuzimate direktno
-u interpreter, obavezno prethodno proverite sadržaj kako biste se uverili da je bezbedan.
+**Napomena:** Ukoliko zbog nedovoljnih ovlašćenja komanda iznad ne uspe, samo dodajte `sudo` ispred nje i ponovo je izvršite.
 
 #### Instalacija na Windows-u
 
@@ -54,7 +56,7 @@ chmod +x $HOME/local/bin/composer
 Putanja `$HOME/local/bin` (ili direktorijum po vašem izboru) bi trebalo da se nalazi u vašoj promenljivoj okruženja
 `$PATH`. Na taj način će komanda `composer` postati dostupna.
 
-Kada u dokumentaciji naiđete na objašnjenje u kojem stoji da Composer pokreće preko `php composer.phar install`,
+Kada u dokumentaciji naiđete na objašnjenje u kojem stoji da Composer pokrećete preko `php composer.phar install`,
 to sada možete zameniti sa:
 
 {% highlight console %}
@@ -95,8 +97,9 @@ Sada možete koristiti zavisnosti i one će se po zahtevu automatski učitavati.
 ### Ažuriranje vaših zavisnosti
 
 Composer kreira fajl `composer.lock` koji čuva tačnu verziju svakog paketa kojeg je preuzeo kada ste prvi put izvršili
-`composer install` komandu. Ako na vašem projektu radite sa drugim programerima, a fajl `composer.lock` je distribuiran (verzionisan),
-nakon što oni pokrenu `composer install`, dobiće iste verzije kao i vi. Da biste ažurirali vaše zavisnosti, koristite `composer update` komandu.
+`composer install` komandu. Ako na vašem projektu radite sa drugim programerima, osigurajte da je fajl `composer.lock` distribuiran (verzionisan),
+tako da nakon što oni pokrenu `composer install`, dobiće iste verzije kao i vi. Da biste ažurirali vaše zavisnosti, koristite `composer update` komandu.
+Ne koristite `composer update` komandu prilikom deploy-a, već samo `composer install`, ili u suprotnom možete završiti sa drugačijim verzijama paketa na produkciji.
 
 Ovo je korisno u situacijama kada fleksibilno definišete zahteve za verzije. Tako na primer zahtev verzije `~1.8` znači "sve što je novije
 od verzije `1.8.0`, ali manje od `2.0.x-dev`". Takođe možete koristiti i `*` wildcard kao u slučaju `1.8.*`. Sada će
