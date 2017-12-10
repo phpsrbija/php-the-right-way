@@ -23,7 +23,7 @@ standardizovanu konvenciju za fajlove, klase i namespace-ove, kako bi se omoguć
 U oktobru 2014. godine, PHP-FIG je prethodni autoloading standard: [PSR-0][psr0], označio kao zastareo/prevaziđen (deprecated),
 i zamenio ga je upravo [PSR-4][psr4]. Trenutno su oba standarda u upotrebi, pri čemu PSR-4 zahteva PHP 5.3,
 dok mnogi PHP 5.2 projekti  koriste PSR-0. Ako nameravate da koristite autoloading standard za neku novu aplikaciju
-ili paket, onda definitivno treba da uzmete u obzir PSR-4.
+ili paket, koristite PSR-4.
 
 * [Pročitajte više o Namespace-ovima][namespaces]
 * [Pročitajte o PSR-0][psr0]
@@ -31,5 +31,5 @@ ili paket, onda definitivno treba da uzmete u obzir PSR-4.
 
 
 [namespaces]: http://php.net/language.namespaces
-[psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
-[psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
+[psr0]: http://www.php-fig.org/psr/psr-0/
+[psr4]: http://www.php-fig.org/psr/psr-4/
