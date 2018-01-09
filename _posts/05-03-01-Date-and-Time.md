@@ -12,7 +12,7 @@ pruža dobar objektno-orijentisani interfejs za najčešće slučajeve korišće
 manipuliše i vremenskim zonama, ali to je van okvira ovog kratkog uvoda.
 
 Da biste započeli sa radom sa DateTime klasom, konvertujte string koji sadrži datum i vreme u objekat pomoću
-`createFromFormat()` factory metode ili pozovite `new \DateTime` kako biste dobili trenutni datum/vreme.
+`createFromFormat()` proizvodne (factory) metode ili pozovite `new \DateTime` kako biste dobili trenutni datum/vreme.
 Koristite `format()` metodu za konvertovanje DateTime instance u string.
 
 {% highlight php %}
@@ -23,7 +23,7 @@ $start = DateTime::createFromFormat('d. m. Y', $raw);
 echo 'Početni datum: ' . $start->format('Y-m-d') . "\n";
 {% endhighlight %}
 
-Računanje je moguće korišćenjem DateInterval klase. DateTime ima metode kao što su `add()` and `sub()` koji prihvataju
+Računanje sa klasom DateTime je moguće korišćenjem DateInterval klase. DateTime ima metode kao što su `add()` and `sub()` koji prihvataju
 DateInterval instancu kao argument. Nemojte pisati kôd koji očekuje isti broj sekundi svakog dana, jer će letnje i zimsko
 računanje vremena i promene vremenske zone oboriti tu pretpostavku. Umesto toga koristite vremenske intervale. Za
 računanje razlike između datuma koristite metodu `diff()`. Ona vraća DateInterval instancu, koja u sebi sadrži sve
@@ -62,6 +62,11 @@ foreach ($periodIterator as $date) {
     echo $date->format('Y-m-d') . ' ';
 }
 {% endhighlight %}
+
+[Carbon](http://carbon.nesbot.com) je popularna ekstenzija (produžetak) PHP API-ja za DateTime. Ona nasleđuje sve osobine
+od DateTime klase tako da zahteva minimalne izmene postojećeg kôda dok donosi dodatne osobine kao što su podrška za lokalizaciju (Localization),
+dodatni načini za dodavanje, oduzimanje i formatiranje objekata tipa DateTime, i dodatno sredstva za testiranje vašeg kôda
+tako da možete da simulirate datum/vreme po vašem izboru.
 
 * [Pročitajte više o DateTime klasi][datetime]
 * [Pročitajte više o formatiranju datuma][dateformat] (prihvaćene opcije za formatiranje datuma)
