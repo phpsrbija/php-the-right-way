@@ -15,8 +15,8 @@ PHP je sam po sebi tolerantan što se ovoga tiče, tako da poziv `file_get_conte
 može rezultovati samo sa vraćenim `FALSE` i upozorenjem (warning).
 Mnogi stariji PHP frejmvorci kao što je CodeIgniter će samo vratiti false, logovati poruku u
 njegov odgovarajući log i eventualno će vam omogućiti da koristite metod kao što je `$this->upload->get_error()`
-kako biste videli šta se zapravo desilo. Problem s tim je što mora da tražite grešku i čitate dokumentaciju
-kako biste našli odgovarajući error metod, umesto da to bude veoma očigledno.
+kako biste videli šta se zapravo desilo. Problem s tim je što morate da tražite grešku i čitate dokumentaciju
+kako biste pronašli odgovarajući error metod, umesto da to bude veoma očigledno.
 
 Još jedan problem postoji u slučaju kada klase automatski ispisuju grešku i prekidaju izvršavanje.
 Kada uradite tako nešto, sprečavate drugog programera da dinamički obradi tu grešku. Izuzetke treba
@@ -58,7 +58,7 @@ class ValidationException extends Exception {}
 {% endhighlight %}
 
 Ovo zapravo znači da možete imati nekoliko catch blokova i ponaosob obrađivati različite izuzetke. Ovo može dovesti
-do toga da imate _mnogo_ custom Exception klasa, a pritom su umesto nekih od njih mogli biti korišćene
+do toga da imate _mnogo_ custom Exception klasa, a pritom su umesto nekih od njih mogle biti korišćene
 SPL Exception klase, dostupne kroz [SPL ekstenziju][splext].
 
 Ako na primer koristite `__call()` magični metod i zatražen je neki nepostojeći metod, onda umesto bacanja
@@ -71,7 +71,7 @@ standardnog izuzetka, što bi bilo nejasno, ili kreiranja custom Exception klase
 * [Najbolja praksa za izuzetke u PHP 5.3][exception-best-practices53]
 
 
-[splext]: #standard_php_library
+[splext]: /#standard_php_library
 [exceptions]: http://php.net/language.exceptions
 [splexe]: http://php.net/spl.exceptions
 [nesting-exceptions-in-php]: http://www.brandonsavage.net/exceptional-php-nesting-exceptions-in-php/
