@@ -19,7 +19,7 @@ anchor: templating_further_reading
 ### Biblioteke
 
 * [Aura.View](https://github.com/auraphp/Aura.View) *(nativni)*
-* [Blade](http://laravel.com/docs/templates) *(kompajlirani, specifičan za framework)*
+* [Blade](http://laravel.com/docs/blade) *(kompajlirani, specifičan za framework)*
 * [Brainy](https://github.com/box/brainy) *(kompajlirani)*
 * [Dwoo](http://dwoo.org/) *(kompajlirani)*
 * [Latte](https://github.com/nette/latte) *(kompajlirani)*
