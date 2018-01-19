@@ -12,4 +12,6 @@ Pri kreiranju konfiguracionih fajlova vaše aplikacije, preporuka je da to bude 
 - Ako ipak morate da čuvate konfiguracione fajlove u document root-u, neka to budu fajlovi sa `.php` ekstenzijom.
 Na taj način ćete obezbediti da, čak iako im se pristupi direktno, kroz browser, neće biti prikazani u tekstualnom formatu.
 - Informacije u konfiguracionim fajlovima bi trebalo da se adekvatno zaštite, bilo enkripcijom ili sistemskim
-dozvolama za prava pristupa
+dozvolama za prava pristupa (grupa/korisnik).
+- Poželjno je da budete sigurni da u vaš sistem za kontrolisanje izvornog kôda ne komitujete (commit) konfiguracione fajlove
+koji sadrže poverljive podatke kao što su npr. lozinke ili API tokeni.
