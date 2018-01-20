@@ -1,10 +1,10 @@
 ---
 isChild: true
-title: Alati za komplementarno testiranje
+title: Dodatni alati za testiranje
 anchor:  complementary_testing_tools
 ---
 
-## Alati za komplementarno testiranje {#complementary_testing_tools_title}
+## Dodatni alati za testiranje {#complementary_testing_tools_title}
 
 Pored pojedinačnih TDD i BDD frejmvorka, postoji i niz generičkih frejmvorka i biblioteka
 koje mogu biti od koristi za bilo koji od ova dva pristupa.
@@ -18,7 +18,7 @@ Integrisan je u [PHPSpec], a može se koristiti i unutar [PHPUnit-a][PHPUnit].
 
 
 [Selenium]: http://seleniumhq.org/
-[integrisan u PHPUnit]: http://phpunit.de/manual/current/en/selenium.html
+[integrisan u PHPUnit]: https://github.com/giorgiosironi/phpunit-selenium/
 [Mockery]: https://github.com/padraic/mockery
 [PHPUnit]: http://phpunit.de/
 [PHPSpec]: http://www.phpspec.net/
