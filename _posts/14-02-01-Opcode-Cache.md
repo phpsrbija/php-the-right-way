@@ -6,30 +6,30 @@ anchor: opcode_cache
 
 ## Opcode keš {#opcode_cache_title}
 
-Kada se PHP fajl izvršava, on se u pozadini najpre kompajlira u opcode, a zatim se taj opcode izvršava.
-Ako se PHP fajl ne menja, odgovarajući opcode će biti isti. To znači da korak kompajliranja predstavlja samo
-bespotrebno trošenje procesorskih resursa.
+Kada se PHP fajl izvršava, on se prvo mora iskompajlirati u opkodove ([opcodes](http://php.net/manual/en/internals2.opcodes.php)),
+mašinske instrukcije za procesor. Ukoliko izvorni kôd nije modifikovan, opkodovi će biti isti, tako da ovaj korak kompilacije
+predstavlja samo trošenje procesorskih resursa.
 
-Upravo ovde opcode keširanje stupa na scenu. Ono sprečava suvišno kompajliranje, tako što se rezultujući
-opcode čuva u memoriji, a zatim se koristi u narednim izvršavanjima. Instalacija opcode keša je brza i
-jednostavna, a vaša aplikacija će raditi znatno brže. Zaista nema razloga da ga ne koristite.
+Opcode keš sprečava suvišno kompajliranje, tako što se rezultujući opcode čuva u memoriji, a zatim se koristi u narednim izvršavanjima.
+Obično će prvo proveriti potpis ili vreme poslednje izmene fajla, u slučaju ako je bilo bilo kakvih izmena.
 
-Od verzije PHP 5.5 postoji ugrađen opcode keš nazvan [OPcache][opcache-book]. On je takođe
-dostupan i za prethodne verzije.
+Opcode keš će vašoj aplikaciji najverovatnije doneti značajno poboljšanje u brzini. Od verzije PHP 5.5 postoji ugrađen opcode keš nazvan [Zend OPcache][opcache-book].
+U zavisnosti od vašeg PHP paketa/distribucije, uglavnom je uključen kao podrazumevana vrednost - proverite [opcache.enable](http://php.net/manual/en/opcache.configuration.php#ini.opcache.enable)
+kao i rezultat poziva funkcije `phpinfo()` kako biste bili sigurni. Za prethodne verzije postoji PECL ekstenzija.
 
 Saznajte više o opcode keširanju:
 
-* [OPcache][opcache-book] (ugrađen od verzije PHP 5.5)
+* [Zend OPcache][opcache-book] (ugrađen od verzije PHP 5.5)
+* Zend OPcache (ranije poznat kao Zend Optimizer+) je sada [otvorenog kôda][Zend Optimizer+]
 * [APC] (PHP <= 5.4)
 * [XCache]
-* [Zend Optimizer+] (deo Zend Server paketa)
 * [WinCache] (ekstenzija za MS Windows Server)
-* [lista PHP akceleratora][PHP_accelerators]
+* [lista PHP akceleratora na Wikipediji][PHP_accelerators]
 
 
 [opcache-book]: http://php.net/book.opcache
 [APC]: http://php.net/book.apc
 [XCache]: http://xcache.lighttpd.net/
-[Zend Optimizer+]: http://www.zend.com/products/server/
+[Zend Optimizer+]: https://github.com/zendtech/ZendOptimizerPlus
 [WinCache]: http://www.iis.net/download/wincacheforphp
 [PHP_accelerators]: http://en.wikipedia.org/wiki/List_of_PHP_accelerators
