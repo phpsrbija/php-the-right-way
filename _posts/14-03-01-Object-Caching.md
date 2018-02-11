@@ -6,14 +6,14 @@ anchor: object_caching
 
 ## Keširanje podataka/objekata {#object_caching_title}
 
-Postoje situacije u kojima je isplativo keširati određene objekte, kao na primer neki podatke koju su
+Postoje situacije u kojima je isplativo keširati određene objekte, kao na primer neke podatke koji su
 komplikovani za dohvatanje ili upiti ka bazi čiji se rezultat retko menja. Tada možete koristiti alate
 za keširanje objekata, kako bi ti podaci bili u memoriji radi njihovog bržeg dohvatanja. Ako sačuvate
 te podatke u neko skladište (storage) nakon što ih dohvatite, a zatim ih izvlačite iz keša u svakom narednom zahtevu,
 dobićete znatno poboljšanje performansi, kao i smanjeno opterećenje (load) na vaše DB servere.
 
-Dosta popularnih opcode keš rešenja omogućava keširanje i nekih custom podataka, pa je to još jedan
-razlog da ih koristite. APCu, XCache i WinCache na raspolaganje imaju API-e za čuvanje podataka iz
+Dosta popularnih bajtkôd keš rešenja omogućava keširanje i nekih custom podataka, pa je to još jedan
+razlog da ih koristite. APCu, XCache i WinCache na raspolaganje imaju API-je za čuvanje podataka iz
 vašeg PHP kôda u njihov memorijski keš.
 
 Najčešće korišćeni memorijski sistemi za keširanje su APCu i Memcached. APCu je odličan izbor za keširanje
@@ -28,7 +28,7 @@ pa na primer APCu podaci neće biti deljeni među procesima. U tom slučaju bi t
 zato što se on ne vezuje za PHP proces.
 
 U umreženoj konfiguraciji APCu se obično bolje pokazuje od Memcached-a u smislu brzine pristupa, ali Memcached
-se brže i bolje skalira. Ako vaša aplikacija ne radi na više servera ili vam ne trebaju dodatne mogućnosti
+se brže i bolje skalira. Ukoliko ne očekujete da će se vaša aplikacija izvršavati na više servera ili vam ne trebaju dodatne mogućnosti
 koje Memcached nudi, onda je APCu verovatno najbolja opcija za keširanje.
 
 Primer korišćenja APCu-a:
