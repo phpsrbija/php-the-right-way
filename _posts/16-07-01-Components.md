@@ -6,7 +6,7 @@ anchor: components
 
 ## Komponente {#components_title}
 
-Kao što je prethodno pomenuto, komponente predstavljau još jedan pristup u cilju kreiranja,
+Kao što je prethodno pomenuto, komponente predstavljaju još jedan pristup u cilju kreiranja,
 distribuiranja i implementiranja deljenog kôda. Postoje različiti repozitorijumi (repositories) komponenata,
 od kojih su najpoznatija sledeća dva:
 
@@ -30,6 +30,7 @@ koristite sam FuelPHP frejmvork.
 * [Symfony komponente]
 * [The League of Extraordinary paketi]
 * Laravel's Illuminate komponente
+    * [IoC Container]
     * [Eloquent ORM]
     * [Queue]
 
@@ -41,12 +42,13 @@ samo one koju su najbolje izdvojene su na prethodnom spisku._
 [PEAR]: /#pear
 [Dependency Management]: /#dependency_management
 [FuelPHP Validation package]: https://github.com/fuelphp/validation
-[Aura]: http://auraphp.com/packages/v2
+[Aura]: http://auraphp.com/framework/2.x/en/
 [FuelPHP]: https://github.com/fuelphp
 [Hoa Project]: https://github.com/hoaproject
 [Orno]: https://github.com/orno
 [Symfony komponente]: http://symfony.com/doc/current/components/index.html
 [The League of Extraordinary paketi]: http://thephpleague.com/
+[IoC Container]: https://github.com/illuminate/container
 [Eloquent ORM]: https://github.com/illuminate/database
 [Queue]: https://github.com/illuminate/queue
 [Illuminate komponente]: https://github.com/illuminate
