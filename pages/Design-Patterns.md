@@ -12,9 +12,9 @@ lakši za razumevanje.
 
 * [Arhitekturalni patern (Wikipedia)](https://en.wikipedia.org/wiki/Architectural_pattern)
 * [Dizajn patern (Wikipedia)](https://en.wikipedia.org/wiki/Software_design_pattern)
-* [Primeri implementacija dizajn paterna](https://github.com/domnikl/DesignPatternsPHP)
+* [Primeri implementacija dizajn paterna](http://designpatternsphp.readthedocs.io/en/latest/)
 
-## Factory
+## Factory (fabrika)
 
 Jedan od najčešće korišćenih dizajn paterna je Factory. U njegovom slučaju, sve što neka klasa radi jeste kreiranje
 objekta kojeg nameravate da koristite. Pogledajmo sledeći primer Factory paterna:
@@ -64,73 +64,12 @@ factory-a vas možete lišiti dosta problema.
 
 * [Factory patern (Wikipedia)](https://en.wikipedia.org/wiki/Factory_pattern)
 
-## Singleton
+## Singleton (unikat)
 
 Pri razvoju web aplikacija, često ima smisla konceptualno i arhitekturalno omogućiti korišćenje samo jedne
 instance određene klase. Singleton patern omogućava upravo tako nešto.
 
-{% highlight php %}
-<?php
-class Singleton
-{
-    /**
-     * @var Singleton Referenca *Singleton* instance ove klase.
-     */
-    private static $instance;
-
-    /**
-     * Vraća *Singleton* instancu ove klase.
-     *
-     * @return Singleton The *Singleton* instance.
-     */
-    public static function getInstance()
-    {
-        if (null === static::$instance) {
-            static::$instance = new static();
-        }
-
-        return static::$instance;
-    }
-
-    /**
-     * Konstruktor je protected kako bi izvan klase bilo onemogućeno
-     * kreiranje *Singleton* instance preko `new` operatora.
-     */
-    protected function __construct()
-    {
-    }
-
-    /**
-     * Sprečavanje kloniranja *Singleton* instance.
-     *
-     * @return void
-     */
-    private function __clone()
-    {
-    }
-
-    /**
-     * Sprečavanje deserijalizacije *Singleton* instance.
-     *
-     * @return void
-     */
-    private function __wakeup()
-    {
-    }
-}
-
-class SingletonChild extends Singleton
-{
-}
-
-$obj = Singleton::getInstance();
-var_dump($obj === Singleton::getInstance());             // bool(true)
-
-$anotherObj = SingletonChild::getInstance();
-var_dump($anotherObj === Singleton::getInstance());      // bool(false)
-
-var_dump($anotherObj === SingletonChild::getInstance()); // bool(true)
-{% endhighlight %}
+**TODO: NEED NEW SINGLETON CODE EXAMPLE**
 
 Ovaj kôd implementira singleton patern koristeći [*statičku* promenljivu](http://php.net/language.variables.scope#language.variables.scope.static)
 i statički `getInstance()` metod. Obratite pažnju i na sledeće:
@@ -141,11 +80,11 @@ kako bi izvan klase bilo onemogućeno kreiranje *Singleton* instance preko `new`
 kako bi bilo onemogućeno kloniranje instance preko [`clone`](http://php.net/language.oop5.cloning) operatora.
 * Magični metod [`__wakeup()`](http://php.net/language.oop5.magic#object.wakeup) je deklarisan kao private
 kako bi bila onemogućena deserijalizacija instance preko globalne funkcije [`unserialize()`](http://php.net/function.unserialize).
-* Nova instanca se kreira prek [late static binding](http://php.net/language.oop5.late-static-bindings) mehanizma
+* Nova instanca se kreira preko [late static binding](http://php.net/language.oop5.late-static-bindings) mehanizma
 u statičkom metodu `getInstance()` putem ključne reči `static`. Upravo ovo omogućava nasleđivanje klase `Singleton` u primeru.
 
 Signleton patern je koristan u situacijama kada treba da obezbedimo da imamo samo jednu instancu neke klase
-u toku jednog kompletnog ciklusa u aplikaciji. Tipičan primer su globalni objekti (kao što je neka Configuration klasa)
+u toku jednog kompletnog ciklusa u web aplikaciji. Tipičan primer su globalni objekti (kao što je neka Configuration klasa)
 ili deljeni resursi (kao što je event queue).
 
 Treba da budete oprezni pri korišćenju Singleton paterna, jer sama njegova priroda uvodi globalno stanje
