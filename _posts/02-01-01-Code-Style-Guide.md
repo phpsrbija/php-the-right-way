@@ -30,7 +30,7 @@ i rade sa vašim kôdom, a da će aplikacije koje koriste komponente biti konzis
 Možete da koristite [PHP_CodeSniffer][phpcs] kako biste proverili da li je vaš kôd u skladu sa nekom od ovih preporuka,
 ali i dodatke za tekst editore kao što je [Sublime Text][st-cs] u cilju dobijanja rezultata provera u realnom vremenu.
 
-Automatksu korekciju izgleda kôda možete obaviti korišćenjem jednog od sledećih alata:
+Automatsku korekciju izgleda kôda možete obaviti korišćenjem jednog od sledećih alata:
 
 - Jedan je [PHP Coding Standards Fixer][phpcsfixer] koji je veoma dobro testiran.
 - Takođe, može se koristiti alat [PHP Code Beautifier and Fixer][phpcbf] koji je uključen sa PHP_CodeSniffer-om da biste skladno podesili vaš kôd.
