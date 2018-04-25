@@ -7,7 +7,7 @@ anchor: components
 ## Komponente {#components_title}
 
 Kao što je prethodno pomenuto, komponente predstavljaju još jedan pristup u cilju kreiranja,
-distribuiranja i implementiranja deljenog kôda. Postoje različiti repozitorijumi (repositories) komponenata,
+distribucije i implementacije deljenog kôda. Postoje različiti repozitorijumi (repositories) komponenata,
 od kojih su najpoznatija sledeća dva:
 
 * [Packagist]

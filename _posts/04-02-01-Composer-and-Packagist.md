@@ -97,8 +97,8 @@ Sada možete koristiti zavisnosti i one će se po zahtevu automatski učitavati.
 ### Ažuriranje vaših zavisnosti
 
 Composer kreira fajl `composer.lock` koji čuva tačnu verziju svakog paketa kojeg je preuzeo kada ste prvi put izvršili
-`composer install` komandu. Ako na vašem projektu radite sa drugim programerima, osigurajte da je fajl `composer.lock` distribuiran (verzionisan),
-tako da nakon što oni pokrenu `composer install`, dobiće iste verzije kao i vi. Da biste ažurirali vaše zavisnosti, koristite `composer update` komandu.
+`composer install` komandu. Ako na projektu radite sa drugim programerima, osigurajte da je fajl `composer.lock` distribuiran (verzionisan),
+tako da nakon što oni pokrenu `composer install`, dobiće iste verzije kao i vi. Da biste ažurirali zavisnosti aplikacije, koristite `composer update` komandu.
 Ne koristite `composer update` komandu prilikom deploy-a, već samo `composer install`, ili u suprotnom možete završiti sa drugačijim verzijama paketa na produkciji.
 
 Ovo je korisno u situacijama kada fleksibilno definišete zahteve za verzije. Tako na primer zahtev verzije `~1.8` znači "sve što je novije

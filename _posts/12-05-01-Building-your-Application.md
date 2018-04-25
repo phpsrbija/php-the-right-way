@@ -1,13 +1,13 @@
 ---
 isChild: true
-title: Izgradnja i isporučivanje vaše aplikacije
+title: Izgradnja i isporučivanje aplikacije
 anchor: building_and_deploying_your_application
 ---
 
-## Izgradnja i isporučivanje (deploy) vaše aplikacije {#building_and_deploying_your_application}
+## Izgradnja i isporučivanje (deploy) aplikacije {#building_and_deploying_your_application}
 
 Ako zateknete sebe da ručno radite promene šeme baze podataka ili ručno pokrećete testove pre nego što ažurirate svoje
-fajlove (ručno), razmislite još jednom! Svaki dodatni ručni zadatak tokom deploy-a nove verzije vaše aplikacije povećava 
+fajlove (ručno), razmislite još jednom! Svaki dodatni ručni zadatak tokom deploy-a nove verzije aplikacije povećava 
 šanse za fatalne greške. Bez obzira da li se bavite jednostavnim ažuriranjem, 
 obimnim procesom izgradnje ili čak strategijom kontinuirane integracije, [automatska izgradnja][buildautomation] je Vaš prijatelj.
 

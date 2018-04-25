@@ -14,7 +14,7 @@ Kreiranje **osnovne virtuelne kutije** je dobar način da se uverite da su sve o
 i otklanja potrebu za ručnim izvršavanjem komplikovanih inicijalnih komandi. Takođe, možete "uništiti" vašu osnovnu
 virtuelnu kutiju i ponovo je kreirati bez dodatnih koraka. Na taj način omogućeno je da lako kreirate svežu instalaciju.
 
-Vagrant kreira folder za deljenje vašeg koda između hosta i vaše virtuene mašine, tako da možete
+Vagrant kreira folder za deljenje vašeg koda između hosta i vaše virtuelne mašine, tako da možete
 kreirati i menjati fajlove na host mašini i potom izvršiti kôd unutar virtuelne mašine.
 
 ### Mala pomoć

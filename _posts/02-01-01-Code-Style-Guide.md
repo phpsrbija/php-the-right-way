@@ -39,7 +39,7 @@ phpcs možete pokrenuti ručno iz konzole:
 
     phpcs -sw --standard=PSR2 file.php
 
-Prikaziće greške kao i predloge za njihovo rešavanje. Ova komanda može biti od koristi ako je uključite u neki git hook.
+Prikazaće greške kao i predloge za njihovo rešavanje. Ova komanda može biti od koristi ako je uključite u neki git hook.
 Na taj način grane koje sadrže kôd koji nije u skladu sa određenim standardom neće moći da uđu u repozitorijum dok se ne poprave.
 
 Ukoliko imate PHP_CodeSniffer onda probleme sa izgledom kôda koje on prijavljuje možete automatski popraviti uz pomoć alata [PHP Code Beautifier and Fixer][phpcbf].
