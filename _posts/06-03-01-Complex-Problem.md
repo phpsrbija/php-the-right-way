@@ -20,8 +20,8 @@ i gde? Na primer, MVC frejmvorci obično na raspolaganje stavljaju super objekat
 kontroleri moraju da naslede da bi dobili pristup njenim zavisnostima. Ovo **jeste** Inverzija kontrole, međutim, umesto
 da olabavi zavisnosti, ovaj metod ih jednostavno izmešta.
 
-Dependency Injection nam omogućava da na elegantniji način rešimo ovaj problem tako što ćemo **ubacujemo**
-zavisnosti koje su nam potrebne i kada su nam potrebne, umesto da ih hardkodujemo i direktno instanciramo.
+Dependency Injection nam omogućava da na elegantniji način rešimo ovaj problem tako što **ubacujemo** (injektujemo)
+samo one zavisnosti koje su nam potrebne i kada su nam potrebne, umesto da ih hardkodujemo i direktno instanciramo.
 
 ### Dependency Inversion princip
 
@@ -57,4 +57,4 @@ mock-ujemo taj interfejs znajući da će naš kolega napraviti adapter u skladu 
 
 Još veći benefit ovog pristupa jeste to što je naš kôd mnogo skalabilniji. Ako posle nekog vremena odlučimo da pređemo na drugi tip baze podataka,
 dovoljno je da napišemo adapter koji implementira postojeći interfejs i zatim ga koristimo kao dependency naše `Database` klase, pri čemu neće biti
-potrebe za bilo kakvim dodatnim refaktorom, jer smo sigurni da je adapter u skladu sa interfejsom.
+potrebe za bilo kakvim dodatnim refaktorisanjem, jer smo sigurni da je adapter u skladu sa interfejsom.

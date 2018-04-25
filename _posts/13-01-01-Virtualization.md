@@ -6,7 +6,7 @@ anchor: virtualization
 # Virtuelizacija {#virtualization_title}
 
 Pokretanje vaših aplikacija na različitim okruženjima, razvojno i produkcijsko okruženje, može dovesti do različitih
-bagova prilikom prebacivanja aplikacije na živ mod. Takođe, kad radite u timu programera, postaje teško vaše
+grešaka prilikom prebacivanja aplikacije na živ mod. Takođe, kada radite u timu programera, postaje teško vaše
 okruženje održavati sa najnovijim verzijama svih biblioteka.
 
 Ako razvijate aplikaciju na Windows OS, a deploy radite na Linux OS ili radite u timu, trebalo bi uzeti u obzir

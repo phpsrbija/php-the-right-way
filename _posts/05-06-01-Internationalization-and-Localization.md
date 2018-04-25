@@ -1,106 +1,108 @@
 ---
-title:   Internationalization and Localization
+title:   Internacionalizacija i Lokalizacija
 isChild: true
 anchor:  i18n_l10n
 ---
 
-## Internationalization (i18n) and Localization (l10n) {#i18n_l10n_title}
+## Internacionalizacija (i18n) i Lokalizacija (l10n) {#i18n_l10n_title}
 
-_Disclaimer for newcomers: i18n and l10n are numeronyms, a kind of abbreviation where numbers are used to shorten
-words - in our case, internationalization becomes i18n and localization, l10n._
+_Objašnjenje za neupućene: i18n i l10n su numeromi, vrsta skraćenice kod koje se brojevi koriste da skrate reči - u našem
+slučaju, internacionalizacija postaje i18n i lokalizacija postaje l10n._
 
-First of all, we need to define those two similar concepts and other related things:
+Pre svega, potrebno je da definišemo ova dva slična koncepta i ostale povezane stvari:
 
-- **Internationalization** is when you organize your code so it can be adapted to different languages or regions
-without refactorings. This is usually done once - preferably, in the beginning of the project, or else you'll probably
-need some huge changes in the source!
-- **Localization** happens when you adapt the interface (mainly) by translating contents, based on the i18n work done
-before. It usually is done every time a new language or region needs support and is updated when new interface pieces
-are added, as they need to be available in all supported languages.
-- **Pluralization** defines the rules needed between different languages to interoperate strings containing numbers and 
-counters. For instance, in English when you have only one item, it's singular, and anything different from that is 
-called plural; plural in this language is indicated by adding an S after some words, and sometimes changes parts of it.
-In other languages, such as Russian or Serbian, there are two plural forms in addition to the singular - you may even
-find languages with a total of four, five or six forms, such as Slovenian, Irish or Arabic.
+- **Internacionalizacija** je kada organizujete vaš kôd tako da ga možete prilagoditi različitim jezicima ili regionima
+bez refaktorisanja. Ovo se obično samo jednom obavi - poželjno na početku samog projekta, ili ćete u suprotnom najverovatnije
+morati da obavite velike promene u izvornom kôdu!
+- **Lokalizacija** se dešava kada prilagodite interfejs tako što (uglavnom) prevedete sadržaje, oslanjajući se na posao
+vezan za i18n koji ste prethodno obavili. Obično se radi svaki put kada novi jezik ili region zahtevaju podršku i ažurira
+se kada se dodaju novi delovi interfejsa, s' obzirom da moraju da budu dostupni u svim podržanim jezicima.
+- **Pluralizacija** definiše potrebna pravila među različitim jezicima kako bi tumačili stringove koji sadrže brojeve i brojioce.
+Na primer, u engleskom jeziku kada imate samo jednu stavku, to je jednina, i bilo šta drugačije od toga se zove množina; množina
+u ovom jeziku se označava sa dodavanjem jednog slova S nakon nekih reči, a ponekad se menjaju neki njihovi delovi. U drugim
+jezicima, kao što su ruski ili srpski, postoje dva oblika množine pored jednine - možete čak pronaći i jezike koji imaju
+i četiri, pet ili šest oblika, kao što su slovenački, irski ili arapski jezik.
 
-## Common ways to implement
-The easiest way to internationalize PHP software is by using array files and using those strings in templates, such as
-`<h1><?=$TRANS['title_about_page']?></h1>`. This is, however, hardly a recommended way for serious projects, as it poses
-some maintenance issues along the road - some might appear in the very beginning, such as pluralization. So, please,
-don't try this if your project will contain more than a couple of pages.
+## Uobičajeni načini implementacije
+Najlakši način da implementirate internacionalizaciju u PHP softveru jeste da koristite fajlove sa nizovima i da koristite
+njihove stringove u templejtima, kao na primer `<h1><?=$TRANS['title_about_page']?></h1>`. Ovo je, međutim, nepreporučeni način
+za ozbiljne projekte zato što ostavlja neke probleme za održavanje usput - neki će se pojaviti na početku, kao što je pluralizacija.
+Tako da, molimo vas, ne pokušavajte ovo ako će vaš projekat sadržati više od nekolicine stranica.
 
-The most classic way and often taken as reference for i18n and l10n is a [Unix tool called `gettext`][gettext]. It dates
-back to 1995 and is still a complete implementation for translating software. It is pretty easy to get running, while
-it still sports powerful supporting tools. It's about Gettext we will be talking here. Also, to help you not get messy
-over the command-line, we will be presenting a great GUI application that can be used to easily update your l10n source
-files.
+Najklasičniji način koji se često uzima kao primer za i18n i l10n je [Unix alatka zvana `gettext`][gettext]. Pojavila se
+1995. godine i još uvek je potpuno rešenje za prevođenje softvera. Poprilično je lako započeti da je koristite, dok još
+uvek podržava moćne alate. Ovde ćemo govoriti o Gettext alatki. Takođe, kako vas ne bismo zbunjivali sa primerima sa konzolne
+linije (CLI), predstavićemo odličnu grafičku (GUI) aplikaciju koja se može koristiti za jednostavno ažuriranje vaših l10n
+izvornih fajlova.
 
-### Other tools
+### Drugi alati
 
-There are common libraries used that support Gettext and other implementations of i18n. Some of them may seem easier to
-install or sport additional features or i18n file formats. In this document, we focus on the tools provided with the 
-PHP core, but here we list others for completion:
+Postoje opšte biblioteke koje se koriste i koje podržavanju Gettext i druge i18n implementacije. Neke od njih vam mogu
+delovati jednostavnije za instalaciju ili za podržavanje dodatnih osobina ili formata i18n fajlova. U ovom dokumentu,
+mi se fokusiramo na alate koji su podržani u samom PHP jeziku, ali ćemo nabrojati ostale kako bismo bili kompletni:
 
-- [oscarotero/Gettext][oscarotero]: Gettext support with an OO interface; includes improved helper functions, powerful
-extractors for several file formats (some of them not supported natively by the `gettext` command), and can also export
-to other formats besides `.mo/.po` files. Can be useful if you need to integrate your translation files into other parts
-of the system, like a JavaScript interface.
-- [symfony/translation][symfony]: supports a lot of different formats, but recommends using verbose XLIFF's. Doesn't
-include helper functions nor a built-in extractor, but supports placeholders using `strtr()` internally.
-- [zend/i18n][zend]: supports array and INI files, or Gettext formats. Implements a caching layer to save you from
-reading the filesystem every time. It also includes view helpers, and locale-aware input filters and validators.
-However, it has no message extractor.
+- [oscarotero/Gettext][oscarotero]: Podrška za Gettext sa OO interfejsom; uključuje unapređene pomoćne funkcije, moćne
+ekstraktore za nekoliko formata fajlova (neki od njih nisu nativno podržani u `gettext` komandi), i takođe može da eksportuje
+u druge formate pored `.mo/.po` fajlova. Može biti koristan ukoliko imate potrebu da integrišete fajlove za prevođenje u
+ostale delove sistema, kao na primer JavaScript interfejs.
+- [symfony/translation][symfony]: podržava dosta različitih formata, ali preporučuje da koristite opširan XLIFF format.
+Ne uključuje pomoćne funkcije niti ugrađen ekstraktor, ali podržava umetanje reči (placeholder) uz pomoć funkcije `strtr()`
+koju interno koristi.
+- [zend/i18n][zend]: podržava nizove i INI fajlove, ili Gettext formate. Implementira keširajući sloj kako bi vas spasao
+od pristupa fajlsistemu svaki put. Takođe uključuje pomoćne funkcije za poglede (view helpers), i ulazne filtere i validatore
+koji su svesni mesta tj. lokala (locale). Međutim, ne poseduje ekstraktor za poruke.
 
-Other frameworks also include i18n modules, but those are not available outside of their codebases:
-- [Laravel] supports basic array files, has no automatic extractor but includes a `@lang` helper for template files.
-- [Yii] supports array, Gettext, and database-based translation, and includes a messages extractor. It is backed by the
-[`Intl`][intl] extension, available since PHP 5.3, and based on the [ICU project]; this enables Yii to run powerful
-replacements, like spelling out numbers, formatting dates, times, intervals, currency, and ordinals.
+Drugi frejmvorci takođe poseduju i18n module, ali nisu dostupni izvan njihovog sopstvenog kôda:
+- [Laravel] podržava osnovne fajlove sa nizovima, nema automatskog ekstraktora ali podržava `@lang` pomoćnu funkciju za templejte.
+- [Yii] podržava nizove, Gettext, i prevođenje uz pomoć baze podataka, i uključuje ekstraktor za poruke. Bazira se na
+ekstenziji [`Intl`][intl], koja je u PHP-u dostupna od verzije 5.3, i koja je bazirana na [ICU projektu][ICU project]; ovo
+Yii-u omogućava da vrši moćne zamene kao na primer sricanje brojeva, formatiranje datuma, vremena, intervala, valuta i rednih brojeva.
 
-If you decide to go for one of the libraries that provide no extractors, you may want to use the gettext formats, so
-you can use the original gettext toolchain (including Poedit) as described in the rest of the chapter.
+Ukoliko se odlučite za neku od biblioteka koja ne podržava ekstraktore, možda ćete poželeti da koristite gettext formate,
+kako biste mogli da koristite originalne gettext alate (uključujući Poedit) kao što je objašnjeno u ostatku ovog poglavlja.
 
 ## Gettext
 
-### Installation
-You might need to install Gettext and the related PHP library by using your package manager, like `apt-get` or `yum`.
-After installed, enable it by adding `extension=gettext.so` (Linux/Unix) or `extension=php_gettext.dll` (Windows) to
-your `php.ini`.
+### Instalacija
+Možda će biti potrebno da instalirate Gettext i njegovu PHP biblioteku uz pomoć vašeg menadžera paketa, npr. `apt-get` ili `yum`.
+Nakon instalacije, potrebno je ga uključite tako što ćete dodati `extension=gettext.so` (Linux/Unix) ili `extension=php_gettext.dll` (Windows)
+u vaš `php.ini` fajl.
 
-Here we will also be using [Poedit] to create translation files. You will probably find it in your system's package
-manager; it's available for Unix, Mac, and Windows, and can be [downloaded for free on their website][poedit_download]
-as well.
+Ovde ćemo takođe koristiti [Poedit] za pravljenje fajlova za prevođenje (translation files). Ovaj alat ćete najverovatnije
+pronaći u vašem sistemskom menadžeru paketa; dostupan je za Unix, Mac, i Windows platforme, i takođe se može
+[besplatno preuzeti sa njihovog sajta][poedit_download].
 
-### Structure
+### Struktura
 
-#### Types of files
-There are three files you usually deal with while working with gettext. The main ones are PO (Portable Object) and
-MO (Machine Object) files, the first being a list of readable "translated objects" and the second, the corresponding
-binary to be interpreted by gettext when doing localization. There's also a POT (Template) file, that simply contains
-all existing keys from your source files, and can be used as a guide to generate and update all PO files. Those template
-files are not mandatory: depending on the tool you're using to do l10n, you can go just fine with only PO/MO files.
-You'll always have one pair of PO/MO files per language and region, but only one POT per domain.
+#### Tipovi fajlova
+Postoje tri fajla sa kojima se obično susrećete kada radite sa gettext alatom. Glavni fajlovi su PO (Portabilni Objekat)
+i MO (Mašinski Objekat), gde je prva vrsta fajla lista "prevedenih objekata" koje možete da čitate i druga vrsta pripadajući
+binarni podaci koje gettext tumači u procesu lokalizacije. Takođe, postoji i POT (Templejt) fajl, koji jednostavno sadrži
+sve postojeće ključeve iz vaših fajlova sa izvornim kôdom i koji se može koristiti kao priručnik za generisanje i ažuriranje
+svih PO fajlova. Ovi templejt fajlovi nisu obavezni: u zavisnosti od alata koji koristite za l10n, možete sasvim fino funkcionisati
+samo sa PO/MO fajlovima. Uvek ćete imati po jedan par PO/MO fajlova po jeziku i regionu, ali samo jedan POT fajl po području (domenu).
 
-### Domains
-There are some cases, in big projects, where you might need to separate translations when the same words convey 
-different meaning given a context. In those cases, you split them into different _domains_. They're basically named
-groups of POT/PO/MO files, where the filename is the said _translation domain_. Small and medium-sized projects usually,
-for simplicity, use only one domain; its name is arbitrary, but we will be using "main" for our code samples.  
-In [Symfony] projects, for example, domains are used to separate the translation for validation messages.
+### Domeni
+Postoje slučajevi, u velikim projektima, kada će vam možda biti potrebno da odvojite prevode kada identične reči imaju različito
+značenje u zavisnosti od konteksta. U ovim slučajevima potrebno je da ih raspodelite po različitim _domenima_. Domeni su, u suštini,
+imenovane grupe POT/PO/MO fajlova, gde se za ime fajla kaže da je od navedenog _domena prevoda_. Mali i projekti srednje veličine obično,
+zbog jednostavnosti, koriste samo jedan domen; njegovo ime je obavezno ali ćemo mi ovde koristiti naziv "main" (glavni) u primerima ispod.
+U [Symfony] projektima, na primer, domeni se koriste da razgraniče prevođenje validacionih poruka.
 
-#### Locale code
-A locale is simply a code that identifies one version of a language. It's defined following the [ISO 639-1][639-1] and 
-[ISO 3166-1 alpha-2][3166-1] specs: two lower-case letters for the language, optionally followed by an underline and two
-upper-case letters identifying the country or regional code. For [rare languages][rare], three letters are used.
+#### Kôd lokala
+Lokal je jednostavno kôd koji identifikuje jednu verziju jezika. Definisan je u saglasnosti sa [ISO 639-1][639-1] i
+[ISO 3166-1 alpha-2][3166-1] specifikacijama: dva mala slova za jezik, opciono sledi donja crta i dva velika slova koja označavaju zemlju ili kôd regiona.
+Za [retke jezike][rare], koriste se tri slova.
 
-For some speakers, the country part may seem redundant. In fact, some languages have dialects in different
-countries, such as Austrian German (`de_AT`) or Brazilian Portuguese (`pt_BR`). The second part is used to distinguish
-between those dialects - when it's not present, it's taken as a "generic" or "hybrid" version of the language.
+Za neka govorna područja, deo sa zemljom možda može izgledati suvišno. U suštini, neki jezici imaju dijalekte u različitim
+zemljama, kao na primer austrijski nemački (`de_AT`) ili brazilski portugalski (`pt_BR`). Drugi deo se koristi za razlikovanje
+između ovih dijalekata - ukoliko nije prisutan smatra se da se koristi "generička" ili "hibridna" verzija jezika.
 
-### Directory structure
-To use Gettext, we will need to adhere to a specific structure of folders. First, you'll need to select an arbitrary
-root for your l10n files in your source repository. Inside it, you'll have a folder for each needed locale, and a fixed
-`LC_MESSAGES` folder that will contain all your PO/MO pairs. Example:
+### Struktura direktorijuma
+Ukoliko želite da koristite Gettext, moraćete da se pridržavate određene strukture foldera. Prvo, u vašem repozitorijumu
+biće potrebno da izaberete proizvoljnu korenu (root) lokaciju za vaše l10n fajlove. Unutar tog direktorijuma, imaćete
+po jedan direktorijum za svaki lokal koji podržavate, i fiksirani `LC_MESSAGES` direktorijum koji će čuvati sve vaše
+PO/MO parove: Na primer:
 
 {% highlight console %}
 <project root>
@@ -126,31 +128,30 @@ root for your l10n files in your source repository. Inside it, you'll have a fol
        └─ ...
 {% endhighlight %}
 
-### Plural forms
-As we said in the introduction, different languages might sport different plural rules. However, gettext saves us from
-this trouble once again. When creating a new `.po` file, you'll have to declare the [plural rules][plural] for that
-language, and translated pieces that are plural-sensitive will have a different form for each of those rules. When
-calling Gettext in code, you'll have to specify the number related to the sentence, and it will work out the correct
-form to use - even using string substitution if needed.
+### Oblici množine
+Kao što smo napomenuli u uvodu, različiti jezici mogu drugačije da upotrebljavaju pravila množine. Međutim, gettext nas lišava
+ovih muka još jedanput. Kada pravite novi `.po` fajl, potrebno je da deklarišete [pravila množine][plural] za taj jezik,
+i delovi prevoda koji se menjaju u množini će imati drugačije oblike za svako od ovih pravila. Kada pozivate Gettext u kôdu,
+moraćete da navedete broj koji se odnosi na rečenicu, i on će izabrati pravilan oblik koji će se koristiti - čak će zameniti string ukoliko je to potrebno.
 
-Plural rules include the number of plurals available and a boolean test with `n` that would define in which rule the
-given number falls (starting the count with 0). For example:
+Pravila množine uključuju broj dostupnih oblika množine i bulov (boolean) test sa `n` koji definiše za koje pravilo zadati broj
+odgovara (odbrojavanje kreće od 0). Na primer:
 
-- Japanese: `nplurals=1; plural=0` - only one rule
-- English: `nplurals=2; plural=(n != 1);` - two rules, first if N is one, second rule otherwise
-- Brazilian Portuguese: `nplurals=2; plural=(n > 1);` - two rules, second if N is bigger than one, first otherwise
+- Japanski: `nplurals=1; plural=0` - samo jedno pravilo
+- Engleski: `nplurals=2; plural=(n != 1);` - dva pravila, prvo ako je N jednako jedan, u suprotnom drugo pravilo
+- Brazilski portugalski: `nplurals=2; plural=(n > 1);` - dva pravila, drugo ukoliko je N veće od jedan, prvo u suprotnom
 
-Now that you understood the basis of how plural rules works - and if you didn't, please look at a deeper explanation
-on the [LingoHub tutorial][lingohub_plurals] -, you might want to copy the ones you need from a [list][plural] instead
-of writing them by hand.
+Sada kada ste razumeli osnove kako pravila množine funkcionišu - a ukoliko niste, molimo vas da pogledate detaljnije objašnjenje
+u [LingoHub tutorijalu][lingohub_plurals] -, možda ćete poželeti da prekopirate neka pravila sa [liste][plural] umesto
+da ih ručno pišete.
 
-When calling out Gettext to do localization on sentences with counters, you'll have to give him the
-related number as well. Gettext will work out what rule should be in effect and use the correct localized version.
-You will need to include in the `.po` file a different sentence for each plural rule defined.
+Kada pozivate Gettext da uradi lokalizaciju u rečenicama sa brojiocima, biće potrebno da mu takođe obezbedite relevantan broj.
+Gettext će sam shvatiti koje pravilo da upotrebi i iskoristiti ispravnu lokalizovanu verziju. U `.po` fajlu moraćete da unesete
+različitu rečenicu za svako definisano pravilo množine.
 
-### Sample implementation
-After all that theory, let's get a little practical. Here's an excerpt of a `.po` file - don't mind with its format,
-but instead the overall content, you'll learn how to edit it easily later:
+### Primer implementacije
+Nakon sve te teorije, hajde da uradimo nešto praktično. Pred nama je jedan izvod `.po` fajla - ne obazirite se na njegov
+format, već na njegov sadržaj, kasnije ćete naučiti kako da ga jednostavno modifikujete:
 
 {% highlight po %}
 msgid ""
@@ -171,58 +172,52 @@ msgstr[0] "Só uma mensagem não lida"
 msgstr[1] "%d mensagens não lidas"
 {% endhighlight %}
 
-The first section works like a header, having the `msgid` and `msgstr` especially empty. It describes the file encoding,
-plural forms and other things that are less relevant.
-The second section translates a simple string from English to
-Brazilian Portuguese, and the third does the same, but leveraging string replacement from [`sprintf`][sprintf] so the
-translation may contain the user name and visit date.  
-The last section is a sample of pluralization forms, displaying
-the singular and plural version as `msgid` in English and their corresponding translations as `msgstr` 0 and 1
-(following the number given by the plural rule). There, string replacement is used as well so the number can be seen
-directly in the sentence, by using `%d`. The plural forms always have two `msgid` (singular and plural), so it's
-advised to not use a complex language as the source of translation.
+Prva sekcija služi kao zaglavlje, gde su `msgid` i `msgstr` posebno prazni. Ono opisuje koji enkoding fajl koristi,
+pravila množine i ostale stvari koje su manje važne.
+Druga sekcija prevodi jednostavan string iz engleskog u brazilski portugalski, i treća takođe, ali upotrebljava zamenu
+stringova uz pomoć funkcije [`sprintf`][sprintf] tako da prevod može da sadrži korisnikovo ime i datum posete.
+Poslednja sekcija je primer oblika množine, koja prikazuje oblike jednine i množine kao `msgid` u engleskom i njihove
+odgovarajuće prevode kao `msgstr` 0 i 1 (prateći broj za zadato pravilo množine). Tu se takođe koristi zamena stringova,
+tako da se broj može direktno videti u rečenici ukoliko upotrebite `%d`. Oblik množine uvek ima dve verzije `msgid` (jednina i množina),
+tako da se ne preporučuje da koristite kompleksan jezik za izvor prevođenja.
 
-### Discussion on l10n keys
-As you might have noticed, we're using as source ID the actual sentence in English. That `msgid` is the same used
-throughout all your `.po` files, meaning other languages will have the same format and the same `msgid` fields but
-translated `msgstr` lines.
+### Diskusija o l10n ključevima
+Kao što ste verovatno primetili, mi koristimo stvarnu rečenicu u engleskom za ID izvora. To polje `msgid` je isto koje se
+koristi u svim vašim `.po` fajlovaima, što znači da će ostali jezici imati isti format i ista `msgid` polja ali prevedene
+`msgstr` linije.
 
-Talking about translation keys, there are two main "schools" here:
+Dok govorimo o ključevima za prevode, postoje dve glavne "škole":
 
-1. _`msgid` as a real sentence_.  
-    The main advantages are: 
-    - if there are pieces of the software untranslated in any given language, the key displayed will still maintain some
-    meaning. Example: if you happen to translate by heart from English to Spanish but need help to translate to French,
-    you might publish the new page with missing French sentences, and parts of the website would be displayed in English
-    instead;
-    - it's much easier for the translator to understand what's going on and make a proper translation based on the
-    `msgid`;
-    - it gives you "free" l10n for one language - the source one;
-    - The only disadvantage: if you need to change the actual text, you would need to replace the same `msgid`
-    across several language files.
+1. _`msgid` kao stvarna rečenica_.  
+    Glavne prednosti su:
+    - ukoliko postoji neki deo softvera koji još uvek nije preveden u bilo kom jeziku, prikazani ključ će i dalje imati neko značenje. Na primer
+    ako se potrudite iz sveg srca da prevedete engleski u španski, ali vam je potrebna pomoć da prevedete u francuski,
+    možete da objavite novu stranicu sa francuskim prevodom kome nedostaju rečenice, i delovi websajta će se prikazati na engleskom;
+    - prevodicu je mnogo lakše da razume o čemu se radi i da pravilno prevede oslanjajući se na `msgid`;
+    - dobijate "besplatno" jedan l10n za jedan jezik - izvorni;
+    - jedina mana: ukoliko je potrebno da promenite stvarni tekst, moraćete da zamenite isti `msgid` u više jezičkih fajlova.
 
-2. _`msgid` as a unique, structured key_.  
-It would describe the sentence role in the application in a structured way, including the template or part where the
-string is located instead of its content.
-    - it's a great way to have the code organized, separating the text content from the template logic.
-    - however, that could bring problems to the translator that would miss the context. A source language file would be
-    needed as a basis for other translations. Example: the developer would ideally have an `en.po` file, that
-    translators would read to understand what to write in `fr.po` for instance.
-    - missing translations would display meaningless keys on screen (`top_menu.welcome` instead of `Hello there, User!`
-    on the said untranslated French page). That's good it as would force translation to be complete before publishing -
-    but bad as translation issues would be really awful in the interface. Some libraries, though, include an option to
-    specify a given language as "fallback", having a similar behavior as the other approach.
+2. _`msgid` kao jedinstveni, struktuirani ključ_.  
+Opisala bi ulogu rečenice u aplikaciji u struktuiranom smislu, uključujući šablon ili deo gde je string lociran umesto njegov sadržaj.
+    - odlično je dobro organizovati kôd, tako da se razdvoji tekstualni sadržaj od logike templejta.
+    - međutim, to može doneti probleme prevodiocu kojem bi nedostajao kontekst. Izvorni jezički fajl bi bio potreban kao osnova
+    za ostale prevode. Na primer: idealno, developer bi mogao da ima jedan `en.po` fajl koji bi prevodioci pročitali kako bi
+    znali šta da napišu u `fr.po` fajlu.
+    - prevodi koji nedostaju bi se prikazali kao nerazumni ključevi na ekranu (`top_menu.welcome` umesto `Hello there, User!`
+    na, recimo, nepotpuno prevedenoj stranici na francuskom jeziku). To je dobro jer bi se na taj način forsiralo potpuno
+    prevođenje pre objave - ali je zato loše zato što bi se problemi sa prevodima prikazali zaista odvratno na ekranu.
+    Neke biblioteke, međutim, imaju jednu opciju da navedete jedan "fallback" jezik, koji vam pruža slično ponašanje kao prethodni pristup.
 
-The [Gettext manual][manual] favors the first approach as, in general, it's easier for translators and users in
-case of trouble. That's how we will be working here as well. However, the [Symfony documentation][symfony-keys] favors
-keyword-based translation, to allow for independent changes of all translations without affecting templates as well.
+[Gettext priručnik][manual] favorizuje prvi pristup jer je, generalno, lakši za prevodioce i korisnike u slučaju nevolje.
+Taj pristup ćemo i mi ovde koristiti. Međutim, [Symfony dokumentacija][symfony-keys] favorizuje prevode koji se baziraju
+na ključnim rečima, da bi omogućili nezavisne promene svih prevoda bez efekata na templejte.
 
-### Everyday usage
-In a common application, you would use some Gettext functions while writing static text in your pages. Those sentences
-would then appear in `.po` files, get translated, compiled into `.mo` files and then, used by Gettext when rendering
-the actual interface. Given that, let's tie together what we have discussed so far in a step-by-step example:
+### Svakodnevna upotreba
+Za uobičajene aplikacije, normalno biste koristili neke Gettext funkcije dok pišete statičan tekst u vašim stranicama.
+Te rečenice bi se onda pojavile u `.po` fajlovima, pa bi se prevele, pa kompajlirale u `.mo` fajlove i onda bi ih koristio
+Gettext prilikom prikazivanja sadržaja. Prema tome, hajde da ovo što smo diskutovali do sada povežemo u celinu u korak-po-korak primeru:
 
-#### 1. A sample template file, including some different gettext calls
+#### 1. Primer templejt fajla koji sadrži različite pozive gettext alata
 {% highlight php %}
 <?php include 'i18n_setup.php' ?>
 <div id="header">
@@ -242,17 +237,18 @@ the actual interface. Given that, let's tie together what we have discussed so f
 <p><?=gettext('We\'re now translating some strings')?></p>
 {% endhighlight %}
 
-- [`gettext()`][func] simply translates a `msgid` into its corresponding `msgstr` for a given language. There's also
-the shorthand function `_()` that works the same way;
-- [`ngettext()`][n_func] does the same but with plural rules;
-- there's also [`dgettext()`][d_func] and [`dngettext()`][dn_func], that allows you to override the domain for a single
-call. More on domain configuration in the next example.
+- [`gettext()`][func] jednostavno prevodi `msgid` u njegov odgovarajući `msgstr` za zadati jezik. Takođe, postoji i skraćenica
+funkcija `_()` koja radi na isti način;
+- [`ngettext()`][n_func] radi isto to samo sa pravilima množine;
+- takođe, postoje [`dgettext()`][d_func] i [`dngettext()`][dn_func], koje vam omogućavaju da redefinišete domen za jedan poziv.
+Više o konfiguraciji domena u sledećem primeru.
 
-#### 2. A sample setup file (`i18n_setup.php` as used above), selecting the correct locale and configuring Gettext
+#### 2. Primer konfiguracionog fajla (`i18n_setup.php` kao što je gore korišćen), koji bira pravilan lokal i konfiguriše Gettext
 {% highlight php %}
 <?php
 /**
- * Verifies if the given $locale is supported in the project
+ * Verifikuje da li je zadati $locale podržan u projektu
+ *
  * @param string $locale
  * @return bool
  */
@@ -260,18 +256,18 @@ function valid($locale) {
    return in_array($locale, ['en_US', 'en', 'pt_BR', 'pt', 'es_ES', 'es');
 }
 
-//setting the source/default locale, for informational purposes
+// postavlja izvorni/podrazumevani lokal, za informativne potrebne
 $lang = 'en_US';
 
 if (isset($_GET['lang']) && valid($_GET['lang'])) {
-    // the locale can be changed through the query-string
-    $lang = $_GET['lang'];    //you should sanitize this!
-    setcookie('lang', $lang); //it's stored in a cookie so it can be reused
+    // lokal se može promeniti kroz query-string
+    $lang = $_GET['lang'];    // ovo biste trebali sanirati!
+    setcookie('lang', $lang); // sačuvan je u kolačiću kako bi se ponovo mogao koristiti
 } elseif (isset($_COOKIE['lang']) && valid($_COOKIE['lang'])) {
-    // if the cookie is present instead, let's just keep it
-    $lang = $_COOKIE['lang']; //you should sanitize this!
+    // ako kolačić postoji, hajde da ga zadržimo
+    $lang = $_COOKIE['lang']; // ovo biste trebali sanirati!
 } elseif (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-    // default: look for the languages the browser says the user accepts
+    // podrazumevano: proverite koje jezike korisnik prihvata na osnovu informacije iz pregledača (browser)
     $langs = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
     array_walk($langs, function (&$lang) { $lang = strtr(strtok($lang, ';'), ['-' => '_']); });
     foreach ($langs as $browser_lang) {
@@ -282,112 +278,110 @@ if (isset($_GET['lang']) && valid($_GET['lang'])) {
     }
 }
 
-// here we define the global system locale given the found language
+// ovde definišemo globalni sistemski lokal na osnovu pronađenog jezika
 putenv("LANG=$lang");
 
-// this might be useful for date functions (LC_TIME) or money formatting (LC_MONETARY), for instance
+// ovo na primer može biti korisno za funkcije za rad sa datumima (LC_TIME) ili za formatiranje novca (LC_MONETARY)
 setlocale(LC_ALL, $lang);
 
-// this will make Gettext look for ../locales/<lang>/LC_MESSAGES/main.mo
+// ovo ukazuje Gettext-u da traži ../locales/<lang>/LC_MESSAGES/main.mo
 bindtextdomain('main', '../locales');
 
-// indicates in what encoding the file should be read
+// naglasiti koje šifrovanje (encoding) se treba koristiti prilikom čitanja datoteke (fajla)
 bind_textdomain_codeset('main', 'UTF-8');
 
-// if your application has additional domains, as cited before, you should bind them here as well
+// ukoliko vaša aplikacija ima više domena, kao što je pomenuto iznad, ovde biste ih trebali vezati
 bindtextdomain('forum', '../locales');
 bind_textdomain_codeset('forum', 'UTF-8');
 
-// here we indicate the default domain the gettext() calls will respond to
+// ovde naglašavamo na koji podrazumevani domen će gettext() pozivi da se odnose
 textdomain('main');
 
-// this would look for the string in forum.mo instead of main.mo
+// ovo bi trebalo da traži string u forum.mo umesto main.mo
 // echo dgettext('forum', 'Welcome back!');
 ?>
 {% endhighlight %}
 
-#### 3. Preparing translation for the first run
-To make matters easier - and one of the powerful advantages Gettext has over custom framework i18n packages - is its
-custom file type. "Oh man, that's quite hard to understand and edit by hand, a simple array would be easier!" Make no
-mistake, applications like [Poedit] are here to help - _a lot_. You can get the program from
-[their website][poedit_download], it's free and available for all platforms. It's a pretty easy tool to get used to,
-and a very powerful one at the same time - using all powerful features Gettext has available.
+#### 3. Pripremanje prevoda za prvu upotrebu
+Da bi stvari bile jednostavnije - i jedna od moćnih prednosti koje Gettext nudi u odnosu na custom i18n pakete - 
+je njegov lični tip fajla. "Čoveče, to je poprilično teško razumeti i izmeniti ručno, jednostavan niz bi bio lakši!" ne greši,
+aplikacije kao što je [Poedit] su ovde da bi pomogle - _poprilično_. Možete preuzeti program sa [njihovog websajta][poedit_download]
+i on je besplatan i dostupan za sve platforme. Veoma je lako navići se da koristite ovaj alat, ali je istovremeno veoma moćan - 
+dok on koristi sve moćne osobine koje Gettext nudi.
 
-In the first run, you should select "File > New Catalog" from the menu. There you'll have a small screen where we will
-set the terrain so everything else runs smoothly. You'll be able to find those settings later through
-"Catalog > Properties":
+Prilikom prvog pokretanja, potrebno je da iz menija izaberete "File > New Catalog". Tu ćete imati mali ekran gde ćemo postaviti
+teren tako da sve ostalo radi lagodno. Kasnije, bićete u mogućnosti da pronađete ova podešavanja kroz "Catalog > Properties":
 
-- Project name and version, Translation Team and email address: useful information that goes in the `.po` file header;
-- Language: here you should use that format we mentioned before, such as `en_US` or `pt_BR`;
-- Charsets: UTF-8, preferably;
-- Source charset: set here the charset used by your PHP files - probably UTF-8 as well, right?
-- plural forms: here go those rules we mentioned before - there's a link in there with samples as well;
-- Source paths: here you must include all folders from the project where `gettext()` (and siblings) will happen - this
-is usually your templates folder(s)
-- Source keywords: this last part is filled by default, but you might need to alter it later - and is one of the
-powerful points of Gettext. The underlying software knows how the `gettext()` calls look like in several programming
-languages, but you might as well create your own translation forms. This will be discussed later in the "Tips" section.
+- Ime projekta i verzija, tim prevodioca i email adresa: korisna informacija koja ide u zaglavlje `.po` fajla;
+- Jezik: ovde biste trebali da koristite format koji smo ranije spomenuli, kao npr. `en_US` ili `pt_BR`;
+- Charset-ovi (skupovi znakova): UTF-8, preferirano;
+- Charset izvora: ovde postavite charset koji vaši PHP fajlovi koriste - verovatno UTF-8 takođe, zar ne?
+- pravila množine: ovde idu ona pravila koja smo ranije spomenuli - ovde postoji i veza sa primerima takođe;
+- Putanje do izvora: ovde morate uključiti sve foldere iz projekta gde će se pojaviti `gettext()` (i rođaci) - ovo su obično vaši templejt folder(i)
+- Ključne reči izvora: ovaj poslednji deo je podrazumevano popunjen, ali ćete naknadno možda morati da ga izmenite - 
+i takođe je jedan od moćnijih aspekata Gettext alata. Softver koji u pozadini koristi Gettext zna kako `gettext()` pozivi
+izgledaju u više programskih jezika, ali vi takođe možete napraviti vaše vlastite oblike za prevođenje. Ovo će biti obrađeno
+kasnije u sekciji "Saveti".
 
-After setting those points you'll be prompted to save the file - using that directory structure we mentioned as well,
-and then it will run a scan through your source files to find the localization calls. They'll be fed empty into the
-translation table, and you'll start typing in the localized versions of those strings. Save it and a `.mo` file will be
-(re)compiled into the same folder and ta-dah: your project is internationalized.
+Nakon podešavanja ovih tačaka bićete upitani da sačuvate fajl - koristeći strukturu direktorijuma koju smo spomenuli,
+i onda će se pokrenuti skeniranje vaših izvornih fajlova kako bi se pronašli pozivi za lokalizaciju. Oni će biti kreirani
+kao prazni redovi u vašoj tabeli sa prevodima, i vi ćete početi da unosite lokalizovane verzije ovih stringova. Sačuvajte
+je i `.mo` fajl će se (re)kompajlirati u istom folderu i na kraju: vaš projekat je internacionalizovan.
 
-#### 4. Translating strings
-As you may have noticed before, there are two main types of localized strings: simple ones and the ones with plural
-forms. The first ones have simply two boxes: source and localized string. The source string can't be modified as
-Gettext/Poedit do not include the powers to alter your source files - you should change the source itself and rescan
-the files. Tip: you may right-click a translation line and it will hint you with the source files and lines where that
-string is being used.  
-On the other hand, plural form strings include two boxes to show the two source strings, and tabs so you can configure
-the different final forms.
+#### 4. Prevođenje stringova
+Kao što ste verovatno ranije primetili, postoje dva glavna tipa lokalizovanih stringova: jednostavni i oni sa oblicima množine.
+Prva grupa ima jednostavno dva polja: izvorni i lokalizovani string. Izvorni string se ne može modifikovati jer Gettext/Poedit
+nemaju tu mogućnost da menjate izvorne fajlove - potrebno je da sami izmenite izvor i ponovo skenirate fajlove. Savet: možete
+pritisnuti desni klik na liniju za prevođenje i on će vam prikazati izvorne fajlove i linije gde se taj string koristi.
+Na drugu stranu, stringovi sa oblicima množine sadrže dva polja da prikažu dva izvorna stringa, i tabove kako biste mogli da konfigurišete
+različite konačne oblike.
 
-Whenever you change your sources and need to update the translations, just hit Refresh and Poedit will rescan the code,
-removing non-existent entries, merging the ones that changed and adding new ones. It may also try to guess some
-translations, based on other ones you did. Those guesses and the changed entries will receive a "Fuzzy" marker,
-indicating it needs review, being highlighted in the list. It's also useful if you have a translation team and someone
-tries to write something they're not sure about: just mark Fuzzy and someone else will review later.
+Svaki put kada izmenite vaše izvore i kada je potrebno da ažurirate prevode, samo pritisnite Osveži (Refresh) i Poedit će
+ponovo skenirati kôd, ukloniti nepostojeće zapise, i spojiti one koji su promenjeni i dodati nove. Možda će čak pokušati da
+pogodi neke prevode, oslanjajući se na one koje ste vi već uneli. Ova nagađanja i izmenjeni zapisi će dobiti obeleživač "Fuzzy"
+što ukazuje da im je potrebna revizija, i biće naglašeni u listi. Takođe je korisno ukoliko imate tim prevodioca i neko
+pokuša da napiše nešto u šta nije sasvim siguran: samo obeležite sa Fuzzy i neko drugi će revidirati kasnije.
 
-Finally, it's advised to leave "View > Untranslated entries first" marked, as it will help you _a lot_ to not forget
-any entry. From that menu, you can also open parts of the UI that allow you to leave contextual information for
-translators if needed.
+Konačno, proporučljivo je da ostavite "View > Untranslated entries first" aktivirano, jer će vam _mnogo_ pomoći da ne zaboravite
+nijedan zapis. Iz tog menija, takođe možete otvoriti delove UI-ja koji vam omogućavaju da ostavite informacije o kontekstu
+za prevodioce, ukoliko je potrebno.
 
-### Tips & Tricks
+### Saveti i Trikovi
 
-#### Possible caching issues
-If you're running PHP as a module on Apache (`mod_php`), you might face issues with the `.mo` file being cached. It
-happens the first time it's read, and then, to update it, you might need to restart the server. On Nginx and PHP5 it
-usually takes only a couple of page refreshes to refresh the translation cache, and on PHP7 it is rarely needed.
+#### Mogući problemi sa keširanjem
+Ukoliko koristite PHP kao modul na Apache-u (`mod_php`), možda ćete imati problema sa keširanim `.mo` fajlom.
+To se dešava kada se prvi put pročita, i onda, da biste ga ažurirali, možda ćete morati da restartujete server. Na Nginx i
+PHP verziji 5 obično je potrebno da nekoliko puta osvežite stranicu da biste osvežili keš prevoda, i u PHP verziji 7 retko
+da je i potrebno.
 
-#### Additional helper functions
-As preferred by many people, it's easier to use `_()` instead of `gettext()`. Many custom i18n libraries from
-frameworks use something similar to `t()` as well, to make translated code shorter. However, that's the only function
-that sports a shortcut. You might want to add in your project some others, such as `__()` or `_n()` for `ngettext()`,
-or maybe a fancy `_r()` that would join `gettext()` and `sprintf()` calls. Other libraries, such as
-[oscarotero's Gettext][oscarotero] also provide helper functions like these.
+#### Dodatne pomoćne funkcije
+Većina ljudi preferira da koristi lakši način `_()` umesto `gettext()`. Mnoge proizvoljne i18n biblioteke u frejmvorcima
+koriste nešto slično kao `t()`, kako bi kôd za prevođenje učinili kraćim. Međutim, to je jedina funkcija koja nudi skraćenicu.
+Možda ćete poželeti u vašem projektu da dodate neke druge, kao na primer `__()` ili `_n()` za `ngettext()`, ili možda
+simpatičnu `_r()` koja bi spojila pozive ka `gettext()` i `sprintf()`. Druge biblioteke, kao što je [Gettext od oscarotero][oscarotero]
+takođe obezbeđuju pomoćne funkcije kao što su ove.
 
-In those cases, you'll need to instruct the Gettext utility on how to extract the strings from those new functions.
-Don't be afraid, it's very easy. It's just a field in the `.po` file, or a Settings screen on Poedit. In the editor,
-that option is inside "Catalog > Properties > Source keywords". You need to include there the specifications of those
-new functions, following [a specific format][func_format]:
+U tim slučajevima, biće potrebno da date instrukcije pomoćnom Gettext alatu kako da izvuče stringove iz ovih novih funkcija.
+Ne plašite se, veoma je jednostavno. U pitanju je samo jedno polje u `.po` fajlu, ili ekran za podešavanje u Poedit-u.
+U editoru, ta opcija je u "Catalog > Properties > Source keywords". Tu ćete uključiti specifikaciju za ove nove funkcije,
+pri čemu ćete poštovati [specifičan format][func_format]:
 
-- if you create something like `t()` that simply returns the translation for a string, you can specify it as `t`.
-Gettext will know the only function argument is the string to be translated;
-- if the function has more than one argument, you can specify in which one the first string is - and if needed, the
-plural form as well. For instance, if we call our function like this: `__('one user', '%d users', $number)`, the
-specification would be `__:1,2`, meaning the first form is the first argument, and the second form is the second
-argument. If your number comes as the first argument instead, the spec would be `__:2,3`, indicating the first form is
-the second argument, and so on.
+- ukoliko napravite nešto nalik `t()` što jednostavno vraća prevod za zadati string, možete ga definisati sa `t`.
+Gettext će znati da je jedini argument funkcije string koji treba prevesti.
+- ukoliko funkcija ima više od jednog argumenta, možete naglasiti u kojem se nalazi prvi string - i ukoliko je potrebno,
+oblik množine takođe. Na primer, ukoliko pozivamo našu funkciju ovako: `__('one user', '%d users', $number)`, specifikacija
+bi bila `__:1,2`, što znači da je prvi oblik prvi argument, i da je drugi oblik drugi argument. Ukoliko se umesto toga vaš broj nađe
+na mestu prvog argumenta, specifikacija bi bila `__:2,3`, ukazujući da je prvi oblik drugi argument, i tako dalje.
 
-After including those new rules in the `.po` file, a new scan will bring in your new strings just as easy as before.
+Nakon što uključite ova nova pravila u `.po` fajl, novo skeniranje će doneti vaše nove stringove isto onako lako kao pre.
 
-### References
+### Reference
 
 * [Wikipedia: i18n and l10n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
 * [Wikipedia: Gettext](https://en.wikipedia.org/wiki/Gettext)
-* [LingoHub: PHP internationalization with gettext tutorial][lingohub]
-* [PHP Manual: Gettext](http://php.net/manual/en/book.gettext.php)
-* [Gettext Manual][manual]
+* [LingoHub: Tutorijal za PHP internacionalizaciju sa gettext-om][lingohub]
+* [PHP priručnik: Gettext](http://php.net/manual/en/book.gettext.php)
+* [Gettext priručnik][manual]
 
 [Poedit]: https://poedit.net
 [poedit_download]: https://poedit.net/download

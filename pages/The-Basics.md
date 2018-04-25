@@ -20,14 +20,12 @@ var_dump($a == '5');     // poređenje vrednosti (bez tipa); vraća true
 var_dump($a === 5);      // poređenja tipa/vrednosti (integer sa integer-om); vraća true
 var_dump($a === '5');    // compare tipa/vrednosti (integer sa string-om); vraća false
 
-/**
- * Striktno poređenje
- */
+// Poređenje po jednakosti (equal)
 if (strpos('testing', 'test')) {    // 'test' je pronađen na poziciji 0, a to se u ovom slučaju interpretira kao 'false'
     // ...
 }
 
-// nasuprot
+// nasuprot poređenja po striktnosti (strict)
 
 if (strpos('testing', 'test') !== false) {    // true, zahvaljujući striktnom poređenju (0 !== false)
     // ...
@@ -66,6 +64,14 @@ function test($a)
     }
     return false;    // else je nepotreban
 }
+
+// ili još kraće:
+
+function test($a)
+{
+    return (bool) $a;
+}
+
 {% endhighlight %}
 
 * [If izrazi](http://php.net/control-structures.if)
@@ -191,7 +197,7 @@ echo 'phptherightway is ' . $adjective . '.'     // primer sa jednostrukim navod
     . "\n"                                       // za umetanje promenljivih
     . 'I love learning' . $code . '!';
 
-// vs
+// nasuprot
 
 echo "phptherightway is $adjective.\n I love learning $code!"  // Umesto konkatenacije, dvostruki navodnici nam omogućavaju
                                                                // korišćenje stringova koji se mogu parsirati
@@ -289,7 +295,7 @@ EOD;                        // završni 'EOD' mora biti u novom redu i kranje ul
 Postoji mit o tome da su jednostruki navodnici nešto brži od dvostrukih, a to u osnovi nije tačno.
 
 Ako definišete string i pritom nemate konkatenaciju vrednosti, onda će stringovi sa jednostrukim i dvostrukim
-navodnicima biti u potpunosti ista. Oba rešenja će biti podjednako brza.
+navodnicima biti u potpunosti isti. Oba rešenja će biti podjednako brza.
 
 Ako vršite konkatenaciju više stringova ili vršite interpolaciju promenljivih u string sa dvostrukim navodnicima,
 onda se rezultati mogu razlikovati. Ako radite sa malim brojem promenljivih, konkatenacija će biti neznatno brža.
@@ -317,7 +323,7 @@ Nasuprot ovome, sledi primer koji kompromituje sve vidove preglednosti u cilju s
 
 {% highlight php %}
 <?php
-echo ($a) ? ($a == 5) ? 'yay' : 'nay' : ($b == 10) ? 'excessive' : ':(';
+echo ($a) ? ($a == 5) ? 'yay' : 'nay' : ($b == 10) ? 'excessive' : ':('; // preterano ugnježdavanje, žrtvovanje čitljivosti
 {% endhighlight %}
 
 Za povratnu vrednost u slučaju ternarnih operatora koristite ispravnu sintaksu:
@@ -382,6 +388,9 @@ Još jedan primer je sledeći kôd koji vraća true ako je ($a != 3 i $b != 4) i
 <?php
 return ($a != 3 && $b != 4) || $c == 5;
 {% endhighlight %}
+
+Od PHP verzije 5.3 moguće je izostaviti središnji deo ternarnog operatora.
+Izraz "expr1 ?: expr3" vraća expr1 ako je on true ili expr3 u suprotnom.
 
 * [Ternarni operatori](http://php.net/language.operators.comparison)
 

@@ -7,12 +7,12 @@ anchor: compiled_templates
 ## Kompajlirani templejti {#compiled_templates_title}
 
 PHP jeste evoluirao u zreo, objektno-orijenisan jezik, ali [nije mnogo napredovao][article_templating_engines]
-kao templejt jezik. Kompajlirani templejt sistemi (template engines), kao što su [Twig] i [Smarty]*, upotpunjuju ovaj
+kao templejt jezik. Kompajlirani templejt sistemi (template engines), kao što su [Twig], [Brainy], ili [Smarty]*, upotpunjuju ovaj
 aspekt sa novom sintaksom osmišljenom upravo za potrebe templejta. Od automatskog escape-ovanja,
 preko nasleđivanja i pojednostavljenih kontrolnih struktura, kompajlirani templejti su mnogo
 čitljiviji, lakši za pisanje, ali i bezbedniji. Oni takođe mogu biti kompatibilni sa više različitih
 programskih jezika, za šta je dobar primer [Mustache]. Pošto se templejti moraju kompajlirati,
-neizbežan je određeni negativan uticaj na performanse, koji je ipak zanemarljiv ako se koristi keširanje.
+neizbežan je određeni negativan uticaj na performanse, koji je ipak zanemarljiv ako se keširanje ispravno koristi.
 
 **Smarty omogućava automatsko _escape-ovanje_, ali ova funkcionalnost NIJE podrazumevano uključena.*
 

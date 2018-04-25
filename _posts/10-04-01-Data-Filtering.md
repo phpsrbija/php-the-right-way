@@ -11,11 +11,11 @@ strani input pre nego što ga upotrebite u kôdu. Funkcije `filter_var()` i `fil
 nekog teksta, kao i za njegovu validiciju (npr. email adrese).
 
 Strani input može biti bilo šta: `$_GET` i `$_POST` podaci iz forme, neke vrednosti u superglobalnoj promenljivoj
-`$_SERVER` ili body HTTP zahteva dobijen putem `fopen('php://input', 'r')`. Zapamtite, strani input nije ograničen
+`$_SERVER` ili telo HTTP zahteva dobijen putem `fopen('php://input', 'r')`. Zapamtite, strani input nije ograničen
 samo na podatke iz forme koje je poslao korisnik. Uploadovani i preuzeti fajlovi, vrednosti iz sesije, podaci iz cookie-a
 i podaci iz 3rd party web servisa su takođe strani input.
 
-Iako se ti podaci mogu čuvati, kombinovati i može im se pristupiti kasnije, oni su ipak strani input. Svaki put
+Iako se ti podaci mogu čuvati, spajati i može im se pristupiti kasnije, oni su ipak strani input. Svaki put
 kad obradite, prikažete, spojite ili uključite podatke u vaš kôd, zapitajte se da li su podaci pravilno filtrirani i da
 li su bezbedni.
 
@@ -49,6 +49,16 @@ teško za implementirati i mnogi pribegavaju korišćenju striktnijeg formatiran
 iako biblioteke kao što je [HTML Purifier][html-purifier] postoje baš iz ovog razloga.
 
 [Pogledaj filtere za prečišćavanje][2]
+
+### Deserijalizacija
+
+Opasno je koristiti funkciju `unserialize()` kako biste deserijalizovali podatke koje dolaze od korisnika ili drugih
+nepoverljivih izvora. Ukoliko to uradite moguće je da dozvolite zlonamernim korisnicima da instanciraju objekte (sa poljima objekta koje su oni definisali)
+čiji će se destruktori izvršiti, **čak iako se sami objekti ne koriste**. Prema tome, trebali biste da izbegavate deserijalizaciju
+nepoverljivih podataka.
+
+Ako je baš neophodno da deserijalizujete podatke od nepouzdanih izvora, koristite opciju [`allowed_classes`][unserialize]
+koja je dostupna u PHP verziji 7 kako biste ograničili koje tipove objekata je dozvoljeno deserijalizovati.
 
 ### Validacija
 

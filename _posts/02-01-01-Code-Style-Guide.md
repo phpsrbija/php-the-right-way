@@ -12,7 +12,7 @@ olakšalo kombinovanje i integrisanje različitih biblioteka u svoje projekte.
 
 [Framework Interop grupa][fig] je predložila i odobrila niz preporuka za stilove kodiranja. Pritom nisu sve
 vezane za stil pisanja kôda, a one koje jesu su sledeće: [PSR-0][psr0], [PSR-1][psr1], [PSR-2][psr2] i [PSR-4][psr4].
-Ove preporuke su zapravo setovi pravila koje neki projekti kao što su Drupal, Zend, Symfony, CakePHP, phpBB,
+Ove preporuke su zapravo setovi pravila koje neki projekti kao što su Drupal, Zend, Symfony, Laravel, CakePHP, phpBB,
 AWS SDK, FuelPHP, Lithium, itd. počinju da usvajaju. I vi ih možete primenjivati u vašim ličnim projektima,
 ili nastaviti sa korišćenjem nekog vašeg ličnog stila.
 
@@ -28,18 +28,27 @@ i rade sa vašim kôdom, a da će aplikacije koje koriste komponente biti konzis
 * [Pročitajte o Symfony standardima kodiranja][symfony-cs]
 
 Možete da koristite [PHP_CodeSniffer][phpcs] kako biste proverili da li je vaš kôd u skladu sa nekom od ovih preporuka,
-ali i dodatke za tekst editore kao što je [Sublime Text 2][st-cs] u cilju dobijanja rezultata provera u realnom vremenu.
+ali i dodatke za tekst editore kao što je [Sublime Text][st-cs] u cilju dobijanja rezultata provera u realnom vremenu.
 
-Automatksu korekciju izgleda kôda možete obaviti korišćenjem jednog od sledeća dva alata. Prvi je [PHP Coding Standards Fixer][phpcsfixer],
-koji je veoma dobro testiran. Druga opcija je [php.tools][phptools], koji je postao popularan zahvaljujući [sublime-phpfmt][sublime-phpfmt] dodatku.
-Iako je noviji, postiže značajne rezultate po pitanju performansi, pa je samim tim korekcija kôda u realnom vremenu dosta tečnija.
+Automatsku korekciju izgleda kôda možete obaviti korišćenjem jednog od sledećih alata:
+
+- Jedan je [PHP Coding Standards Fixer][phpcsfixer] koji je veoma dobro testiran.
+- Takođe, može se koristiti alat [PHP Code Beautifier and Fixer][phpcbf] koji je uključen sa PHP_CodeSniffer-om da biste skladno podesili vaš kôd.
 
 phpcs možete pokrenuti ručno iz konzole:
 
     phpcs -sw --standard=PSR2 file.php
 
-Prikaziće greške kao i predloge za njihovo rešavanje. Ova komanda može biti od koristi ako je uključite u neki git hook.
-Na taj način će grane koje sadrže kôd koji nije u skladu sa određenim standardom neće moći da uđu u repozitorijum dok se ne poprave.
+Prikazaće greške kao i predloge za njihovo rešavanje. Ova komanda može biti od koristi ako je uključite u neki git hook.
+Na taj način grane koje sadrže kôd koji nije u skladu sa određenim standardom neće moći da uđu u repozitorijum dok se ne poprave.
+
+Ukoliko imate PHP_CodeSniffer onda probleme sa izgledom kôda koje on prijavljuje možete automatski popraviti uz pomoć alata [PHP Code Beautifier and Fixer][phpcbf].
+
+    phpcbf -w --standard=PSR2 file.php
+
+Druga opcija je da koristite [PHP Coding Standards Fixer][phpcsfixer]. Ovaj alat će vam prikazati koje vrste grešaka je vaš izgled kôda imao, pre nego što ga je on popravio.
+
+    php-cs-fixer fix -v --level=psr2 file.php
 
 Korišćenje engleskog jezika se preporučuje u slučaju svih imenovanja u kôdu i njegovoj infrastrukturi.
 Komentari mogu biti pisani u bilo kom jeziku poznatom svim trenutnim i budućim učesnicima u razvoju kôda.
@@ -56,5 +65,3 @@ Komentari mogu biti pisani u bilo kom jeziku poznatom svim trenutnim i budućim 
 [phpcbf]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
 [phpcsfixer]: http://cs.sensiolabs.org/
-[phptools]: https://github.com/dericofilho/php.tools
-[sublime-phpfmt]: https://github.com/dericofilho/sublime-phpfmt

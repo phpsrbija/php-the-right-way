@@ -20,8 +20,8 @@ Postoji nekoliko različitih tipova testiranja koje možete koristiti za testira
 
 Unit testiranje je pristup koji obezbeđuje da funkcije, klase i metode rade onako kako se očekuje, od momenta
 kada ste ih napravili i tokom celokupnog razvojnog ciklusa. Proverom ulaznih i izlaznih vrednosti različitih
-funkcija i metoda, možete biti sigurni da je njihova interna logika ispravna. Korišćenjem dependency
-injection-a i kreiranjem mock ("lažnih") klasa i stub-ova možete utvrditi da li se zavisnosti ispravno
+funkcija i metoda, možete biti sigurni da je njihova interna logika ispravna. Korišćenjem Dependency
+Injection-a i kreiranjem mock ("lažnih") klasa i stub-ova možete utvrditi da li se zavisnosti ispravno
 koriste u cilju još bolje pokrivenosti kôda testovima.
 
 Kada kreirate klasu ili funkciju, treba da kreirate i odgovarajući unit test za sve različite slučajeve njenog
@@ -39,10 +39,10 @@ bude uslov za njihovo slanje.
 [PHPUnit](http://phpunit.de) frejmvork je de fakto standard za pisanje unit testova za PHP aplikacije, ali
 postoji i nekoliko alternativa:
 
-* [SimpleTest](http://simpletest.org)
-* [Enhance PHP](http://www.enhance-php.com/)
-* [PUnit](http://punit.smf.me.uk/)
 * [atoum](https://github.com/atoum/atoum)
+* [Kahlan](https://github.com/crysalead/kahlan)
+* [Peridot](http://peridot-php.github.io/)
+* [SimpleTest](http://simpletest.org)
 
 ### Intergraciono testiranje
 

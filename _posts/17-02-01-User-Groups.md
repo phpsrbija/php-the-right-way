@@ -18,7 +18,7 @@ nudi online sastanke dvaput mesečno, sa prezentacijama koje drže neki od vode�
 koji podržavaju raznoliku zajednicu. PHPWomen ima mrežu za podršku, mentorstvo i edukaciju, i uopšte
 promoviše stvaranje "ženski nastrojene" i profesionalne atmosfere.
 
-[Pročitajte o korisničkim grupam na PHP Wiki stranici][php-wiki]
+[Pročitajte o korisničkim grupama na PHP Wiki stranici][php-wiki]
 
 [google]: https://www.google.com/search?q=php+user+group+near+me
 [meetup]: http://www.meetup.com/find/

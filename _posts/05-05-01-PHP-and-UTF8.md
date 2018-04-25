@@ -102,13 +102,13 @@ $link = new PDO(
 );
 
 // Upisujemo obrađeni string kao UTF-8 u bazi
-// Vaša baza and tabele su na utf8mb4 character set-u i kolaciji, jel tako?
+// Vaša baza i tabele su na utf8mb4 character set-u i kolaciji, jel tako?
 $handle = $link->prepare('insert into ElvishSentences (Id, Body) values (?, ?)');
 $handle->bindValue(1, 1, PDO::PARAM_INT);
 $handle->bindValue(2, $string);
 $handle->execute();
 
-// Dohvatanje upravo sačuvanog stringa kako bismo proverili da li zaista dobro unet
+// Dohvatanje upravo sačuvanog stringa kako bismo proverili da li je zaista dobro sačuvan
 $handle = $link->prepare('select * from ElvishSentences where Id = ?');
 $handle->bindValue(1, 1, PDO::PARAM_INT);
 $handle->execute();
@@ -121,12 +121,12 @@ header('Content-Type: text/html; charset=UTF-8');
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>UTF-8 test page</title>
+        <title>UTF-8 test stranica</title>
     </head>
     <body>
         <?php
         foreach($result as $row){
-            print($row->Body);  // Ovde bi trebalo da imamo ispravan ispis našeg UTF-8 stringa
+            print($row->Body);  // Ovde bi trebalo da imamo ispravan ispis našeg UTF-8 stringa u browser-u
         }
         ?>
     </body>
@@ -149,9 +149,9 @@ header('Content-Type: text/html; charset=UTF-8');
     * [`htmlentities()`](http://php.net/function.htmlentities)
     * [`htmlspecialchars()`](http://php.net/function.htmlspecialchars)
 * [PHP UTF-8 Cheatsheet](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
-* [Handling UTF-8 with PHP](http://www.phpwact.org/php/i18n/utf-8)
+* [UTF-8 rukovanje sa PHP-om](http://www.phpwact.org/php/i18n/utf-8)
 * [Stack Overflow: What factors make PHP Unicode-incompatible?](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
 * [Stack Overflow: Best practices in PHP and MySQL with international strings](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
-* [How to support full Unicode in MySQL databases](http://mathiasbynens.be/notes/mysql-utf8mb4)
-* [Bringing Unicode to PHP with Portable UTF-8](http://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)
+* [Kako da imate potpunu Unicode podršku u MySQL bazama podataka](http://mathiasbynens.be/notes/mysql-utf8mb4)
+* [Dovođenje Unicode-a u PHP sa portabilnim (prenosivim) UTF-8](http://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)
 * [Stack Overflow: DOMDocument loadHTML does not encode UTF-8 correctly](http://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly)
